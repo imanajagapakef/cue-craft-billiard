@@ -122,20 +122,33 @@ async function main() {
 
   try {
     // ── 1. Availability ──────────────────────────────────────────────────────
+    // Does NOT assume a pristine database. A venue being used while the suite
+    // runs is the normal case, not an error — a test that demands all 12 tables
+    // free fails for the wrong reason and trains people to ignore it.
     const before = await getAvailability({ date: dateStr, startMin, durationMin });
-    check("1. availability returns every active table", before.length, 12);
     check(
-      "2. every table is available before any booking",
-      before.filter((r) => r.available).length,
-      12,
+      `1. availability returns every active table (${before.length})`,
+      before.length >= 12,
+      true,
     );
-    const target = before[0];
+
+    const target = before.find((r) => r.available);
+    check("2. at least one table is free for this window", Boolean(target), true);
+    if (!target) throw new Error("no free table — cannot continue");
+
     check("3. an available table carries a positive price", target.totalPrice > 0, true);
     check(
       "4. deposit is the configured percentage of the total",
       target.depositAmount,
       Math.ceil(target.totalPrice * (settings.depositPercent / 100)),
     );
+    const alreadyTaken = before.filter((r) => !r.available).length;
+    check(
+      "4b. unavailable tables report no price rather than a stale one",
+      before.filter((r) => !r.available).every((r) => r.totalPrice === 0),
+      true,
+    );
+    void alreadyTaken;
 
     // ── 2. Create booking ────────────────────────────────────────────────────
     const idempotencyKey = `${tag}-key`;
@@ -186,9 +199,10 @@ async function main() {
       false,
     );
     check(
-      "13. other tables stay available",
+      // Relative, not absolute: a venue in use while tests run must not fail this.
+      "13. holding one table does not disturb the others",
       after.filter((r) => r.available).length,
-      11,
+      before.filter((r) => r.available).length - 1,
     );
 
     // ── 5. Double booking refused (§64) ──────────────────────────────────────

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { Chip, ChipStrip, TableBar } from "./mobile.tsx";
-import { Button, ErrorNote, Input, Meta, Select, rupiah, localDateStr } from "./ui.tsx";
+import { Button, ErrorNote, Input, Meta, Select, rupiah } from "./ui.tsx";
 
 /**
  * Mobile availability — mobile_table_availability_instant_hold.
@@ -35,18 +35,24 @@ const STARTS = Array.from({ length: 32 }, (_, i) => 10 * 60 + i * 30).filter((m)
 const slot = (m: number) =>
   `${String(Math.floor(m / 60)).padStart(2, "0")}:${String(m % 60).padStart(2, "0")}`;
 
-/** Next `count` days as local date strings, today first. */
-function upcomingDays(count: number): string[] {
-  const out: string[] = [];
-  for (let i = 0; i < count; i++) {
-    out.push(localDateStr(new Date(Date.now() + i * 86_400_000)));
-  }
-  return out;
+/**
+ * The next `count` days as `YYYY-MM-DD`, starting from `today`.
+ *
+ * Derived from the server-supplied `today` rather than Date.now(). A clock read
+ * during render is a hydration hazard: if the server renders at 23:59:59 and the
+ * browser hydrates at 00:00:01, the two disagree about what "today" is and the
+ * date strip mismatches.
+ */
+function upcomingDays(today: string, count: number): string[] {
+  const base = new Date(`${today}T00:00:00Z`).getTime();
+  return Array.from({ length: count }, (_, i) =>
+    new Date(base + i * 86_400_000).toISOString().slice(0, 10),
+  );
 }
 
 export function MobilePicker({ today }: { today: string }) {
   const router = useRouter();
-  const days = upcomingDays(7);
+  const days = upcomingDays(today, 7);
 
   const [date, setDate] = useState(today);
   const [startMin, setStartMin] = useState(19 * 60);

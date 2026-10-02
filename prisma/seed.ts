@@ -93,11 +93,24 @@ async function main() {
   for (const [i, t] of TABLES.entries()) {
     await db.table.upsert({
       where: { code: t.code },
-      update: { name: t.name, type: t.type, zone: t.zone, sortOrder: i },
+      // status is NOT reset here on purpose — it is operational state, and a
+      // venue may genuinely have a table out of service.
+      //
+      // Use `npm run db:reset-tables` to clear maintenance when you actually want
+      // a clean floor. README used to claim `db:seed` was the recovery path, and
+      // it was not: a table stuck in MAINTENANCE stayed stuck.
+      update: { name: t.name, type: t.type, zone: t.zone, sortOrder: i, active: true },
       create: { ...t, sortOrder: i, active: true },
     });
   }
   console.log(`tables        ${TABLES.length}`);
+
+  const inMaintenance = await db.table.count({ where: { status: "MAINTENANCE" } });
+  if (inMaintenance > 0) {
+    console.log(
+      `              ${inMaintenance} meja sedang MAINTENANCE — jalankan npm run db:reset-tables untuk mengosongkan lantai`,
+    );
+  }
 
   for (const u of USERS) {
     const passwordHash = await bcrypt.hash(u.password, 12);

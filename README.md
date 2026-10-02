@@ -45,6 +45,17 @@ npm run dev           # http://localhost:3000
 
 Kalau PostgreSQL belum terpasang di mesin ini, ikuti `docs/LOCAL_DB.md`.
 
+`db:seed` sengaja **tidak** mereset status meja, karena maintenance adalah keputusan
+operasional — ada venue yang memang menurunkan satu meja dari layanan. Kalau lantai
+seharusnya bersih dan tidak bisa discovered kenapa:
+
+```powershell
+npm run db:reset-tables   # bersihkan maintenance dari semua meja
+```
+
+`db:seed` juga memberi tahu kalau masih ada meja yang sedang maintenance, supaya
+tidak hilang diam-diam saat seed dijalankan berulang kali.
+
 **Kredensial dev** (dari seed, ganti sebelum deploy):
 
 | Email | Password | Role |
@@ -69,7 +80,7 @@ Menjalankan seluruh suite berurutan. Rinciannya:
 | `npm run test:flow` | 43 | Alur penuh §80 di layer service |
 | `npm run test:routes` | 19 | Halaman render; route staff menolak tamu tanpa session |
 | `npm run test:counter` | 24 | Walk-in → extension → checkout lewat HTTP dengan session kasir |
-
+| `npm run test:hydration` | 20 | Tidak ada nilai jam yang bocor ke HTML server |
 Dua suite terakhir butuh `npm run dev` berjalan.
 
 ---

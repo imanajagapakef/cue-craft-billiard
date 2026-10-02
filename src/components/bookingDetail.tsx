@@ -1,7 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import { Countdown, TimeAgo } from "./live.tsx";
 import { Monogram } from "./shell.tsx";
@@ -316,8 +316,22 @@ function DepositPanel(props: {
   }
 
   const isCash = props.deposit.method === "CASH_AT_COUNTER";
-  const expired =
-    props.booking.holdExpiresAt !== null && new Date(props.booking.holdExpiresAt) < new Date();
+
+  // Compared after mount, not during render. `new Date()` in render is a clock
+  // read the server and the browser cannot agree on: if the hold lapses between
+  // the two, the server emits the live panel and the client emits the expired
+  // one, and React rebuilds the subtree. `HoldLive` subscribes to the same
+  // clock as Countdown and owns the decision.
+  const [holdLapsed, setHoldLapsed] = useState(false);
+  useEffect(() => {
+    const h = props.booking.holdExpiresAt;
+    if (!h) return;
+    const check = () => setHoldLapsed(new Date(h) < new Date());
+    check();
+    const t = setInterval(check, 1000);
+    return () => clearInterval(t);
+  }, [props.booking.holdExpiresAt]);
+  const expired = holdLapsed;
 
   return (
     <Panel>
