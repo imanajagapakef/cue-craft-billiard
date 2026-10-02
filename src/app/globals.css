@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+/*
+  Cue & Rail System — tokens from KITAB DESIGN/cue_rail_system/DESIGN.md
+  Do not add colours here that are not in that document.
+*/
+@theme {
+  /* Foundations & canvas */
+  --color-canvas: #fbf9f5;
+  --color-canvas-recessed: #f7f5f0;
+  --color-surface: #ffffff;
+  --color-surface-accent: #f3efea;
+
+  /* Ink & contrast */
+  --color-ink: #141615;
+  --color-ink-secondary: #2b2e2c;
+  --color-ink-muted: #5c625e;
+  --color-ink-faint: #8c938e;
+
+  /* Accent & cloth */
+  --color-emerald: #0f5a47;
+  --color-emerald-deep: #0b4536;
+  --color-emerald-wash: #e7f3ef;
+
+  /* Table status */
+  --color-open: #0f5a47;
+  --color-open-wash: #e7f3ef;
+  --color-reserved: #2a3b50;
+  --color-reserved-wash: #eaf0f6;
+  --color-inplay: #9a5a18;
+  --color-inplay-wash: #fbf2e8;
+  --color-maint: #7a3535;
+  --color-maint-wash: #f9ebeb;
+
+  /* Structural dividers */
+  --color-rule: #e5e0d8;
+  --color-rule-strong: #dcd6cd;
+
+  /* Typography */
+  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Radius — architectural, never bubbly */
+  --radius-core: 0.25rem;
+  --radius-panel: 0.5rem;
+
+  /* Layout */
+  --spacing-gutter: 1.5rem;
+  --spacing-gutter-mobile: 0.75rem;
+  --spacing-margin: 2.5rem;
+  --spacing-margin-mobile: 1rem;
+
+  /* Floating state only (active cueing sheet, time picker). Never on resting elements. */
+  --shadow-float: 0 4px 20px -2px rgb(20 22 21 / 0.06), 0 0 0 1px #dcd6cd;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Sighting diamond — the 45deg status anchor from DESIGN.md */
+  .diamond {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    background: currentColor;
+    transform: rotate(45deg);
+  }
+
+  /* The Trajectory Line: 1.5px emerald rule, snaps to active tab */
+  .trajectory {
+    position: relative;
+  }
+  .trajectory[data-active="true"]::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1.5px;
+    background: var(--color-emerald);
+  }
+
+  ::selection {
+    background: var(--color-emerald-wash);
+    color: var(--color-ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

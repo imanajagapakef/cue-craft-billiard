@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<html class="h-full bg-background" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_tab" name="shell-type"/><title>The Rail Club</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-primary-fixed-variant": "#00513f", "inverse-surface": "#2f3130", "surface-tint": "#256956", "on-tertiary-fixed": "#2e1500", "primary-fixed": "#acf1d7", "on-tertiary": "#ffffff", "on-surface": "#1a1c1b", "surface-container-high": "#e8e8e6", "on-secondary-fixed-variant": "#37485e", "on-tertiary-container": "#ffb06b", "background": "#f9f9f7", "surface-variant": "#e2e3e0", "surface-bright": "#f9f9f7", "surface-container-low": "#f4f4f1", "on-primary-container": "#8ccfb7", "secondary-container": "#d2e4ff", "primary-container": "#0f5a47", "on-primary-fixed": "#002118", "surface-container": "#eeeeec", "on-error-container": "#93000a", "inverse-primary": "#90d4bc", "error": "#ba1a1a", "tertiary-fixed": "#ffdcc2", "on-tertiary-fixed-variant": "#6d3a00", "tertiary": "#582e00", "outline-variant": "#bfc9c3", "primary": "#004132", "secondary-fixed": "#d2e4ff", "on-error": "#ffffff", "surface-dim": "#dadad8", "tertiary-container": "#794100", "on-secondary-container": "#55667c", "inverse-on-surface": "#f1f1ef", "tertiary-fixed-dim": "#ffb77a", "error-container": "#ffdad6", "on-surface-variant": "#3f4945", "on-background": "#1a1c1b", "surface-container-highest": "#e2e3e0", "primary-fixed-dim": "#90d4bc", "on-secondary": "#ffffff", "surface": "#f9f9f7", "on-primary": "#ffffff", "on-secondary-fixed": "#0a1c30", "surface-container-lowest": "#ffffff", "secondary-fixed-dim": "#b6c8e2", "secondary": "#4f6076", "outline": "#6f7974" }, borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, spacing: { "space-xs": "0.25rem", "gutter": "1.5rem", "space-sm": "0.5rem", "gutter-mobile": "0.75rem", "space-md": "1rem", "margin": "2.5rem", "margin-mobile": "1rem", "space-xl": "2.5rem", "space-lg": "1.5rem" }, fontFamily: { "headline-sm": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "label-lg": ["JetBrains Mono"], "display": ["Plus Jakarta Sans"], "headline-md": ["Plus Jakarta Sans"], "display-mobile": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"] }, fontSize: { "headline-sm": ["1.125rem", { "lineHeight": "1.4", "letterSpacing": "-0.005em", "fontWeight": "600" }], "label-sm": ["0.6875rem", { "lineHeight": "1.3", "letterSpacing": "0.06em", "fontWeight": "600" }], "body-lg": ["1rem", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }], "headline-lg-mobile": ["1.5rem", { "lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500" }], "label-lg": ["0.875rem", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }], "display": ["3rem", { "lineHeight": "1.15", "letterSpacing": "-0.03em", "fontWeight": "600" }], "headline-md": ["1.375rem", { "lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display-mobile": ["2rem", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }], "headline-lg": ["2rem", { "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-md": ["0.875rem", { "lineHeight": "1.55", "letterSpacing": "0", "fontWeight": "400" }] } } } }</script><style>@layer base { html, body { width: 100%; margin: 0; padding: 0; min-height: 100%; } .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); } .pt-safe { padding-top: env(safe-area-inset-top, 0px); } } ::-webkit-scrollbar { display: none; }</style></head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.03)] pt-safe"><div class="h-16 px-gutter-mobile flex items-center justify-between"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #0f5a47
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wjgf_8TzzRHhf047rGayrdoC07zG-toO0Ba_f3kHL6Q_9vZxHFT3EVFYzFyhU4wOYL9qxOh3qMtEAyh5_F11IbF9-OWpMVhTAK6a1hMP6yGinwOxo8sb2px-tfGaO1grVE586kwAwcpgwEhqIgMSzC5eMBn_MVTSIW33tkRiwWbgnJpZmEzgdNSgNIoQIgal38VUvwCEQIgRjb250IH4mxKsmbYyARI8PzPlXa3ByguN_RLF1n_6l3EIlr"/><div class="flex flex-col"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant leading-none">The Strand Flagship</span><span class="font-headline-sm text-headline-sm text-on-surface tracking-tight leading-snug font-bold">Floor Ops</span></div></div><div class="flex items-center gap-space-xs"><div class="hidden sm:flex items-center gap-1.5 px-space-sm py-1 bg-surface-container-low rounded"><span class="inline-block w-1.5 h-1.5 rounded-full bg-primary-container animate-pulse"></span><span class="font-label-sm text-label-sm text-primary uppercase font-semibold">Telemetry</span></div><button aria-label="Notifications" class="min-h-[44px] min-w-[44px] flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[20px]">notifications</span></button><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shadow-[0_0_0_1px_rgba(0,65,50,0.1)]"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="flex-1 flex flex-col relative w-full pt-16 pb-24 bg-surface"><div class="flex flex-col w-full px-gutter-mobile space-y-space-md">
+<!-- Rhythmic Tactical Header: Floor Status -->
+<section class="w-full bg-surface-container-low rounded-lg p-space-md shadow-sm">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Live Dispatch Floor</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-semibold">SHIFT B · 21:18</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs pt-space-xs">
+<div class="bg-surface-container-lowest p-space-sm rounded flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Floor Occ</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-label-lg text-label-lg font-bold text-primary">8/12</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">67%</span>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-sm rounded flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Settled</span>
+<span class="font-label-lg text-label-lg font-bold text-on-surface mt-0.5 truncate">Rp 4.85M</span>
+</div>
+<div class="bg-error-container p-space-sm rounded flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-error uppercase font-semibold">Holds &lt;5m</span>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[15px] text-error font-bold">save_as</span>
+<span class="font-label-lg text-label-lg font-bold text-error">2 Bays</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 1: Urgent Cashier Verification Queue -->
+<section class="w-full space-y-space-sm">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">1. Immediate Queue</span>
+<span class="px-1.5 py-0.5 rounded bg-tertiary-container text-on-tertiary-container font-label-sm text-label-sm font-semibold">3 Actions</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Avg Wait: 1m 40s</span>
+</div>
+<!-- Slip 01: QRIS Auto-match -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm transition-all" id="slip-01">
+<div class="flex items-start justify-between">
+<div class="min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary bg-primary-fixed px-1.5 py-0.5 rounded">BAY 04</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">#TX-8821</span>
+</div>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1 truncate">Julian Vance</p>
+<div class="flex items-center gap-1 mt-0.5">
+<span class="material-symbols-outlined text-[14px] text-primary" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-sm text-label-sm text-primary font-medium">QRIS Confirmed (Rp 50.000)</span>
+</div>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-md text-label-md font-bold text-on-surface block">Rp 50.000</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-matched</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-sm flex gap-2">
+<button class="min-h-[44px] flex-1 bg-primary hover:bg-primary-container active:translate-y-px text-on-primary font-label-md text-label-md rounded flex items-center justify-center gap-1.5 transition-all" onclick="approveSlip('slip-01')">
+<span class="material-symbols-outlined text-[18px]">key</span>
+<span>Approve &amp; Issue PIN</span>
+</button>
+</div>
+</div>
+<!-- Slip 02: Bank Transfer Slip -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm" id="slip-02">
+<div class="flex items-start justify-between">
+<div class="min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-secondary bg-secondary-container px-1.5 py-0.5 rounded">BAY 08</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">#TX-8824</span>
+</div>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1 truncate">Elena Rostova</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Manual BCA Transfer • Photo Pending</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-md text-label-md font-bold text-on-surface block">Rp 50.000</span>
+<span class="font-label-sm text-label-sm text-tertiary-container font-semibold">Unverified</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-sm flex gap-2">
+<button class="min-h-[44px] flex-1 bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md rounded flex items-center justify-center gap-1.5 transition-all" onclick="openModal('slip-02')">
+<span class="material-symbols-outlined text-[18px]">receipt_long</span>
+<span>Review Transfer Slip</span>
+</button>
+</div>
+</div>
+<!-- Slip 03: Walk-in Cash -->
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm" id="slip-03">
+<div class="flex items-start justify-between">
+<div class="min-w-0 pr-2">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant bg-surface-container-high px-1.5 py-0.5 rounded">BAY 05</span>
+<span class="font-label-sm text-label-sm text-error font-semibold">Desk Hold (02:40)</span>
+</div>
+<p class="font-headline-sm text-headline-sm font-bold text-on-surface mt-1 truncate">David Chen</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant mt-0.5">Walk-in · Cash at Podium</p>
+</div>
+<div class="text-right shrink-0">
+<span class="font-label-md text-label-md font-bold text-on-surface block">Rp 50.000</span>
+<span class="font-label-sm text-label-sm text-error font-medium">Pending Tender</span>
+</div>
+</div>
+<div class="mt-space-sm pt-space-sm flex gap-2">
+<button class="min-h-[44px] flex-1 bg-surface-container-high hover:bg-surface-variant text-on-surface font-label-md text-label-md rounded flex items-center justify-center gap-1.5 transition-all" onclick="tenderCash('slip-03')">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>Tender Cash (Rp 50k)</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Section 2: Active Table Match & Session Triage Card -->
+<section class="w-full space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">2. Bay Triage &amp; Inspection</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Focus: Selected Bay</span>
+</div>
+<div class="w-full bg-surface-container-lowest rounded-lg p-space-md shadow-sm space-y-space-md">
+<!-- Rail Header -->
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="font-label-md text-label-md font-bold text-primary">TBL-04 [9-FT BRUNSWICK]</span>
+</div>
+<div class="flex items-center gap-1 bg-primary-fixed px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-bold text-on-primary-fixed uppercase">In-Play</span>
+</div>
+</div>
+<!-- Player Context -->
+<div class="flex items-center justify-between bg-surface-container-low p-space-sm rounded">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Current Match Player</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">Julian "Andi" Vance</span>
+</div>
+<div class="text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Target Vacate</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">22:00 BST</span>
+</div>
+</div>
+<!-- Session Countdown -->
+<div class="text-center py-space-sm bg-surface-container-high/40 rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Remaining Session Time</span>
+<div class="font-label-lg text-display-mobile font-bold tracking-tight text-primary mt-1" id="session-countdown">
+          00 : 42 : 13
+        </div>
+</div>
+<!-- Inlaid Horizontal Rail Timeline -->
+<div class="space-y-space-xs pt-1">
+<div class="flex justify-between items-center text-on-surface-variant font-label-sm text-label-sm">
+<span>20:07 Rack-off</span>
+<span class="text-primary font-bold">Now 21:18</span>
+<span>22:00 Vacate</span>
+</div>
+<!-- Rail bar representation -->
+<div class="relative w-full h-2 bg-surface-container-high rounded-full overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 bg-primary w-[63%] rounded-l-full"></div>
+<div class="absolute left-[63%] top-0 bottom-0 bg-primary-container w-[27%]"></div>
+<div class="absolute right-0 top-0 bottom-0 bg-tertiary-fixed-dim w-[10%]"></div>
+</div>
+<div class="flex justify-between items-center font-label-sm text-label-sm text-on-surface-variant">
+<span>El. 71m</span>
+<span class="text-on-tertiary-container font-semibold">15m Turn-Buffer @ 22:00</span>
+</div>
+</div>
+<!-- Next Booking Queue Alert -->
+<div class="bg-surface-container-low p-space-sm rounded flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[20px] text-secondary">person_pin</span>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase block">Next Up (22:00)</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Budi Prasetyo</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm bg-secondary-container text-on-secondary-container px-2 py-1 rounded font-semibold">In Lounge</span>
+</div>
+<!-- Extension Feasibility Banner (Crucial Staff Decision Engine) -->
+<div class="p-space-sm rounded bg-error-container text-on-error-container flex items-start gap-2">
+<span class="material-symbols-outlined text-[18px] text-error shrink-0 mt-0.5">do_not_disturb_on</span>
+<div>
+<span class="font-label-sm text-label-sm font-bold uppercase tracking-wider block">Extension Lock: 0 Min Feasible</span>
+<p class="font-body-sm text-body-sm text-error leading-snug">Strict bay conflict with Budi Prasetyo at 22:00. No adjacent 9-ft brunswick available.</p>
+</div>
+</div>
+<!-- Quick Operational Dispatch Actions -->
+<div class="pt-space-xs space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block">Floor Dispatch Matrix</span>
+<div class="grid grid-cols-3 gap-2">
+<button class="min-h-[44px] p-1.5 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface flex flex-col items-center justify-center text-center transition-colors">
+<span class="material-symbols-outlined text-[18px] text-primary">lightbulb</span>
+<span class="font-label-sm text-label-sm font-semibold mt-0.5">Canopy 100%</span>
+</button>
+<button class="min-h-[44px] p-1.5 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface flex flex-col items-center justify-center text-center transition-colors">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">receipt</span>
+<span class="font-label-sm text-label-sm font-semibold mt-0.5">Tab £34.50</span>
+</button>
+<button class="min-h-[44px] p-1.5 rounded bg-surface-container-high hover:bg-surface-variant text-on-surface flex flex-col items-center justify-center text-center transition-colors" onclick="toastDispatch()">
+<span class="material-symbols-outlined text-[18px] text-primary">dry_cleaning</span>
+<span class="font-label-sm text-label-sm font-semibold mt-0.5">Towel/Chalk</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Zone Quick Switcher (Floor Glance) -->
+<section class="w-full space-y-space-sm pb-space-lg">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-bold">3. Zone Matrix Switcher</span>
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-primary"></span>Play</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-tertiary-container"></span>&lt;15m</span>
+<span class="inline-flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-surface-dim"></span>Free</span>
+</div>
+</div>
+<!-- Salon North (Tables 1-6) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Salon North (Bays 01-06)</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">5 Active</span>
+</div>
+<div class="grid grid-cols-6 gap-1.5">
+<div class="h-11 rounded bg-surface-container-high flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface leading-none">01</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1"></span>
+</div>
+<div class="h-11 rounded bg-surface-container-high flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface leading-none">02</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1"></span>
+</div>
+<div class="h-11 rounded bg-surface-container-high flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface leading-none">03</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container mt-1"></span>
+</div>
+<div class="h-11 rounded bg-primary-fixed flex flex-col items-center justify-center p-1 text-center shadow-inner">
+<span class="font-label-sm text-label-sm font-bold text-on-primary-fixed leading-none">04</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1"></span>
+</div>
+<div class="h-11 rounded bg-surface-container-high flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface leading-none">05</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container mt-1"></span>
+</div>
+<div class="h-11 rounded bg-surface-container-low flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant leading-none">06</span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-dim mt-1"></span>
+</div>
+</div>
+</div>
+<!-- Salon South (Tables 7-12) -->
+<div class="bg-surface-container-lowest rounded-lg p-space-md shadow-sm space-y-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-bold text-on-surface uppercase">Salon South (Bays 07-12)</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">3 Active</span>
+</div>
+<div class="grid grid-cols-6 gap-1.5">
+<div class="h-11 rounded bg-surface-container-high flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface leading-none">07</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1"></span>
+</div>
+<div class="h-11 rounded bg-surface-container-high flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface leading-none">08</span>
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary-container mt-1"></span>
+</div>
+<div class="h-11 rounded bg-surface-container-low flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant leading-none">09</span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-dim mt-1"></span>
+</div>
+<div class="h-11 rounded bg-surface-container-high flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface leading-none">10</span>
+<span class="w-1.5 h-1.5 rounded-full bg-primary mt-1"></span>
+</div>
+<div class="h-11 rounded bg-surface-container-low flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant leading-none">11</span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-dim mt-1"></span>
+</div>
+<div class="h-11 rounded bg-surface-container-low flex flex-col items-center justify-center p-1 text-center">
+<span class="font-label-sm text-label-sm font-bold text-on-surface-variant leading-none">12</span>
+<span class="w-1.5 h-1.5 rounded-full bg-surface-dim mt-1"></span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Modal / Slide-up Drawer: Review Transfer Slip -->
+<div class="fixed inset-0 z-50 bg-inverse-surface/40 backdrop-blur-sm hidden flex-col justify-end p-gutter-mobile" id="transfer-modal">
+<div class="bg-surface-container-lowest rounded-xl p-space-md shadow-xl w-full max-w-md mx-auto space-y-space-md">
+<div class="flex items-center justify-between pb-space-xs">
+<div>
+<span class="font-label-sm text-label-sm text-primary font-bold uppercase">Manual Verification</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Elena Rostova · Bay 08</h3>
+</div>
+<button class="w-8 h-8 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface" onclick="closeModal()">
+<span class="material-symbols-outlined text-[18px]">close</span>
+</button>
+</div>
+<div class="bg-surface-container-low p-space-sm rounded space-y-1">
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Method</span>
+<span class="font-semibold text-on-surface">Bank Central Asia (BCA)</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Sender Acc</span>
+<span class="font-semibold text-on-surface">**** 4910 (E. Rostova)</span>
+</div>
+<div class="flex justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Tendered Total</span>
+<span class="font-bold text-primary">Rp 50.000</span>
+</div>
+</div>
+<div class="w-full h-32 rounded bg-surface-container-high flex flex-col items-center justify-center p-space-sm text-center">
+<span class="material-symbols-outlined text-[32px] text-on-surface-variant">receipt</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">Bank Receipt Attached</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">Ref #BCA-9941-0294</span>
+</div>
+<div class="grid grid-cols-2 gap-2 pt-space-xs">
+<button class="min-h-[44px] rounded bg-surface-container-high text-on-surface font-label-md text-label-md" onclick="closeModal()">
+          Flag Issue
+        </button>
+<button class="min-h-[44px] rounded bg-primary text-on-primary font-label-md text-label-md font-semibold" onclick="confirmModal('slip-02')">
+          Confirm &amp; Unlock
+        </button>
+</div>
+</div>
+</div>
+<!-- Toast Notification element -->
+<div class="fixed bottom-20 left-4 right-4 bg-inverse-surface text-inverse-on-surface px-4 py-3 rounded-lg shadow-lg flex items-center justify-between transition-all transform translate-y-24 opacity-0 pointer-events-none z-50" id="toast">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-inverse-primary text-[20px]" id="toast-icon">check_circle</span>
+<span class="font-body-sm text-body-sm font-medium" id="toast-msg">Action completed.</span>
+</div>
+</div>
+</div>
+<script>
+  function showToast(msg, icon = 'check_circle') {
+    const toast = document.getElementById('toast');
+    const toastMsg = document.getElementById('toast-msg');
+    const toastIcon = document.getElementById('toast-icon');
+    
+    toastMsg.textContent = msg;
+    toastIcon.textContent = icon;
+    
+    toast.classList.remove('translate-y-24', 'opacity-0', 'pointer-events-none');
+    toast.classList.add('translate-y-0', 'opacity-100');
+    
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0', 'pointer-events-none');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 2800);
+  }
+
+  function approveSlip(slipId) {
+    const el = document.getElementById(slipId);
+    if (el) {
+      el.style.opacity = '0.4';
+      el.style.pointerEvents = 'none';
+      setTimeout(() => {
+        el.remove();
+        showToast('PIN 4921 dispatched to Bay 04 console', 'vpn_key');
+      }, 350);
+    }
+  }
+
+  function tenderCash(slipId) {
+    const el = document.getElementById(slipId);
+    if (el) {
+      el.style.opacity = '0.4';
+      el.style.pointerEvents = 'none';
+      setTimeout(() => {
+        el.remove();
+        showToast('Cash tendered: Rp 50.000 for Bay 05', 'payments');
+      }, 350);
+    }
+  }
+
+  function openModal(id) {
+    const modal = document.getElementById('transfer-modal');
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  }
+
+  function closeModal() {
+    const modal = document.getElementById('transfer-modal');
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+  }
+
+  function confirmModal(slipId) {
+    closeModal();
+    approveSlip(slipId);
+    showToast('Transfer slip verified. Bay 08 activated.', 'verified');
+  }
+
+  function toastDispatch() {
+    showToast('Dispatch sent: Fresh towels and Master chalk to Bay 04', 'sports_handball');
+  }
+
+  // Active Countdown Simulation
+  let remainingSeconds = 42 * 60 + 13;
+  const countdownEl = document.getElementById('session-countdown');
+  setInterval(() => {
+    if (remainingSeconds > 0) {
+      remainingSeconds--;
+      const hrs = String(Math.floor(remainingSeconds / 3600)).padStart(2, '0');
+      const mins = String(Math.floor((remainingSeconds % 3600) / 60)).padStart(2, '0');
+      const secs = String(remainingSeconds % 60).padStart(2, '0');
+      if (countdownEl) {
+        countdownEl.textContent = `${hrs} : ${mins} : ${secs}`;
+      }
+    }
+  }, 1000);
+</script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(0,0,0,0.04)]" data-active-classes="text-primary font-semibold"><div class="grid grid-cols-4 h-16 px-gutter-mobile"><a class="min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors group" data-path="explore" href="#"><span class="material-symbols-outlined text-[22px] transition-transform group-hover:-translate-y-0.5">grid_view</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Explore</span></a><a class="min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors group" data-path="pass-bookings" href="#"><span class="material-symbols-outlined text-[22px] transition-transform group-hover:-translate-y-0.5">confirmation_number</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Passes</span></a><a aria-current="page" class="min-h-[44px] flex flex-col items-center justify-center gap-1 transition-colors group text-primary font-semibold" data-path="floor-ops" href="#"><span class="material-symbols-outlined text-[22px] transition-transform group-hover:-translate-y-0.5">sports_esports</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Floor</span></a><a class="min-h-[44px] flex flex-col items-center justify-center gap-1 text-on-surface-variant hover:text-on-surface transition-colors group" data-path="cashier" href="#"><span class="material-symbols-outlined text-[22px] transition-transform group-hover:-translate-y-0.5">payments</span><span class="font-label-sm text-label-sm uppercase tracking-wider">Cashier</span></a></div></nav></body></html>

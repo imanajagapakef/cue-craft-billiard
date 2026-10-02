@@ -1,0 +1,409 @@
+// Cue & Rail — Billiard Booking & Table Management System
+//
+// Derived from Project.md §59 (Core Domain States) + §79 (Domain Map).
+// Entity count is intentionally 11, not the 16 in Project.md §79 — see
+// docs/TECH_DESIGN.md "Cut Entities" for what was removed and why.
+//
+// The `no_overlap` exclusion constraint that prevents double booking is NOT
+// expressible in Prisma. It lives in prisma/migrations/*/migration.sql.
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ── Enums ──────────────────────────────────────────────────────────────────────
+// Source of truth: Project.md §59. Booking status and payment status are
+// deliberately separate enums — Project.md §73 Rule 13 forbids merging them.
+
+enum TableType {
+  REGULAR
+  VIP
+}
+
+enum TableStatus {
+  AVAILABLE
+  HELD // awaiting deposit, not yet confirmed (Project.md §8)
+  OCCUPIED
+  MAINTENANCE
+}
+
+enum BookingStatus {
+  PENDING
+  AWAITING_DEPOSIT
+  CONFIRMED
+  CHECKED_IN
+  COMPLETED
+  CANCELLED
+  EXPIRED
+  NO_SHOW
+}
+
+enum PaymentStatus {
+  PENDING
+  PROOF_SUBMITTED
+  PAID
+  REJECTED
+  REFUNDED
+}
+
+enum PaymentMethod {
+  QRIS
+  CASH_AT_COUNTER
+}
+
+/// A booking accrues up to three payments: the deposit, extension charges, and
+/// the final settlement. §61's "WAITING CASH" is not a status — it is
+/// status=PENDING with method=CASH_AT_COUNTER.
+enum PaymentKind {
+  DEPOSIT
+  EXTENSION
+  FINAL
+}
+
+enum SessionStatus {
+  ACTIVE
+  ENDED
+  OVERDUE
+}
+
+enum ExtensionStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  CANCELLED
+}
+
+enum NotificationStatus {
+  PENDING
+  SENT
+  DELIVERED
+  FAILED
+}
+
+enum Role {
+  OWNER
+  CASHIER
+}
+
+enum BookingSource {
+  ONLINE
+  ADMIN
+  WALK_IN // Project.md §73 Rule 7 — same tables, no separate workflow
+}
+
+/// Who cancelled. Inverts responsibility, so refund rules differ (D3).
+enum CancellationParty {
+  CUSTOMER
+  VENUE
+}
+
+enum NotificationEvent {
+  BOOKING_CREATED
+  PAYMENT_PROOF_SUBMITTED
+  PAYMENT_CONFIRMED
+  PAYMENT_REJECTED
+  BOOKING_REMINDER
+  BOOKING_CANCELLED
+  NO_SHOW
+  EXTENSION_CONFIRMED
+  SESSION_ENDING
+}
+
+enum AuditActorType {
+  SYSTEM
+  CUSTOMER
+  STAFF
+}
+
+// ── Tables ─────────────────────────────────────────────────────────────────────
+
+/// Staff only. Customers have no account in MVP — they are identified by phone
+/// number + booking code (see "What Is Deliberately Not Built" in
+/// BUSINESS_DECISIONS.md).
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  name         String
+  role         Role     @default(CASHIER)
+  active       Boolean  @default(true)
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  verifiedPayments   Payment[]   @relation("verified_payments")
+  approvedExtensions Extension[] @relation("approved_extensions")
+  auditLogs          AuditLog[]
+
+  @@map("users")
+}
+
+model Table {
+  id        String      @id @default(cuid())
+  /// Human identifier used everywhere in the UI, e.g. "TBL-04". Matches the
+  /// monospaced table-ID convention in DESIGN.md.
+  code      String      @unique
+  name      String
+  type      TableType   @default(REGULAR)
+  zone      String?
+  status    TableStatus @default(AVAILABLE)
+  active    Boolean     @default(true)
+  /// Floor-plan ordering. Kept as an integer rather than deriving from `code`
+  /// so the owner can rearrange the floor without renumbering every table.
+  sortOrder Int         @default(0) @map("sort_order")
+  createdAt DateTime    @default(now()) @map("created_at")
+  updatedAt DateTime    @updatedAt @map("updated_at")
+
+  bookings Booking[]
+  sessions Session[]
+
+  @@index([status, active])
+  @@map("tables")
+}
+
+/// One row per weekday. Closing time may be numerically smaller than opening
+/// time, which means the window crosses midnight (D9, e.g. 22:00 → 02:00).
+model OperatingHour {
+  id          String   @id @default(cuid())
+  /// 0 = Sunday … 6 = Saturday, matching JS Date#getDay.
+  weekday     Int      @unique
+  /// Minutes from local midnight. Stored as an integer rather than TIME so that
+  /// a closing time of 120 (02:00) is unambiguous without date arithmetic.
+  opensAtMin  Int      @map("opens_at_min")
+  closesAtMin Int      @map("closes_at_min")
+  active      Boolean  @default(true)
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  @@map("operating_hours")
+}
+
+/// Hourly rate for a table type over a day-type and time-of-day window.
+/// Rows are evaluated most-specific-first; see src/lib/pricing.ts.
+model PricingRule {
+  id          String    @id @default(cuid())
+  tableType   TableType @map("table_type")
+  name        String
+  /// WEEKDAY (Mon–Fri) / WEEKEND (Sat–Sun). Holidays reuse WEEKEND until a
+  /// holiday calendar is actually needed — see "What Is Deliberately Not Built".
+  weekendOnly Boolean   @default(false) @map("weekend_only")
+  /// Minutes from local midnight, inclusive. startsAtMin > endsAtMin means the
+  /// window wraps past midnight (e.g. 17:00 → 00:00 is 1020 → 1440).
+  startsAtMin Int       @map("starts_at_min")
+  endsAtMin   Int       @map("ends_at_min")
+  hourlyPrice Int       @map("hourly_price")
+  active      Boolean   @default(true)
+  updatedAt   DateTime  @updatedAt @map("updated_at")
+
+  @@index([tableType, active])
+  @@map("pricing_rules")
+}
+
+/// Single-row-per-key policy store. Every CONFIGURABLE value in
+/// docs/BUSINESS_DECISIONS.md lives here, not in code.
+model Setting {
+  key       String   @id
+  value     Json
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("settings")
+}
+
+model Booking {
+  id            String @id @default(cuid())
+  /// Customer-facing reference, e.g. "BK-7F29A" (Project.md §14). Short enough
+  /// to read aloud over the phone to the cashier.
+  code          String @unique
+  /// Customer has no account in MVP, so identity lives on the booking itself.
+  customerName  String @map("customer_name")
+  customerPhone String @map("customer_phone")
+
+  tableId String @map("table_id")
+  table   Table  @relation(fields: [tableId], references: [id])
+
+  startAt         DateTime @map("start_at") @db.Timestamptz(3)
+  endAt           DateTime @map("end_at") @db.Timestamptz(3)
+  durationMinutes Int      @map("duration_minutes")
+
+  totalPrice      Int @map("total_price")
+  depositAmount   Int @map("deposit_amount")
+  remainingAmount Int @map("remaining_amount")
+
+  status BookingStatus @default(PENDING)
+  source BookingSource @default(ONLINE)
+
+  /// When an un-deposited hold lapses. Null once the deposit lands, because a
+  /// confirmed booking is never subject to hold expiry.
+  holdExpiresAt DateTime? @map("hold_expires_at") @db.Timestamptz(3)
+
+  checkedInAt  DateTime?          @map("checked_in_at") @db.Timestamptz(3)
+  completedAt  DateTime?          @map("completed_at") @db.Timestamptz(3)
+  noShowAt     DateTime?          @map("no_show_at") @db.Timestamptz(3)
+  cancelledAt  DateTime?          @map("cancelled_at") @db.Timestamptz(3)
+  cancelParty  CancellationParty? @map("cancel_party")
+  cancelReason String?            @map("cancel_reason")
+
+  /// Client-supplied key so a retried create-booking request cannot produce two
+  /// bookings. See TECH_DESIGN.md "Idempotency".
+  idempotencyKey String? @unique @map("idempotency_key")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  payments      Payment[]
+  sessions      Session[]
+  extensions    Extension[]
+  notifications NotificationLog[]
+
+  @@index([tableId, startAt])
+  @@index([customerPhone])
+  @@index([status])
+  @@map("bookings")
+}
+
+model Payment {
+  id        String  @id @default(cuid())
+  bookingId String  @map("booking_id")
+  booking   Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+
+  kind   PaymentKind
+  method PaymentMethod
+  status PaymentStatus @default(PENDING)
+  amount Int
+
+  /// Server-generated path under public/uploads/proof/. Never a client filename.
+  proofPath       String?   @map("proof_path")
+  proofUploadedAt DateTime? @map("proof_uploaded_at") @db.Timestamptz(3)
+
+  verifiedById String?   @map("verified_by")
+  verifiedBy   User?     @relation("verified_payments", fields: [verifiedById], references: [id])
+  verifiedAt   DateTime? @map("verified_at") @db.Timestamptz(3)
+
+  rejectionReason String?   @map("rejection_reason")
+  refundedAt      DateTime? @map("refunded_at") @db.Timestamptz(3)
+  /// Provider or cashier reference, e.g. QRIS settlement ID or receipt number.
+  externalRef     String?   @map("external_ref")
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  extensionId String?    @unique @map("extension_id")
+  extension   Extension? @relation(fields: [extensionId], references: [id])
+
+  @@index([bookingId, kind])
+  @@index([status])
+  @@map("payments")
+}
+
+model Session {
+  id        String  @id @default(cuid())
+  bookingId String  @map("booking_id")
+  booking   Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+  tableId   String  @map("table_id")
+  table     Table   @relation(fields: [tableId], references: [id])
+
+  /// Actual check-in time. Differs from booking.startAt for late arrivals (D4).
+  startedAt       DateTime      @map("started_at") @db.Timestamptz(3)
+  /// Anchored to booking.endAt even when startedAt is late (D4).
+  scheduledEndAt  DateTime      @map("scheduled_end_at") @db.Timestamptz(3)
+  actualEndAt     DateTime?     @map("actual_end_at") @db.Timestamptz(3)
+  /// End pushed forward by an approved extension, for countdown display.
+  extendedMinutes Int           @default(0) @map("extended_minutes")
+  status          SessionStatus @default(ACTIVE)
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  extensions Extension[]
+
+  @@index([status, scheduledEndAt])
+  @@map("sessions")
+}
+
+model Extension {
+  id        String  @id @default(cuid())
+  sessionId String  @map("session_id")
+  session   Session @relation(fields: [sessionId], references: [id], onDelete: Cascade)
+  bookingId String  @map("booking_id")
+  booking   Booking @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+
+  requestedMinutes Int             @map("requested_minutes")
+  approvedMinutes  Int             @map("approved_minutes")
+  price            Int
+  status           ExtensionStatus @default(PENDING)
+
+  requestedByName String?   @map("requested_by_name")
+  approvedById    String?   @map("approved_by")
+  approvedBy      User?     @relation("approved_extensions", fields: [approvedById], references: [id])
+  approvedAt      DateTime? @map("approved_at") @db.Timestamptz(3)
+  /// Required when an admin overrides a blocking next booking (D7).
+  reason          String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  payment Payment?
+
+  @@index([bookingId])
+  @@map("extensions")
+}
+
+/// Outbox for WhatsApp. Written in the same transaction as the state change
+/// that triggered it, then dispatched after the response is sent. WhatsApp is a
+/// delivery mechanism only — its failure never rolls back a payment or booking
+/// (Project.md §33).
+model NotificationLog {
+  id        String   @id @default(cuid())
+  bookingId String?  @map("booking_id")
+  booking   Booking? @relation(fields: [bookingId], references: [id], onDelete: Cascade)
+
+  event     NotificationEvent
+  channel   String             @default("WHATSAPP")
+  recipient String
+  body      String
+  status    NotificationStatus @default(PENDING)
+  template  String?
+
+  providerMessageId String? @map("provider_message_id")
+  attempts          Int     @default(0)
+  errorMessage      String? @map("error_message")
+
+  sentAt      DateTime? @map("sent_at") @db.Timestamptz(3)
+  deliveredAt DateTime? @map("delivered_at") @db.Timestamptz(3)
+  failedAt    DateTime? @map("failed_at") @db.Timestamptz(3)
+  createdAt   DateTime  @default(now()) @map("created_at")
+
+  @@index([status, createdAt])
+  @@map("notification_logs")
+}
+
+model AuditLog {
+  id Int @id @default(autoincrement())
+
+  actorType AuditActorType @default(SYSTEM) @map("actor_type")
+  actorId   String?        @map("actor_id")
+  actorName String?        @map("actor_name")
+  actor     User?          @relation(fields: [actorId], references: [id])
+
+  /// Every row carries the booking it belongs to, so the §57 booking timeline is
+  /// one indexed lookup. Without it the timeline would need to fan out across
+  /// payments, sessions, and extensions to find related rows.
+  bookingId String? @map("booking_id")
+
+  action   String
+  entity   String
+  entityId String? @map("entity_id")
+  before   Json?
+  after    Json?
+  reason   String?
+
+  createdAt DateTime @default(now()) @map("created_at")
+
+  @@index([bookingId, createdAt])
+  @@index([entity, entityId])
+  @@index([createdAt])
+  @@map("audit_logs")
+}

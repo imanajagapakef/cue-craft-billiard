@@ -1,0 +1,28 @@
+node_modules/
+.next/
+out/
+build/
+dist/
+
+.env
+.env.local
+.env*.local
+
+# QRIS payment proofs — customer-supplied images, never in git
+public/uploads/*
+!public/uploads/.gitkeep
+
+*.tsbuildinfo
+next-env.d.ts
+
+.DS_Store
+Thumbs.db
+.vercel
+
+# Personal access notes, never part of the project.
+key_access.md
+
+# Stitch reference screenshots. The design system itself is committed as
+# DESIGN.md + code.html; the PNGs are 10.7 MB of render output that regenerates
+# from the Stitch project and is not needed to build anything.
+KITAB DESIGN_cuecraft billiard design system/**/*.png

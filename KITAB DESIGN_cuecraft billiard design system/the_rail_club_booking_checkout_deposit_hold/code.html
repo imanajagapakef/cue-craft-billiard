@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-low": "#f4f4f1",
+          "on-background": "#1a1c1b",
+          "surface-variant": "#e2e3e0",
+          "surface-container": "#eeeeec",
+          "on-primary-fixed-variant": "#00513f",
+          "on-secondary": "#ffffff",
+          "background": "#f9f9f7",
+          "secondary-fixed": "#d2e4ff",
+          "primary": "#004132",
+          "inverse-primary": "#90d4bc",
+          "outline-variant": "#bfc9c3",
+          "on-secondary-container": "#55667c",
+          "on-primary": "#ffffff",
+          "on-error-container": "#93000a",
+          "surface-container-highest": "#e2e3e0",
+          "inverse-on-surface": "#f1f1ef",
+          "on-surface-variant": "#3f4945",
+          "on-tertiary": "#ffffff",
+          "error": "#ba1a1a",
+          "on-secondary-fixed-variant": "#37485e",
+          "on-secondary-fixed": "#0a1c30",
+          "surface-container-lowest": "#ffffff",
+          "on-surface": "#1a1c1b",
+          "surface-container-high": "#e8e8e6",
+          "surface-bright": "#f9f9f7",
+          "secondary-container": "#d2e4ff",
+          "error-container": "#ffdad6",
+          "secondary-fixed-dim": "#b6c8e2",
+          "on-error": "#ffffff",
+          "primary-fixed": "#acf1d7",
+          "tertiary-fixed": "#ffdcc2",
+          "tertiary-container": "#794100",
+          "surface": "#f9f9f7",
+          "primary-container": "#0f5a47",
+          "on-primary-fixed": "#002118",
+          "on-tertiary-fixed": "#2e1500",
+          "surface-tint": "#256956",
+          "tertiary-fixed-dim": "#ffb77a",
+          "on-primary-container": "#8ccfb7",
+          "outline": "#6f7974",
+          "tertiary": "#582e00",
+          "primary-fixed-dim": "#90d4bc",
+          "inverse-surface": "#2f3130",
+          "on-tertiary-container": "#ffb06b",
+          "on-tertiary-fixed-variant": "#6d3a00",
+          "secondary": "#4f6076",
+          "surface-dim": "#dadad8"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem",
+          "margin": "2.5rem",
+          "gutter-mobile": "0.75rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "display": ["Plus Jakarta Sans"],
+          "body-md": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "label-md": ["JetBrains Mono"],
+          "display-mobile": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "label-sm": ["JetBrains Mono"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "label-lg": ["JetBrains Mono"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "display": ["3rem", {"lineHeight": "1.15", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+          "body-md": ["0.875rem", {"lineHeight": "1.55", "letterSpacing": "0", "fontWeight": "400"}],
+          "body-lg": ["1rem", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+          "label-md": ["0.75rem", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
+          "display-mobile": ["2rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-sm": ["0.75rem", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+          "headline-sm": ["1.125rem", {"lineHeight": "1.4", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+          "label-sm": ["0.6875rem", {"lineHeight": "1.3", "letterSpacing": "0.06em", "fontWeight": "600"}],
+          "headline-md": ["1.375rem", {"lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["2rem", {"lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-lg": ["0.875rem", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "headline-lg-mobile": ["1.5rem", {"lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-surface-variant"><div class="h-[72px] w-full px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-sm focus:outline-none" href="#"><img alt="Cue &amp; Rail Monogram &amp; Wordmark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Ue6GmKo_J647MZcNVNC2Jx18K3o8D1rT6oih7uN88GZhqQv5Mv61sGz2SMS0mi0AyV9cVN5Ifc01VyXMzu4zCAJJnQrRPB_p--bSDYZiEyZSM4UmEUV440ZW0uStsz_4NGPo-PHcxdHC0hH3zfiG2KqHUJUeezcCqtx73e1m6gHPDqB91v-DbbWY9mGqNiF2muDR4kLQNpnXmanQzKTOtPIHIlTCN4aC04qqRsW7ne2TIiTbk-0OCLtoL1"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface uppercase">Cue &amp; Rail</span></a><div class="h-6 w-[1px] bg-surface-variant hidden xl:block"></div><button class="hidden xl:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors" type="button"><span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span><span class="font-body-sm text-body-sm font-medium text-on-surface">The Strand Flagship — London, W1</span><span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded">7 Open</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">keyboard_arrow_down</span></button></div><nav class="hidden lg:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-semibold relative after:absolute after:bottom-[-26px] after:left-0 after:right-0 after:h-[2px] after:bg-primary"><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tables-salon" href="#">Tables &amp; Salon</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="live-availability" href="#">Live Availability</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="private-bookings" href="#">Private Bookings</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tournaments" href="#">Tournaments</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="member-concierge" href="#">Member Concierge</a></nav><div class="flex items-center gap-space-md shrink-0"><button class="hidden sm:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm">Search</span><kbd class="font-label-sm text-label-sm bg-surface-container px-space-xs rounded text-on-surface-variant border border-surface-variant">⌘K</kbd></button><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container border border-surface-variant rounded"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span><span class="font-label-sm text-label-sm text-on-surface">Today, Oct 24 • Evening</span></div><a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary rounded font-body-md text-body-md font-semibold hover:bg-primary-container transition-colors" data-path="reserve-table" href="#"><span class="material-symbols-outlined text-[16px]">add</span><span>Reserve a Table</span></a><div class="h-6 w-[1px] bg-surface-variant"></div><button class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors" type="button"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden sm:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-semibold">MR • T4 Admin</span><span class="font-label-sm text-label-sm text-on-surface-variant">Staff Active</span></div></button></div></div><div class="h-8 w-full bg-surface-container-low border-t border-surface-variant px-margin hidden md:flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Venue Sighting</span><span class="text-outline text-[10px]">•</span><span class="font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="text-primary">♦</span> Salon North: Precision Rails 1–6</span><span class="text-outline text-[10px]">•</span><span class="font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="text-tertiary-container">♦</span> Salon South: Championship Arena 7–12</span></div><div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block animate-pulse"></span><span>Optical Table Trackers Operational</span></div></div></header><main class="w-full pt-[104px] bg-background flex-1"><div class="flex flex-col w-full">
+<div class="w-full max-w-7xl mx-auto px-margin py-space-xl">
+<!-- Step Tracker & Breadcrumb -->
+<div class="mb-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md pb-space-md border-b border-surface-variant">
+<div class="flex items-center gap-space-sm flex-wrap">
+<span class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-semibold text-[10px]">01</span>
+          Floor Plan
+        </span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-4 h-4 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface font-semibold text-[10px]">02</span>
+          Table Specs
+        </span>
+<span class="material-symbols-outlined text-[14px] text-outline">chevron_right</span>
+<span class="inline-flex items-center gap-space-xs font-label-sm text-label-sm text-primary font-semibold">
+<span class="w-4 h-4 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-[10px]">03</span>
+          Deposit &amp; Verification
+        </span>
+</div>
+<div class="inline-flex items-center gap-space-xs font-label-sm text-label-sm px-space-md py-1 bg-surface-container rounded border border-surface-variant text-on-surface">
+<span class="material-symbols-outlined text-[14px] text-primary">verified_user</span>
+<span>Escrow Rail Ledger #CR-8821</span>
+</div>
+</div>
+<!-- Main Title Block -->
+<div class="mb-space-xl">
+<div class="flex items-center gap-space-xs text-primary font-label-sm text-label-sm tracking-widest uppercase mb-1">
+<span>◆</span>
+<span>Championship Salon Bay Allocation</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Reservation Hold &amp; Deposit Checkout</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+        Review session specifications, verify guest credentials, and confirm the table deposit before the exclusive hold window expires.
+      </p>
+</div>
+<!-- Asymmetric Two-Column Architecture Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-xl items-start">
+<!-- LEFT COLUMN: Booking Dossier & Protocol (Approx 57% -> 7 Cols) -->
+<div class="lg:col-span-7 flex flex-col gap-space-lg">
+<!-- Table Spec Dossier Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-lg shadow-sm">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md border-b border-surface-variant gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Assigned Arena</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Table 04 — Rasson Magnum 9ft</h2>
+</div>
+<div class="flex items-center gap-space-xs">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm px-space-sm py-1 bg-surface-container-low text-primary border border-outline-variant rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Laser Tuned
+              </span>
+<span class="font-label-sm text-label-sm px-space-sm py-1 bg-surface-container text-on-surface-variant rounded">Salon North</span>
+</div>
+</div>
+<!-- Technical Attributes Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-space-md py-space-md text-on-surface">
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tournament Cloth</span>
+<span class="font-body-md text-body-md font-medium">Simonis 860 Worsted Green</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Pocket Tolerances</span>
+<span class="font-body-md text-body-md font-medium">4.5" Pro Cut with Drop Brass Buckets</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Session Window</span>
+<span class="font-body-md text-body-md font-semibold text-primary">Thu, 24 Oct • 20:00 — 22:00</span>
+</div>
+<div class="flex flex-col gap-0.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Duration Allotment</span>
+<span class="font-body-md text-body-md font-medium">120 Minutes (2.0 Match Hours)</span>
+</div>
+</div>
+<!-- Included Equipments Bar -->
+<div class="bg-surface-container-low p-space-md rounded border border-surface-variant flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase font-semibold">Bay Amenities &amp; Cue Calibration Included:</span>
+<div class="flex flex-wrap gap-x-space-md gap-y-1 font-body-sm text-body-sm text-on-surface">
+<span class="flex items-center gap-1"><span class="text-primary text-[10px]">●</span> 2x Predator 314 Cues</span>
+<span class="flex items-center gap-1"><span class="text-primary text-[10px]">●</span> Super Aramith Pro-Cup Ball Set</span>
+<span class="flex items-center gap-1"><span class="text-primary text-[10px]">●</span> Master Chalk &amp; Precision Bridge</span>
+<span class="flex items-center gap-1"><span class="text-primary text-[10px]">●</span> Dedicated Rail Service Tray</span>
+</div>
+</div>
+<!-- Guest Ledger Metadata -->
+<div class="mt-space-md pt-space-md border-t border-surface-variant flex flex-col sm:flex-row justify-between items-start sm:items-center text-on-surface-variant font-body-sm text-body-sm gap-2">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Lead Player Account:</span>
+<span class="font-medium text-on-surface">Julian Vance</span>
+<span class="font-label-sm text-label-sm text-outline ml-1">(ID: #CR-8821)</span>
+</div>
+<div class="font-label-sm text-label-sm text-right">
+<span class="text-on-surface-variant">Contact:</span>
+<span class="text-on-surface ml-1">+44 20 7946 0912</span>
+</div>
+</div>
+</div>
+<!-- Financial Breakdown & Deposit Box -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-lg shadow-sm">
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-variant">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Itemized Financial Ledger</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Currency: IDR (Rp)</span>
+</div>
+<table class="w-full mt-space-sm text-body-sm">
+<tbody>
+<tr class="border-b border-surface-variant">
+<td class="py-space-sm text-on-surface">Bay 04 Session Time (2.0 hrs @ Rp 100.000 / hr)</td>
+<td class="py-space-sm text-right font-label-md text-label-md font-medium text-on-surface">Rp 200.000</td>
+</tr>
+<tr class="border-b border-surface-variant">
+<td class="py-space-sm text-on-surface">Aramith Pro-Cup Laser Cleaning &amp; Table Reset</td>
+<td class="py-space-sm text-right font-label-md text-label-md text-primary font-medium">Complimentary</td>
+</tr>
+<tr class="border-b border-surface-variant">
+<td class="py-space-sm text-on-surface">Concierge Sighting &amp; Match Rack Delivery</td>
+<td class="py-space-sm text-right font-label-md text-label-md text-primary font-medium">Included</td>
+</tr>
+<tr>
+<td class="pt-space-sm font-medium text-on-surface">Total Session Valuation (All Taxes Included)</td>
+<td class="pt-space-sm text-right font-label-md text-label-md font-semibold text-on-surface">Rp 200.000</td>
+</tr>
+</tbody>
+</table>
+<!-- 3-Tier Financial Structure Banner -->
+<div class="mt-space-lg grid grid-cols-1 sm:grid-cols-3 gap-0 border border-outline-variant rounded overflow-hidden">
+<div class="bg-surface-container-low p-space-md border-b sm:border-b-0 sm:border-r border-surface-variant flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">TOTAL SESSION</span>
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface mt-1">Rp 200.000</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1">Simonis 860 cloth rate</span>
+</div>
+<div class="bg-surface-container-lowest p-space-md border-b sm:border-b-0 sm:border-r border-primary/30 flex flex-col justify-between relative">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-primary">DEPOSIT PAYABLE NOW</span>
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary mt-1">Rp 50.000</span>
+<span class="font-body-sm text-[11px] text-primary font-medium mt-1">Locks table hold in system</span>
+</div>
+<div class="bg-surface-container-low p-space-md flex flex-col justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">REMAINING AT VENUE</span>
+<span class="font-headline-sm text-headline-sm font-medium text-on-surface mt-1">Rp 150.000</span>
+<span class="font-body-sm text-[11px] text-on-surface-variant mt-1">Settled at Salon Concierge</span>
+</div>
+</div>
+</div>
+<!-- Venue Etiquette & Trust Protocols -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center gap-space-xs text-on-surface">
+<span class="material-symbols-outlined text-primary text-[20px]">policy</span>
+<h3 class="font-headline-sm text-headline-sm font-semibold">Salon Arrival &amp; Cancellation Policy</h3>
+</div>
+<div class="space-y-space-sm font-body-sm text-body-sm text-on-surface-variant">
+<div class="flex items-start gap-space-sm">
+<span class="text-primary font-bold mt-0.5">◆</span>
+<p>
+<strong class="text-on-surface">Grace Window:</strong> Complimentary cancellation or booking time modification is honored up to 60 minutes prior to the 20:00 session start. Unclaimed bays after a 15-minute grace period will forfeit deposit to club cloth upkeep.
+              </p>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="text-primary font-bold mt-0.5">◆</span>
+<p>
+<strong class="text-on-surface">Acoustic &amp; Dress Code:</strong> Smart casual salon attire. Tailored soft-soled footwear required around slate beds. Liquids and drinks must remain on dedicated rail consoles at all times.
+              </p>
+</div>
+<div class="flex items-start gap-space-sm">
+<span class="text-primary font-bold mt-0.5">◆</span>
+<p>
+<strong class="text-on-surface">Direct Salon Assistance:</strong> Desk Concierge: +44 20 7946 0912 • Dedicated Bay 04 Intercom will be unlocked upon player check-in.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT COLUMN: Payment Method & Verification (Approx 43% -> 5 Cols) -->
+<div class="lg:col-span-5 flex flex-col gap-space-lg">
+<!-- Live Countdown Hold Box -->
+<div class="bg-surface-container-lowest border border-primary/30 rounded p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded bg-primary-fixed flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined text-[20px]">timer</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider block">Hold Expiration</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Bay 04 reserved exclusively</span>
+</div>
+</div>
+<div class="text-right">
+<div class="font-label-lg text-label-lg font-bold text-primary tracking-wider" id="holdCountdown">14:32</div>
+<span class="font-label-sm text-label-sm text-outline">Auto-release clock</span>
+</div>
+</div>
+<!-- Payment Mode Controller -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-lg shadow-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant block mb-space-sm">Deposit Settlement Mode</span>
+<!-- Segmented Tab Controls -->
+<div class="grid grid-cols-2 gap-space-xs p-1 bg-surface-container rounded border border-surface-variant mb-space-lg">
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded text-on-surface bg-surface-container-lowest font-body-sm text-body-sm font-semibold shadow-xs border border-outline-variant transition-all" id="tabQris" onclick="switchMethod('qris')">
+<span class="material-symbols-outlined text-[18px] text-primary">qr_code_2</span>
+<span>QRIS Digital</span>
+</button>
+<button class="flex items-center justify-center gap-1.5 py-2 px-3 rounded text-on-surface-variant font-body-sm text-body-sm font-medium hover:text-on-surface transition-all" id="tabCash" onclick="switchMethod('cash')">
+<span class="material-symbols-outlined text-[18px]">payments</span>
+<span>Cash at Counter</span>
+</button>
+</div>
+<!-- TAB CONTENT A: QRIS MODE -->
+<div class="flex flex-col items-center" id="contentQris">
+<div class="w-full text-center mb-space-md">
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Scan to Deposit Rp 50.000</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                Instant reservation lock via National QRIS standard. Supported by BCA, Mandiri, GoPay, OVO &amp; partner apps.
+              </p>
+</div>
+<!-- Architectural QR Frame -->
+<div class="bg-surface-container-lowest p-space-md border-2 border-primary/40 rounded flex flex-col items-center justify-center shadow-sm relative">
+<!-- Subtle Diamond Watermark in corners -->
+<span class="absolute top-2 left-2 text-[10px] text-primary">◆</span>
+<span class="absolute top-2 right-2 text-[10px] text-primary">◆</span>
+<span class="absolute bottom-2 left-2 text-[10px] text-primary">◆</span>
+<span class="absolute bottom-2 right-2 text-[10px] text-primary">◆</span>
+<!-- Inline Stylized Architectural QR Blueprint -->
+<div class="w-52 h-52 bg-surface-container-lowest p-2 border border-surface-variant flex items-center justify-center relative">
+<svg class="w-full h-full text-on-surface" fill="currentColor" viewbox="0 0 160 160">
+<!-- QR Alignment Patterns Top-Left -->
+<rect fill="#141615" height="35" width="35" x="10" y="10"></rect>
+<rect fill="#FFFFFF" height="25" width="25" x="15" y="15"></rect>
+<rect fill="#0F5A47" height="15" width="15" x="20" y="20"></rect>
+<!-- QR Alignment Patterns Top-Right -->
+<rect fill="#141615" height="35" width="35" x="115" y="10"></rect>
+<rect fill="#FFFFFF" height="25" width="25" x="120" y="15"></rect>
+<rect fill="#0F5A47" height="15" width="15" x="125" y="20"></rect>
+<!-- QR Alignment Patterns Bottom-Left -->
+<rect fill="#141615" height="35" width="35" x="10" y="115"></rect>
+<rect fill="#FFFFFF" height="25" width="25" x="15" y="120"></rect>
+<rect fill="#0F5A47" height="15" width="15" x="20" y="125"></rect>
+<!-- Stylized Data Matrix Dots -->
+<rect height="8" width="8" x="55" y="15"></rect>
+<rect height="8" width="8" x="70" y="15"></rect>
+<rect height="8" width="8" x="85" y="15"></rect>
+<rect height="8" width="8" x="100" y="15"></rect>
+<rect height="8" width="8" x="55" y="30"></rect>
+<rect height="8" width="8" x="85" y="30"></rect>
+<rect height="8" width="8" x="15" y="55"></rect>
+<rect height="8" width="8" x="30" y="55"></rect>
+<rect height="8" width="8" x="55" y="55"></rect>
+<rect height="8" width="8" x="70" y="55"></rect>
+<rect height="8" width="8" x="100" y="55"></rect>
+<rect height="8" width="8" x="125" y="55"></rect>
+<rect height="8" width="8" x="140" y="55"></rect>
+<rect height="8" width="8" x="15" y="70"></rect>
+<rect height="8" width="8" x="35" y="70"></rect>
+<rect height="8" width="8" x="55" y="70"></rect>
+<rect height="8" width="8" x="100" y="70"></rect>
+<rect height="8" width="8" x="120" y="70"></rect>
+<!-- Center Monogram Cue Emblem Overlay -->
+<rect fill="#FFFFFF" height="36" stroke="#0F5A47" stroke-width="2" width="36" x="62" y="62"></rect>
+<text fill="#0F5A47" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" font-weight="800" text-anchor="middle" x="80" y="85">C&amp;R</text>
+<rect height="8" width="8" x="15" y="90"></rect>
+<rect height="8" width="8" x="30" y="90"></rect>
+<rect height="8" width="8" x="110" y="90"></rect>
+<rect height="8" width="8" x="135" y="90"></rect>
+<rect height="8" width="8" x="55" y="115"></rect>
+<rect height="8" width="8" x="80" y="115"></rect>
+<rect height="8" width="8" x="115" y="115"></rect>
+<rect height="8" width="8" x="135" y="115"></rect>
+<rect height="8" width="8" x="55" y="135"></rect>
+<rect height="8" width="8" x="70" y="135"></rect>
+<rect height="8" width="8" x="95" y="135"></rect>
+<rect height="8" width="8" x="120" y="135"></rect>
+</svg>
+</div>
+<!-- Metadata Strings -->
+<div class="w-full mt-space-sm pt-space-xs border-t border-surface-variant flex flex-col items-center">
+<span class="font-label-sm text-label-sm text-on-surface font-semibold">THE RAIL CLUB • FLAGSHIP LONDON</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">NMID: ID102938472910</span>
+<span class="font-label-md text-label-md text-primary font-bold mt-1">Rp 50.000</span>
+</div>
+</div>
+<!-- Steps Instruction List -->
+<div class="w-full mt-space-md space-y-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<div class="flex items-start gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary">1.</span>
+<span>Open your payment app and scan the QRIS image above.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary">2.</span>
+<span>Confirm recipient name is displayed as <strong class="text-on-surface">"The Rail Club"</strong>.</span>
+</div>
+<div class="flex items-start gap-2">
+<span class="font-label-sm text-label-sm font-bold text-primary">3.</span>
+<span>Transfer exact sum of <strong class="text-on-surface">Rp 50.000</strong>. Attach transfer receipt below.</span>
+</div>
+</div>
+<!-- Upload Verification Voucher Area -->
+<div class="w-full mt-space-md border border-dashed border-outline-variant rounded p-space-md bg-surface-container-low hover:bg-surface-container transition-colors cursor-pointer">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">attachment</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">receipt_qris_deposit_50k.png</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">1.2 MB • Auto-matched via OCR</span>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-semibold bg-surface-container-lowest px-2 py-0.5 rounded border border-outline-variant">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+<span>Attached</span>
+</span>
+</div>
+</div>
+</div>
+<!-- TAB CONTENT B: CASH AT COUNTER (Initially Hidden) -->
+<div class="hidden flex flex-col gap-space-md py-space-sm" id="contentCash">
+<div class="p-space-md bg-surface-container-low border border-surface-variant rounded">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">storefront</span>
+<div>
+<h4 class="font-headline-sm text-headline-sm font-semibold text-on-surface">Salon Concierge Desk Deposit</h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                    You may tender your Rp 50.000 cash deposit physically at the front desk.
+                  </p>
+</div>
+</div>
+</div>
+<div class="border border-surface-variant rounded p-space-md space-y-space-sm text-body-sm text-on-surface-variant">
+<p class="font-medium text-on-surface">Deposit Instructions for Counter Payment:</p>
+<ul class="list-disc pl-5 space-y-1">
+<li>Arrive at least 15 minutes prior to match schedule (19:45 break-in).</li>
+<li>Present Member ID <strong class="text-on-surface font-label-sm">#CR-8821</strong> to Floor Manager at The Strand Salon.</li>
+<li>Deposit must be registered before the countdown timer expires to maintain hold integrity.</li>
+</ul>
+</div>
+<div class="p-space-sm bg-surface-container rounded border border-surface-variant flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Counter Queue State:</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">0 Waiting • Concierge Ready</span>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="mt-space-lg pt-space-md border-t border-surface-variant flex flex-col gap-space-sm">
+<button class="w-full py-3 px-space-lg bg-primary text-on-primary rounded font-body-md text-body-md font-semibold hover:bg-primary-container active:translate-y-px transition-all flex items-center justify-center gap-space-xs shadow-xs" type="button">
+<span>Submit Booking &amp; Verify Deposit</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+<a class="w-full py-2.5 px-space-md bg-transparent border border-outline-variant rounded font-body-md text-body-md text-on-surface text-center hover:bg-surface-container transition-colors" href="#">
+              ← Return to Table 04 Specifications
+            </a>
+</div>
+<!-- Security Encryption Footnote -->
+<div class="mt-space-md flex items-center justify-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+<span>256-bit encrypted ledger verification • Instant SMS &amp; keyless pass</span>
+</div>
+</div>
+<!-- Venue Atmosphere Vignette Card -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded overflow-hidden shadow-sm">
+<div class="h-36 w-full relative">
+<img class="w-full h-full object-cover" data-alt="High angle macro perspective of pristine tournament billiard table cloth in Simonis emerald green with turned brass corner pocket, polished mahogany rails, and an Aramith cue ball resting under soft studio halogen lamps" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ9XuwYbD918IUDBxo8gDy6RH9Clau8AzobBciPuYLER4CDF0_QZzlj4SrIWrqeq9nQslvtOzzoWPGW6R04kOvN_d4xPIV3_XIwDKgLN_VAfcoZAMoJyQ6foPKsCc1CFthUZpa0zkkiDJnvh6mR-ZLAq8ANSl0ST_K9eqNfN2K2ZE4A7s5CBqWEap-bwt0ednWq9-470Yn2pGmqZyu272IuDiCwG_3Ualp7ZP6L7Ze4Rb1rzbV2IiVnQ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent"></div>
+<div class="absolute bottom-2 left-3 right-3 flex items-center justify-between text-on-primary">
+<span class="font-label-sm text-label-sm font-medium">Salon North • Acoustic Dampened Arena</span>
+<span class="font-label-sm text-label-sm">Bay 04 Direct Camera</span>
+</div>
+</div>
+<div class="p-space-md bg-surface-container-lowest flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Slate Level: ±0.03mm</span>
+<span class="text-primary font-semibold">● Ready for Session Break</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Interactive Logic for Tab Toggling and Countdown -->
+<script>
+    function switchMethod(mode) {
+      const tabQris = document.getElementById('tabQris');
+      const tabCash = document.getElementById('tabCash');
+      const contentQris = document.getElementById('contentQris');
+      const contentCash = document.getElementById('contentCash');
+
+      if (mode === 'qris') {
+        tabQris.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'border', 'border-outline-variant');
+        tabQris.classList.remove('text-on-surface-variant', 'font-medium');
+        
+        tabCash.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'border', 'border-outline-variant');
+        tabCash.classList.add('text-on-surface-variant', 'font-medium');
+
+        contentQris.classList.remove('hidden');
+        contentCash.classList.add('hidden');
+      } else {
+        tabCash.classList.add('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'border', 'border-outline-variant');
+        tabCash.classList.remove('text-on-surface-variant', 'font-medium');
+
+        tabQris.classList.remove('bg-surface-container-lowest', 'text-on-surface', 'font-semibold', 'border', 'border-outline-variant');
+        tabQris.classList.add('text-on-surface-variant', 'font-medium');
+
+        contentCash.classList.remove('hidden');
+        contentQris.classList.add('hidden');
+      }
+    }
+
+    // Live Reservation Hold Countdown Ticker
+    (function initHoldTimer() {
+      let totalSeconds = 14 * 60 + 32;
+      const timerElement = document.getElementById('holdCountdown');
+      
+      setInterval(function () {
+        if (totalSeconds <= 0) {
+          timerElement.innerText = "00:00 EXPIRED";
+          return;
+        }
+        totalSeconds--;
+        const minutes = Math.floor(totalSeconds / 60);
+        const seconds = totalSeconds % 60;
+        timerElement.innerText = (minutes < 10 ? "0" : "") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+      }, 1000);
+    })();
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-variant mt-auto"><div class="w-full px-margin py-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-space-xs font-label-md text-label-md text-on-surface font-semibold"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span> 9 of 12 Tables in Play</span><span class="h-3 w-[1px] bg-surface-variant hidden sm:block"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Last synchronized 12s ago</span><span class="h-3 w-[1px] bg-surface-variant hidden sm:block"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Next Open Salon at <span class="text-on-surface font-semibold">20:30</span></span></div><div class="flex items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm"><span>Table Humidity: 46% • Cloth: Simonis 860</span><span class="text-on-surface font-medium">© Cue &amp; Rail Club Ltd.</span></div></div></footer></body></html>

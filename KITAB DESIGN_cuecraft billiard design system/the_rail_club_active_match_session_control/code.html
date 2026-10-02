@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { "colors": { "on-primary-fixed": "#002118", "error": "#ba1a1a", "outline-variant": "#bfc9c3", "on-surface": "#1a1c1b", "surface": "#f9f9f7", "tertiary-fixed-dim": "#ffb77a", "inverse-primary": "#90d4bc", "tertiary-fixed": "#ffdcc2", "on-error": "#ffffff", "surface-tint": "#256956", "surface-container-highest": "#e2e3e0", "primary-container": "#0f5a47", "tertiary": "#582e00", "on-error-container": "#93000a", "secondary": "#4f6076", "on-primary": "#ffffff", "on-primary-fixed-variant": "#00513f", "surface-container-high": "#e8e8e6", "primary-fixed-dim": "#90d4bc", "primary": "#004132", "on-tertiary-fixed": "#2e1500", "primary-fixed": "#acf1d7", "on-secondary-fixed-variant": "#37485e", "on-tertiary": "#ffffff", "secondary-fixed-dim": "#b6c8e2", "tertiary-container": "#794100", "on-tertiary-fixed-variant": "#6d3a00", "on-secondary-fixed": "#0a1c30", "on-tertiary-container": "#ffb06b", "surface-variant": "#e2e3e0", "surface-bright": "#f9f9f7", "inverse-on-surface": "#f1f1ef", "on-surface-variant": "#3f4945", "background": "#f9f9f7", "on-secondary-container": "#55667c", "on-secondary": "#ffffff", "on-primary-container": "#8ccfb7", "surface-dim": "#dadad8", "outline": "#6f7974", "secondary-container": "#d2e4ff", "on-background": "#1a1c1b", "inverse-surface": "#2f3130", "error-container": "#ffdad6", "surface-container-low": "#f4f4f1", "surface-container": "#eeeeec", "surface-container-lowest": "#ffffff", "secondary-fixed": "#d2e4ff" }, "borderRadius": { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" }, "spacing": { "space-sm": "0.5rem", "space-md": "1rem", "margin-mobile": "1rem", "gutter": "1.5rem", "space-xs": "0.25rem", "margin": "2.5rem", "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "space-xl": "2.5rem" }, "fontFamily": { "headline-sm": ["Plus Jakarta Sans"], "display-mobile": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "headline-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-lg-mobile": ["Plus Jakarta Sans"], "label-sm": ["JetBrains Mono"], "headline-md": ["Plus Jakarta Sans"], "display": ["Plus Jakarta Sans"], "label-md": ["JetBrains Mono"], "body-lg": ["Plus Jakarta Sans"], "label-lg": ["JetBrains Mono"] }, "fontSize": { "headline-sm": ["1.125rem", { "lineHeight": "1.4", "letterSpacing": "-0.005em", "fontWeight": "600" }], "display-mobile": ["2rem", { "lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-md": ["0.875rem", { "lineHeight": "1.55", "letterSpacing": "0", "fontWeight": "400" }], "headline-lg": ["2rem", { "lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600" }], "body-sm": ["0.75rem", { "lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400" }], "headline-lg-mobile": ["1.5rem", { "lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600" }], "label-sm": ["0.6875rem", { "lineHeight": "1.3", "letterSpacing": "0.06em", "fontWeight": "600" }], "headline-md": ["1.375rem", { "lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "600" }], "display": ["3rem", { "lineHeight": "1.15", "letterSpacing": "-0.03em", "fontWeight": "600" }], "label-md": ["0.75rem", { "lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500" }], "body-lg": ["1rem", { "lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400" }], "label-lg": ["0.875rem", { "lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500" }] } } } };</script></head><body class="bg-surface font-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 h-16 bg-surface/90 backdrop-blur-md shadow-[0_1px_8px_rgba(0,0,0,0.04)] z-50 flex items-center justify-between px-margin"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-sm"><img alt="Brand logo. - Primary color: #0f5a47
+- Font: plusJakartaSans
+- Mode: light
+- Roundness: rounded-sm
+" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Wjgf_8TzzRHhf047rGayrdoC07zG-toO0Ba_f3kHL6Q_9vZxHFT3EVFYzFyhU4wOYL9qxOh3qMtEAyh5_F11IbF9-OWpMVhTAK6a1hMP6yGinwOxo8sb2px-tfGaO1grVE586kwAwcpgwEhqIgMSzC5eMBn_MVTSIW33tkRiwWbgnJpZmEzgdNSgNIoQIgal38VUvwCEQIgRjb250IH4mxKsmbYyARI8PzPlXa3ByguN_RLF1n_6l3EIlr"/><div class="flex flex-col"><span class="font-headline-sm text-headline-sm text-primary tracking-tight">CUE &amp; RAIL</span><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">The Rail Club • London</span></div></div><div class="h-6 w-px bg-outline-variant/40 hidden md:block"></div><button class="hidden lg:flex items-center gap-space-xs bg-surface-container-low px-space-sm py-1 rounded hover:bg-surface-container transition-colors" type="button"><span class="font-label-md text-label-md text-on-surface font-medium">The Strand Flagship — London, W1</span><span class="material-symbols-outlined text-on-surface-variant text-[16px]">unfold_more</span></button><div class="hidden xl:flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest rounded shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span><span class="font-label-sm text-label-sm text-primary font-semibold">Salon North: Precision Rails 1-6 • Active</span></div></div><div class="flex items-center gap-space-md"><div class="hidden md:flex items-center bg-surface-container-low rounded px-space-sm py-1.5 text-on-surface-variant gap-space-xs w-64 shadow-[0_1px_3px_rgba(0,0,0,0.02)]"><span class="material-symbols-outlined text-[18px]">search</span><span class="font-body-sm text-body-sm text-on-surface-variant">Search rail, member, cue...</span><span class="font-label-sm text-label-sm text-outline ml-auto bg-surface-container-highest px-1 rounded">⌘K</span></div><div class="hidden sm:flex flex-col text-right"><span class="font-label-sm text-label-sm text-on-surface-variant">Thu, 24 Oct • Salon Prime</span><span class="font-label-md text-label-md text-on-surface font-semibold">20:45 BST</span></div><button class="bg-primary text-on-primary px-space-md py-1.5 rounded font-label-md text-label-md uppercase tracking-wider hover:bg-primary-container hover:text-on-primary transition-colors flex items-center gap-1 shadow-[0_1px_4px_rgba(0,0,0,0.05)]" type="button"><span class="material-symbols-outlined text-[16px]">add</span>Reserve Rail</button><div class="flex items-center gap-space-xs pl-space-xs"><div class="hidden lg:flex flex-col text-right"><span class="font-label-md text-label-md text-on-surface font-medium">MR • T4 Admin</span><span class="font-label-sm text-label-sm text-primary font-semibold">Staff Active</span></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><aside class="fixed left-0 top-16 bottom-10 w-64 bg-surface-container-low shadow-[0_1px_8px_rgba(0,0,0,0.02)] z-40 flex flex-col justify-between py-space-lg"><div class="flex flex-col gap-space-sm"><div class="px-space-lg mb-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-widest font-semibold">Salon Management</span></div><nav class="flex flex-col px-space-md gap-1" data-active-classes="bg-primary-container text-on-primary rounded font-semibold"><a class="px-space-md py-2.5 rounded text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors flex items-center justify-between" data-path="tables-and-salon" href="#">Tables &amp; Salon<span class="font-label-sm text-label-sm text-on-surface-variant">12</span></a><a class="px-space-md py-2.5 rounded text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors flex items-center justify-between" data-path="live-availability" href="#">Live Availability<span class="w-2 h-2 rounded-full bg-primary"></span></a><a class="px-space-md py-2.5 rounded text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors flex items-center justify-between" data-path="floor-command" href="#">Floor Command</a><a class="px-space-md py-2.5 rounded text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors flex items-center justify-between" data-path="active-match-session-control" href="#">Active Match / Session Control<span class="font-label-sm text-label-sm text-tertiary-container bg-surface-container-high px-1 rounded">LIVE</span></a><a class="px-space-md py-2.5 rounded text-on-surface-variant font-body-md text-body-md hover:bg-surface-container hover:text-on-surface transition-colors flex items-center justify-between" data-path="member-concierge" href="#">Member Concierge</a></nav></div><div class="px-space-lg"><div class="bg-surface-container-lowest p-space-md rounded flex flex-col gap-space-xs shadow-[0_1px_4px_rgba(0,0,0,0.02)]"><span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Cues &amp; Hardware</span><div class="flex justify-between items-center"><span class="font-body-sm text-body-sm text-on-surface">Locker Vault</span><span class="font-label-sm text-label-sm text-primary font-semibold">94% Secured</span></div><div class="flex justify-between items-center"><span class="font-body-sm text-body-sm text-on-surface">Cloth Humidity</span><span class="font-label-sm text-label-sm text-on-surface-variant font-medium">48% RH</span></div></div></div></aside><div class="pl-64"><main class="relative pt-16 pb-12 w-full px-gutter min-h-screen bg-surface"><div class="flex flex-col w-full text-on-surface">
+<!-- TOP CONTEXT BAR: Breadcrumbs, Venue Sensor Specs, Rapid Bay Switcher -->
+<section class="flex flex-col lg:flex-row lg:items-center justify-between pb-space-md border-b border-surface-container-highest gap-space-md">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm tracking-wider uppercase">
+<span class="hover:text-primary transition-colors cursor-pointer">Floor Command</span>
+<span class="text-outline">/</span>
+<span class="hover:text-primary transition-colors cursor-pointer">Salon North</span>
+<span class="text-outline">/</span>
+<span class="text-primary font-semibold">Table 04 — Active Match</span>
+</div>
+<div class="flex items-center gap-space-sm flex-wrap">
+<h1 class="font-headline-md text-headline-md tracking-tight text-on-surface">
+          Bay 04 • Rasson Magnum 9ft
+        </h1>
+<div class="flex items-center gap-1.5 px-space-sm py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-inverse-primary animate-pulse"></span>
+<span>LIVE TELEMETRY SYNCED</span>
+</div>
+<div class="flex items-center gap-3 px-space-sm py-0.5 rounded bg-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">thermostat</span> Slate: 21.5°C</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-primary">straighten</span> Laser Level: ±0.03mm</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[14px] text-tertiary">water_drop</span> RH: 46%</span>
+</div>
+</div>
+</div>
+<!-- Rapid Bay Selector Strip -->
+<div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0" id="bay-selector-strip">
+<button class="px-3 py-1.5 rounded text-left font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-1.5" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>BAY 01</span>
+</button>
+<button class="px-3 py-1.5 rounded text-left font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-1.5" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>BAY 02</span>
+</button>
+<button class="px-3 py-1.5 rounded text-left font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-1.5" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+<span>BAY 03</span>
+</button>
+<button class="px-3 py-1.5 rounded text-left font-label-sm text-label-sm bg-primary text-on-primary font-semibold shadow-sm flex items-center gap-1.5 ring-1 ring-primary/20" type="button">
+<span class="w-2 h-2 rounded-full bg-inverse-primary animate-ping"></span>
+<span>BAY 04 [CURRENT]</span>
+</button>
+<button class="px-3 py-1.5 rounded text-left font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-1.5" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-outline"></span>
+<span>BAY 05</span>
+</button>
+<button class="px-3 py-1.5 rounded text-left font-label-sm text-label-sm bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-colors flex items-center gap-1.5" type="button">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>BAY 06</span>
+</button>
+</div>
+</section>
+<!-- MAIN DUAL-COLUMN OPERATIONAL COCKPIT -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg pt-space-lg">
+<!-- LEFT MASTER PANEL (Cols 1-8): Live Chronometer, Rail Timeline, In-Session Hardware -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- HERO SESSION TIMER & PLAYER IDENTITY CARD -->
+<div class="bg-surface-container-lowest p-space-lg rounded shadow-sm flex flex-col gap-space-lg relative overflow-hidden">
+<!-- Architectural Sighting Diamond Accent in Background -->
+<div class="absolute -right-8 -top-8 w-36 h-36 border border-surface-container opacity-40 rotate-45 pointer-events-none"></div>
+<!-- Upper Bar: Player Dossier & Session Economics -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-md border-b border-surface-container gap-space-sm">
+<div class="flex items-center gap-space-md">
+<div class="w-12 h-12 rounded bg-surface-container-high flex items-center justify-center font-headline-sm text-headline-sm text-primary font-semibold">
+              JV
+            </div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-headline-sm text-headline-sm text-on-surface">Julian "Andi" Vance</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-semibold">GOLD MEMBER</span>
+</div>
+<div class="flex items-center gap-3 text-on-surface-variant font-label-sm text-label-sm">
+<span>#MEM-4491</span>
+<span>•</span>
+<span>Handicap: Premier AA</span>
+<span>•</span>
+<span class="flex items-center text-primary"><span class="material-symbols-outlined text-[14px]">star</span> 4.95 Rating</span>
+</div>
+</div>
+</div>
+<div class="flex sm:flex-col items-baseline sm:items-end justify-between sm:justify-start gap-1">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Tournament Billing Rate</span>
+<div class="flex items-baseline gap-1.5">
+<span class="font-label-lg text-label-lg font-bold text-on-surface">£48.00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">/ hr (Standard Salon)</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium">Billed to Folio #4092</span>
+</div>
+</div>
+<!-- Central High-Impact JetBrains Chronometer -->
+<div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-space-lg bg-surface-container-low p-space-md rounded">
+<div class="flex flex-col gap-1">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Remaining Session Time</span>
+</div>
+<!-- Exact Numeric Chronometer -->
+<div class="flex items-baseline gap-2 text-primary font-label-lg">
+<div class="flex flex-col items-center">
+<span class="text-[3.25rem] leading-none font-bold tracking-tight text-on-surface" id="timer-hours">00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">HOURS</span>
+</div>
+<span class="text-[2.5rem] leading-none text-outline-variant font-light">:</span>
+<div class="flex flex-col items-center">
+<span class="text-[3.25rem] leading-none font-bold tracking-tight text-primary" id="timer-minutes">42</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold mt-1">MINUTES</span>
+</div>
+<span class="text-[2.5rem] leading-none text-outline-variant font-light">:</span>
+<div class="flex flex-col items-center">
+<span class="text-[3.25rem] leading-none font-bold tracking-tight text-on-surface" id="timer-seconds">16</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-1">SECONDS</span>
+</div>
+</div>
+</div>
+<!-- Session Run Metrics Box -->
+<div class="grid grid-cols-2 gap-x-6 gap-y-2 border-l border-surface-container-highest pl-space-md">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Session Began</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">20:07 BST</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Target Vacate</span>
+<span class="font-label-md text-label-md font-semibold text-error">22:00 BST</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Total Allotted</span>
+<span class="font-label-md text-label-md text-on-surface">113 min <span class="text-body-sm text-on-surface-variant">(+7m grace)</span></span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Elapsed Time</span>
+<span class="font-label-md text-label-md text-primary font-medium">1 hr 11 min</span>
+</div>
+</div>
+</div>
+<!-- THE BILLIARD RAIL TIMELINE: Sighting Diamonds & Stewarding Safety Buffer -->
+<div class="flex flex-col gap-space-sm pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-primary">straighten</span>
+              Table Turnaround Sighting Rail (Acoustic Timeline)
+            </span>
+<span class="font-label-sm text-label-sm text-error font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">lock_clock</span>
+              Strict 15m Stewarding Buffer Locked
+            </span>
+</div>
+<!-- Architectural Rail Graphic with Sighting Diamonds -->
+<div class="bg-surface-container p-space-md rounded relative">
+<!-- Rail Wood Cushion Track Line -->
+<div class="relative w-full h-3 bg-surface-container-highest rounded-full overflow-hidden my-3">
+<!-- Completed Track Fill (Elapsed 63%) -->
+<div class="absolute left-0 top-0 bottom-0 bg-primary w-[63%] rounded-l-full"></div>
+<!-- Current Target Active Point -->
+<div class="absolute left-[63%] top-0 bottom-0 bg-primary-fixed w-[24%]"></div>
+<!-- Red/Amber Collision Guard: Stewarding Turnover Zone (87% to 100%) -->
+<div class="absolute right-0 top-0 bottom-0 bg-error/20 w-[13%] flex items-center justify-center">
+<span class="w-full h-full bg-repeating-linear-stripes opacity-40"></span>
+</div>
+</div>
+<!-- Diamond Sighting Nodes & Micro Markers -->
+<div class="relative w-full h-12 flex justify-between items-start pt-1 font-label-sm text-label-sm">
+<!-- Checkpoint 1: 20:07 Started -->
+<div class="flex flex-col items-start -ml-2">
+<div class="w-3.5 h-3.5 rotate-45 bg-primary text-on-primary flex items-center justify-center shadow-xs">
+<div class="w-1.5 h-1.5 bg-surface-container-lowest"></div>
+</div>
+<span class="text-on-surface font-semibold mt-1">20:07</span>
+<span class="text-body-sm text-on-surface-variant">Rack-Off</span>
+</div>
+<!-- Checkpoint 2: 20:30 Refresh -->
+<div class="flex flex-col items-center">
+<div class="w-2.5 h-2.5 rotate-45 bg-primary shadow-xs"></div>
+<span class="text-on-surface-variant font-medium mt-1">20:30</span>
+<span class="text-body-sm text-outline">Beverage</span>
+</div>
+<!-- Checkpoint 3: 21:18 NOW (Dynamic Pointer) -->
+<div class="flex flex-col items-center -mt-1">
+<div class="flex items-center gap-1 bg-primary text-on-primary px-2 py-0.5 rounded shadow-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-inverse-primary animate-ping"></span>
+<span class="font-bold">NOW 21:18</span>
+</div>
+<span class="text-primary font-semibold mt-0.5">42m 16s Remaining</span>
+</div>
+<!-- Checkpoint 4: 22:00 Session Cap -->
+<div class="flex flex-col items-center">
+<div class="w-3.5 h-3.5 rotate-45 bg-error text-on-error flex items-center justify-center shadow-xs">
+<div class="w-1.5 h-1.5 bg-surface-container-lowest"></div>
+</div>
+<span class="text-error font-bold mt-1">22:00</span>
+<span class="text-body-sm text-error font-medium">Vacate Bay 04</span>
+</div>
+<!-- Checkpoint 5: 22:00 - 22:15 Buffer & Next Booking Arriving -->
+<div class="flex flex-col items-end -mr-2">
+<div class="flex items-center gap-1 bg-surface-container-highest text-on-surface-variant px-1.5 py-0.5 rounded">
+<span class="material-symbols-outlined text-[12px] text-tertiary">cleaning_services</span>
+<span>15m Turn</span>
+</div>
+<span class="text-on-surface font-semibold mt-1">22:15 Inbound</span>
+<span class="text-body-sm text-on-surface-variant">Budi Prasetyo</span>
+</div>
+</div>
+<!-- Cushion Safety Banner -->
+<div class="mt-2 pt-2 border-t border-surface-container-highest/60 flex items-center justify-between text-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px] text-outline">info</span>
+                Mandatory protocol: 15-minute table reset includes Simonis cloth thermobrush, Hainsworth ball ultrasonic polish, and chalk dust extraction.
+              </span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">Buffer Enforced: Yes</span>
+</div>
+</div>
+</div>
+</div>
+<!-- IN-SESSION TABLE HARDWARE & HOSPITALITY CONTROL SUITE -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- Overhead Competition Lighting & Atmosphere -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-sm justify-between">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">light</span>
+              Brass Canopy Luminaire
+            </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">100% Tournament Peak</span>
+</div>
+<div class="flex flex-col gap-2 py-1">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Dimmed (40%)</span>
+<span>Lounge (70%)</span>
+<span class="text-primary font-bold">Championship (100%)</span>
+</div>
+<!-- Custom Luminaire Step Selector -->
+<div class="grid grid-cols-3 gap-1 bg-surface-container p-1 rounded">
+<button class="py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:bg-surface-container-lowest transition-colors" type="button">40% Focus</button>
+<button class="py-1 text-center font-label-sm text-label-sm rounded text-on-surface-variant hover:bg-surface-container-lowest transition-colors" type="button">70% Social</button>
+<button class="py-1 text-center font-label-sm text-label-sm rounded bg-primary text-on-primary font-semibold shadow-xs" type="button">100% Match</button>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container font-label-sm text-label-sm text-on-surface-variant">
+<span>Diffuser Temp: 4,000K Neutral</span>
+<span class="text-primary flex items-center gap-1"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Lux: 1,120 lx</span>
+</div>
+</div>
+<!-- In-Play Bar Cart & Active Tab -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-sm justify-between">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-tertiary">local_bar</span>
+              Player Lounge &amp; Bar Tab
+            </span>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">£34.50 Active</span>
+</div>
+<div class="flex flex-col gap-1.5 text-body-sm">
+<div class="flex justify-between items-center text-on-surface">
+<span>1x The Macallan 12 Double Cask (Neat)</span>
+<span class="font-label-sm text-label-sm font-medium">£24.00</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>2x Fever-Tree Premium Indian Tonic</span>
+<span class="font-label-sm text-label-sm">£10.50</span>
+</div>
+</div>
+<div class="flex items-center justify-between pt-1 border-t border-surface-container">
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-semibold flex items-center gap-1 transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px]">add_circle</span> Add Consumable
+            </button>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-merges to Folio #4092</span>
+</div>
+</div>
+</div>
+<!-- MATCH PERFORMANCE TELEMETRY: Optical Shot Tracker & Frame Log -->
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex flex-col gap-space-sm">
+<div class="flex items-center justify-between pb-space-xs border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Optical Table Vision (Hawkeye AI Track)</span>
+<span class="font-label-sm text-label-sm px-1.5 rounded bg-surface-container text-on-surface-variant">9-Ball Rotation</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium">Optical Sensor: 120 FPS Active</span>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-space-md pt-1">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Racks Completed</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">4 Racks</span>
+<span class="font-label-sm text-label-sm text-primary">Avg. 17.5m / frame</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">High Break Run</span>
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">28 Balls</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Frame 2 Table Clear</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Potting Precision</span>
+<span class="font-headline-sm text-headline-sm font-bold text-primary">91.4%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">42 / 46 attempts</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Active Cue Staged</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface truncate">Predator 314-3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Vault Locker #14</span>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT AUDIT & EXTENSION DOSSIER (Cols 9-12): Next Booking Lock, Policy Feasibility -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- NEXT BOOKING & TURNAROUND SAFETY CARD (Zero-Overstay Engine) -->
+<div class="bg-surface-container-lowest p-space-lg rounded shadow-sm flex flex-col gap-space-md relative overflow-hidden">
+<!-- Header Banner -->
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-container">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-error animate-pulse"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-wider font-bold text-on-surface">Inbound Reservation</span>
+</div>
+<span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-error-container text-on-error-container font-semibold">
+            STRICT LOCK
+          </span>
+</div>
+<!-- Next Customer Dossier -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col gap-space-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Budi Prasetyo</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Membership #CR-8842 • Regular</span>
+</div>
+<span class="px-2 py-0.5 rounded bg-primary-container text-on-primary font-label-sm text-label-sm font-medium">Confirmed</span>
+</div>
+<div class="grid grid-cols-2 gap-2 text-body-sm pt-1 border-t border-surface-container-highest">
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Reserved Slot</span>
+<span class="font-label-md text-label-md font-bold text-on-surface">22:00 – 00:00</span>
+</div>
+<div>
+<span class="font-label-sm text-label-sm text-on-surface-variant block">Arrival ETA</span>
+<span class="font-label-md text-label-md text-primary font-semibold">In Lounge (21:50)</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 font-label-sm text-label-sm text-on-surface-variant bg-surface-container-lowest p-2 rounded">
+<span class="material-symbols-outlined text-[16px] text-tertiary">check_circle</span>
+<span>£96.00 Deposit fully authorized via Stripe</span>
+</div>
+</div>
+<!-- DYNAMIC EXTENSION FEASIBILITY MATRIX -->
+<div class="flex flex-col gap-space-sm pt-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-on-surface-variant font-semibold">Extension Feasibility</span>
+<!-- Interactive Scenario Tab Toggle -->
+<div class="flex items-center bg-surface-container p-0.5 rounded text-label-sm font-label-sm">
+<button class="px-2 py-0.5 rounded bg-surface-container-lowest font-semibold text-on-surface shadow-xs" id="tab-direct-bay" onclick="setScenario('direct')" type="button">Bay 04 Direct</button>
+<button class="px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface" id="tab-transfer-bay" onclick="setScenario('transfer')" type="button">Bay 03 Swap</button>
+</div>
+</div>
+<!-- Scenario A: Direct Table Lock (Current Reality) -->
+<div class="flex flex-col gap-space-sm" id="scenario-direct">
+<div class="p-space-sm bg-error-container/40 rounded flex items-start gap-2">
+<span class="material-symbols-outlined text-error text-[18px] mt-0.5">do_not_disturb_on</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-error">MAX EXTENSION: 0 MINUTES</span>
+<span class="text-body-sm text-on-surface">
+                  Table 04 is hard-reserved for Budi Prasetyo prompt at 22:00. Adding minutes on this rail directly compromises clean turnaround.
+                </span>
+</div>
+</div>
+<!-- Quick Test Chips -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Simulate Time Extension on Bay 04:</span>
+<div class="grid grid-cols-3 gap-1.5">
+<button class="ext-btn py-1.5 rounded font-label-sm text-label-sm text-center bg-surface-container hover:bg-surface-container-high transition-colors font-medium" onclick="previewExtension(15)" type="button">+15 min</button>
+<button class="ext-btn py-1.5 rounded font-label-sm text-label-sm text-center bg-surface-container hover:bg-surface-container-high transition-colors font-medium" onclick="previewExtension(30)" type="button">+30 min</button>
+<button class="ext-btn py-1.5 rounded font-label-sm text-label-sm text-center bg-surface-container hover:bg-surface-container-high transition-colors font-medium" onclick="previewExtension(60)" type="button">+60 min</button>
+</div>
+</div>
+<!-- Dynamic Feedback Dossier Panel -->
+<div class="p-space-sm bg-surface-container-low rounded flex flex-col gap-1.5 text-body-sm" id="extension-preview">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Simulation Output:</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold" id="preview-tag">DIRECT CONFLICT</span>
+</div>
+<div class="flex justify-between text-on-surface">
+<span>Proposed New End Time:</span>
+<span class="font-label-sm text-label-sm font-bold text-error" id="preview-time">22:15 BST (+15m)</span>
+</div>
+<div class="flex justify-between text-on-surface">
+<span>Additional Fee:</span>
+<span class="font-label-sm text-label-sm font-semibold" id="preview-fee">+£12.00</span>
+</div>
+<p class="text-body-sm text-error mt-0.5 leading-snug" id="preview-desc">
+                Warning: Collides directly with Budi Prasetyo's reservation. Requires either an early guest conciliation or bay relocation.
+              </p>
+</div>
+</div>
+<!-- Scenario B: Buffer Swap Mode (Hidden by Default, toggled by button) -->
+<div class="hidden flex flex-col gap-space-sm" id="scenario-transfer">
+<div class="p-space-sm bg-secondary-container/50 rounded flex items-start gap-2">
+<span class="material-symbols-outlined text-secondary text-[18px] mt-0.5">swap_horiz</span>
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm font-bold text-on-secondary-fixed">TRANSFER BUFFER FEASIBLE: +30 MIN</span>
+<span class="text-body-sm text-on-surface">
+                  Adjacent Bay 03 is vacant from 22:00 to 23:30. Reassigning Budi Prasetyo to Bay 03 frees Bay 04 for Julian Vance until 22:30.
+                </span>
+</div>
+</div>
+<div class="p-space-sm bg-surface-container-low rounded flex flex-col gap-1.5 text-body-sm">
+<div class="flex justify-between items-center text-on-surface">
+<span>Reroute Inbound Guest:</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">Bay 03 (Identical Spec)</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<span>Julian Extended Until:</span>
+<span class="font-label-sm text-label-sm font-bold text-primary">22:30 BST (+30m)</span>
+</div>
+<div class="flex justify-between items-center text-on-surface">
+<span>Additional Billed:</span>
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">+£24.00</span>
+</div>
+</div>
+</div>
+</div>
+<!-- FLOOR STAFF COMMAND ACTION DECK -->
+<div class="flex flex-col gap-2 pt-space-xs border-t border-surface-container">
+<!-- Primary Action Button: Context Aware -->
+<button class="w-full py-2.5 px-space-md rounded bg-primary text-on-primary font-label-md text-label-md uppercase tracking-wider font-semibold hover:bg-primary-container transition-all flex items-center justify-center gap-2 shadow-xs opacity-60 cursor-not-allowed" id="btn-primary-action" title="Direct extension locked" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+            Direct Extension Prohibited (0m)
+          </button>
+<!-- Alternative Action: Relocate & Extend -->
+<button class="w-full py-2 px-space-md rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm uppercase tracking-wider font-semibold transition-colors flex items-center justify-center gap-1.5" onclick="triggerTransferModal()" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">move_down</span>
+            Reassign Budi to Bay 03 &amp; Extend Vance
+          </button>
+<!-- Grid of Secondary Immediate Floor Actions -->
+<div class="grid grid-cols-2 gap-2 pt-1">
+<button class="py-2 px-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors flex items-center justify-center gap-1 text-center" onclick="triggerVacateEarly()" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">check_circle</span>
+              Early Vacate &amp; Settle
+            </button>
+<button class="py-2 px-2 rounded bg-surface-container-low hover:bg-surface-container text-on-surface font-label-sm text-label-sm transition-colors flex items-center justify-center gap-1 text-center" onclick="triggerChalkPause()" type="button">
+<span class="material-symbols-outlined text-[16px] text-tertiary">pause_circle</span>
+              Pause Technical
+            </button>
+</div>
+<button class="w-full py-1.5 rounded text-on-surface-variant hover:text-on-surface font-label-sm text-label-sm flex items-center justify-center gap-1 transition-colors" onclick="alert('Floor steward dispatched with fresh microfiber towel and Master chalk blocks.')" type="button">
+<span class="material-symbols-outlined text-[14px]">notifications</span>
+            Dispatch Floor Steward (Towel / Chalk)
+          </button>
+</div>
+</div>
+<!-- TABLE ARCHITECTURAL SPECIFICATION SUMMARY -->
+<div class="bg-surface-container-low p-space-md rounded flex flex-col gap-2 shadow-xs">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">Table Specification Card</span>
+<div class="flex flex-col gap-1 text-body-sm">
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Table Model:</span>
+<span class="font-medium text-on-surface">Rasson Magnum II Championship</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Slate Thickness:</span>
+<span class="font-medium text-on-surface">50mm Italian Honed Slate</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Cloth Spec:</span>
+<span class="font-medium text-on-surface">Simonis 860 Worsted Green</span>
+</div>
+<div class="flex justify-between">
+<span class="text-on-surface-variant">Ball Set:</span>
+<span class="font-medium text-on-surface">Aramith Tournament Super Pro TV</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- EMBEDDED MODAL / NOTIFICATION OVERLAY (Triggered via staff actions) -->
+<div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-xs z-50 hidden flex items-center justify-center p-4" id="transfer-modal">
+<div class="bg-surface-container-lowest max-w-lg w-full rounded p-space-lg shadow-xl flex flex-col gap-space-md">
+<div class="flex items-start justify-between pb-space-xs border-b border-surface-container">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[24px]">swap_horizontal_circle</span>
+<span class="font-headline-sm text-headline-sm text-on-surface">Authorize Guest Relocation &amp; Extension</span>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface" onclick="closeTransferModal()" type="button">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<p class="text-body-md text-on-surface">
+        Moving <strong>Budi Prasetyo (#CR-8842)</strong> from Bay 04 to <strong>Bay 03</strong> (matching Rasson 9ft slate). This unblocks Bay 04 to grant Julian Vance a <strong>+30 minute extension</strong> until 22:30.
+      </p>
+<div class="bg-surface-container-low p-space-md rounded flex flex-col gap-1.5 font-label-sm text-label-sm">
+<div class="flex justify-between text-on-surface">
+<span>Budi Prasetyo Notification:</span>
+<span class="text-primary font-semibold">SMS / Push Sent to Reception Concierge</span>
+</div>
+<div class="flex justify-between text-on-surface">
+<span>Complimentary Welcome Drink:</span>
+<span class="font-semibold">Auto-credited (Strand Welcome Highball)</span>
+</div>
+<div class="flex justify-between text-on-surface">
+<span>Julian Vance Folio Billing:</span>
+<span class="font-semibold text-primary">+£24.00 added to Tab</span>
+</div>
+</div>
+<div class="flex items-center justify-end gap-2 pt-space-xs">
+<button class="px-space-md py-2 rounded bg-surface-container text-on-surface font-label-md text-label-md font-semibold" onclick="closeTransferModal()" type="button">
+          Cancel
+        </button>
+<button class="px-space-md py-2 rounded bg-primary text-on-primary font-label-md text-label-md font-semibold hover:bg-primary-container transition-colors" onclick="confirmTransfer()" type="button">
+          Confirm Reassignment &amp; Extend +30m
+        </button>
+</div>
+</div>
+</div>
+<!-- CLIENT-SIDE INTERACTION CONTROLLER -->
+<script>
+    // Live Countdown Timer Simulation
+    let remainingSeconds = 42 * 60 + 16; // 42m 16s
+
+    function updateLiveTimer() {
+      if (remainingSeconds <= 0) return;
+      remainingSeconds--;
+      
+      const hours = Math.floor(remainingSeconds / 3600);
+      const minutes = Math.floor((remainingSeconds % 3600) / 60);
+      const seconds = remainingSeconds % 60;
+
+      const hElem = document.getElementById('timer-hours');
+      const mElem = document.getElementById('timer-minutes');
+      const sElem = document.getElementById('timer-seconds');
+
+      if (hElem && mElem && sElem) {
+        hElem.textContent = String(hours).padStart(2, '0');
+        mElem.textContent = String(minutes).padStart(2, '0');
+        sElem.textContent = String(seconds).padStart(2, '0');
+      }
+    }
+    setInterval(updateLiveTimer, 1000);
+
+    // Scenario Switcher (Direct vs Transfer Feasibility)
+    function setScenario(type) {
+      const directPanel = document.getElementById('scenario-direct');
+      const transferPanel = document.getElementById('scenario-transfer');
+      const tabDirect = document.getElementById('tab-direct-bay');
+      const tabTransfer = document.getElementById('tab-transfer-bay');
+      const primaryBtn = document.getElementById('btn-primary-action');
+
+      if (type === 'direct') {
+        directPanel.classList.remove('hidden');
+        transferPanel.classList.add('hidden');
+        tabDirect.className = 'px-2 py-0.5 rounded bg-surface-container-lowest font-semibold text-on-surface shadow-xs';
+        tabTransfer.className = 'px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface';
+        
+        primaryBtn.classList.add('opacity-60', 'cursor-not-allowed');
+        primaryBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">lock</span> Direct Extension Prohibited (0m)';
+      } else {
+        directPanel.classList.add('hidden');
+        transferPanel.classList.remove('hidden');
+        tabTransfer.className = 'px-2 py-0.5 rounded bg-surface-container-lowest font-semibold text-on-surface shadow-xs';
+        tabDirect.className = 'px-2 py-0.5 rounded text-on-surface-variant hover:text-on-surface';
+
+        primaryBtn.classList.remove('opacity-60', 'cursor-not-allowed');
+        primaryBtn.innerHTML = '<span class="material-symbols-outlined text-[18px]">verified</span> Execute Bay 03 Relocation (+30m)';
+        primaryBtn.onclick = triggerTransferModal;
+      }
+    }
+
+    // Dynamic Simulation of Extension Minutes
+    function previewExtension(minutes) {
+      const tag = document.getElementById('preview-tag');
+      const time = document.getElementById('preview-time');
+      const fee = document.getElementById('preview-fee');
+      const desc = document.getElementById('preview-desc');
+
+      let newMin = 0 + minutes;
+      let targetTime = minutes === 15 ? '22:15 BST' : (minutes === 30 ? '22:30 BST' : '23:00 BST');
+      let cost = minutes === 15 ? '£12.00' : (minutes === 30 ? '£24.00' : '£48.00');
+
+      time.textContent = targetTime + ' (+' + minutes + 'm)';
+      fee.textContent = '+' + cost;
+
+      tag.className = 'font-label-sm text-label-sm px-1.5 py-0.5 rounded bg-error-container text-on-error-container font-semibold';
+      tag.textContent = 'COLLISION CONFLICT (' + minutes + 'M)';
+      desc.textContent = 'Warning: Overlaps Budi Prasetyo by ' + minutes + ' minutes. Inbound guest will be forced to wait in lounge unless Bay 03 is designated.';
+    }
+
+    // Modal Helpers
+    function triggerTransferModal() {
+      document.getElementById('transfer-modal').classList.remove('hidden');
+    }
+
+    function closeTransferModal() {
+      document.getElementById('transfer-modal').classList.add('hidden');
+    }
+
+    function confirmTransfer() {
+      closeTransferModal();
+      remainingSeconds += 30 * 60; // add 30 mins
+      alert('Success: Budi Prasetyo routed to Bay 03. Table 04 extended +30 min for Julian Vance until 22:30.');
+      setScenario('direct');
+    }
+
+    function triggerVacateEarly() {
+      if (confirm('Initiate early table settlement for Julian Vance? Folio total £82.50.')) {
+        alert('Table 04 released to Stewarding Clean Queue.');
+      }
+    }
+
+    function triggerChalkPause() {
+      alert('Technical intermission logged. Match chronometer paused. Reason: Cue Tip Re-shaping.');
+    }
+  </script>
+</div></main></div><footer class="fixed bottom-0 left-0 right-0 h-10 bg-surface-container-lowest/95 backdrop-blur-md shadow-[0_-1px_6px_rgba(0,0,0,0.03)] z-40 flex items-center justify-between px-margin"><div class="flex items-center gap-space-lg"><div class="flex items-center gap-space-xs"><span class="w-2 h-2 rounded-full bg-primary"></span><span class="font-label-sm text-label-sm text-on-surface font-semibold">TABLES IN PLAY:</span><span class="font-label-sm text-label-sm text-on-surface-variant">9 / 12 ACTIVE</span></div><div class="h-4 w-px bg-outline-variant/40 hidden sm:block"></div><div class="hidden sm:flex items-center gap-space-xs"><span class="font-label-sm text-label-sm text-on-surface-variant">SURFACE SPEC:</span><span class="font-label-sm text-label-sm text-on-surface font-medium">Strachan 6811 Tournament Gold • Hainsworth Precision</span></div></div><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm text-on-surface-variant hidden md:inline">Acoustic Sighting Diamond Calibration Active</span><span class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Cue &amp; Rail Club Holdings Ltd.</span></div></footer></body></html>

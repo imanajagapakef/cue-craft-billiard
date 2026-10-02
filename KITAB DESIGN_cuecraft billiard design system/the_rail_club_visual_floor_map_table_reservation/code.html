@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-low": "#f4f4f1",
+          "on-background": "#1a1c1b",
+          "surface-variant": "#e2e3e0",
+          "surface-container": "#eeeeec",
+          "on-primary-fixed-variant": "#00513f",
+          "on-secondary": "#ffffff",
+          "background": "#f9f9f7",
+          "secondary-fixed": "#d2e4ff",
+          "primary": "#004132",
+          "inverse-primary": "#90d4bc",
+          "outline-variant": "#bfc9c3",
+          "on-secondary-container": "#55667c",
+          "on-primary": "#ffffff",
+          "on-error-container": "#93000a",
+          "surface-container-highest": "#e2e3e0",
+          "inverse-on-surface": "#f1f1ef",
+          "on-surface-variant": "#3f4945",
+          "on-tertiary": "#ffffff",
+          "error": "#ba1a1a",
+          "on-secondary-fixed-variant": "#37485e",
+          "on-secondary-fixed": "#0a1c30",
+          "surface-container-lowest": "#ffffff",
+          "on-surface": "#1a1c1b",
+          "surface-container-high": "#e8e8e6",
+          "surface-bright": "#f9f9f7",
+          "secondary-container": "#d2e4ff",
+          "error-container": "#ffdad6",
+          "secondary-fixed-dim": "#b6c8e2",
+          "on-error": "#ffffff",
+          "primary-fixed": "#acf1d7",
+          "tertiary-fixed": "#ffdcc2",
+          "tertiary-container": "#794100",
+          "surface": "#f9f9f7",
+          "primary-container": "#0f5a47",
+          "on-primary-fixed": "#002118",
+          "on-tertiary-fixed": "#2e1500",
+          "surface-tint": "#256956",
+          "tertiary-fixed-dim": "#ffb77a",
+          "on-primary-container": "#8ccfb7",
+          "outline": "#6f7974",
+          "tertiary": "#582e00",
+          "primary-fixed-dim": "#90d4bc",
+          "inverse-surface": "#2f3130",
+          "on-tertiary-container": "#ffb06b",
+          "on-tertiary-fixed-variant": "#6d3a00",
+          "secondary": "#4f6076",
+          "surface-dim": "#dadad8"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem",
+          "margin": "2.5rem",
+          "gutter-mobile": "0.75rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "display": ["Plus Jakarta Sans"],
+          "body-md": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "label-md": ["JetBrains Mono"],
+          "display-mobile": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "label-sm": ["JetBrains Mono"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "label-lg": ["JetBrains Mono"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "display": ["3rem", {"lineHeight": "1.15", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+          "body-md": ["0.875rem", {"lineHeight": "1.55", "letterSpacing": "0", "fontWeight": "400"}],
+          "body-lg": ["1rem", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+          "label-md": ["0.75rem", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
+          "display-mobile": ["2rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-sm": ["0.75rem", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+          "headline-sm": ["1.125rem", {"lineHeight": "1.4", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+          "label-sm": ["0.6875rem", {"lineHeight": "1.3", "letterSpacing": "0.06em", "fontWeight": "600"}],
+          "headline-md": ["1.375rem", {"lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["2rem", {"lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-lg": ["0.875rem", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "headline-lg-mobile": ["1.5rem", {"lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-surface-variant"><div class="h-[72px] w-full px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-sm focus:outline-none" href="#"><img alt="Cue &amp; Rail Monogram &amp; Wordmark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Ue6GmKo_J647MZcNVNC2Jx18K3o8D1rT6oih7uN88GZhqQv5Mv61sGz2SMS0mi0AyV9cVN5Ifc01VyXMzu4zCAJJnQrRPB_p--bSDYZiEyZSM4UmEUV440ZW0uStsz_4NGPo-PHcxdHC0hH3zfiG2KqHUJUeezcCqtx73e1m6gHPDqB91v-DbbWY9mGqNiF2muDR4kLQNpnXmanQzKTOtPIHIlTCN4aC04qqRsW7ne2TIiTbk-0OCLtoL1"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface uppercase">Cue &amp; Rail</span></a><div class="h-6 w-[1px] bg-surface-variant hidden xl:block"></div><button class="hidden xl:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors" type="button"><span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span><span class="font-body-sm text-body-sm font-medium text-on-surface">The Strand Flagship — London, W1</span><span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded">7 Open</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">keyboard_arrow_down</span></button></div><nav class="hidden lg:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-semibold relative after:absolute after:bottom-[-26px] after:left-0 after:right-0 after:h-[2px] after:bg-primary"><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tables-salon" href="#">Tables &amp; Salon</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="live-availability" href="#">Live Availability</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="private-bookings" href="#">Private Bookings</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tournaments" href="#">Tournaments</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="member-concierge" href="#">Member Concierge</a></nav><div class="flex items-center gap-space-md shrink-0"><button class="hidden sm:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm">Search</span><kbd class="font-label-sm text-label-sm bg-surface-container px-space-xs rounded text-on-surface-variant border border-surface-variant">⌘K</kbd></button><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container border border-surface-variant rounded"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span><span class="font-label-sm text-label-sm text-on-surface">Today, Oct 24 • Evening</span></div><a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary rounded font-body-md text-body-md font-semibold hover:bg-primary-container transition-colors" data-path="reserve-table" href="#"><span class="material-symbols-outlined text-[16px]">add</span><span>Reserve a Table</span></a><div class="h-6 w-[1px] bg-surface-variant"></div><button class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors" type="button"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden sm:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-semibold">MR • T4 Admin</span><span class="font-label-sm text-label-sm text-on-surface-variant">Staff Active</span></div></button></div></div><div class="h-8 w-full bg-surface-container-low border-t border-surface-variant px-margin hidden md:flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Venue Sighting</span><span class="text-outline text-[10px]">•</span><span class="font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="text-primary">♦</span> Salon North: Precision Rails 1–6</span><span class="text-outline text-[10px]">•</span><span class="font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="text-tertiary-container">♦</span> Salon South: Championship Arena 7–12</span></div><div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block animate-pulse"></span><span>Optical Table Trackers Operational</span></div></div></header><main class="w-full pt-[104px] bg-background flex-1"><div class="flex flex-col w-full">
+<!-- CONTEXTUAL FILTER & STATUS RIBBON -->
+<div class="w-full bg-surface-container-low px-margin py-space-sm flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md">
+<!-- Left: Selected Session Meta & Filter Pills -->
+<div class="flex flex-wrap items-center gap-space-md">
+<div class="flex items-center gap-space-xs bg-surface-container-lowest px-space-md py-space-xs rounded shadow-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_today</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Today, 24 Oct</span>
+<span class="text-outline-variant text-[12px] mx-1">•</span>
+<span class="font-label-md text-label-md text-primary font-semibold">20:00 – 22:00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">2h Session</span>
+</div>
+<div class="h-5 w-[1px] bg-surface-variant hidden md:block"></div>
+<!-- Zone Navigation Matrix -->
+<div class="flex items-center gap-1.5 p-1 bg-surface-container rounded" id="zoneFilterPills">
+<button class="zone-pill active-pill px-space-md py-1 rounded font-label-sm text-label-sm text-on-primary bg-primary transition-all flex items-center gap-1.5" data-zone="all" type="button">
+<span>All Zones</span>
+<span class="px-1.5 py-0.2 bg-on-primary/20 text-on-primary rounded font-label-sm text-label-sm">12</span>
+</button>
+<button class="zone-pill px-space-md py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-1.5" data-zone="hall" type="button">
+<span>Main Hall</span>
+<span class="text-on-surface-variant">6</span>
+</button>
+<button class="zone-pill px-space-md py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-1.5" data-zone="mezzanine" type="button">
+<span>The Mezzanine VIP</span>
+<span class="text-on-surface-variant">4</span>
+</button>
+<button class="zone-pill px-space-md py-1 rounded font-label-sm text-label-sm text-on-surface-variant hover:text-on-surface hover:bg-surface-container-highest transition-all flex items-center gap-1.5" data-zone="vault" type="button">
+<span>The Vault</span>
+<span class="text-on-surface-variant">2</span>
+</button>
+</div>
+</div>
+<!-- Right: Operational Micro-Legend & Calibration Telemetry -->
+<div class="flex flex-wrap items-center gap-space-lg text-on-surface-variant">
+<div class="flex items-center gap-space-md text-label-sm font-label-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-container-lowest shadow-sm flex items-center justify-center">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+</span>
+<span class="text-on-surface font-medium">Available</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-surface-dim"></span>
+<span>Occupied</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-secondary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-[10px] text-secondary">lock</span>
+</span>
+<span>Reserved</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-error-container"></span>
+<span>Maint.</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary flex items-center justify-center">
+<span class="w-1 h-1 bg-on-primary rounded-full"></span>
+</span>
+<span class="text-primary font-semibold">Selected</span>
+</div>
+</div>
+<div class="hidden 2xl:flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant pl-space-md">
+<span class="material-symbols-outlined text-[15px] text-primary">tune</span>
+<span>Simonis 860 Cloth Calibrated • 68°F (46% RH)</span>
+</div>
+</div>
+</div>
+<!-- MAIN WORKSPACE: ARCHITECTURAL FLOOR CANVAS + BOOKING SUMMARY DOCK -->
+<div class="w-full px-margin py-space-lg flex flex-col lg:flex-row gap-space-xl items-start">
+<!-- LEFT: SPATIAL BLUEPRINT CANVAS -->
+<div class="flex-1 w-full flex flex-col gap-space-lg">
+<!-- Architectural Framing Bar -->
+<div class="flex items-center justify-between bg-surface-container px-space-md py-space-xs rounded">
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface uppercase">The Strand Flagship • Floor Plate L1</span>
+<span class="text-outline text-[10px]">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Orthogonal Sightline Projection (1:100 Scale)</span>
+</div>
+<div class="flex items-center gap-space-md text-label-sm font-label-sm">
+<span class="text-primary font-semibold">7 OF 12 TABLES OPEN</span>
+<div class="flex items-center gap-1 text-on-surface-variant">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+<span>Live Sync</span>
+</div>
+</div>
+</div>
+<!-- THE ARCHITECTURAL FLOOR GRID -->
+<div class="w-full bg-surface-container-lowest p-space-lg rounded shadow-sm space-y-space-xl overflow-x-auto relative">
+<!-- SIGHTLINE GRID GRAPHIC OVERLAY (Decorative subtle blueprint backdrop) -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.035] bg-[radial-gradient(#1a1c1b_1px,transparent_1px)] [background-size:24px_24px]"></div>
+<!-- ============================================== -->
+<!-- ZONE 01: THE MAIN TOURNAMENT HALL (Bays 01-06) -->
+<!-- ============================================== -->
+<section class="space-y-space-md relative z-10" id="zone-hall">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm font-bold tracking-widest text-primary uppercase">ZONE 01</span>
+<span class="h-3 w-[1px] bg-surface-variant"></span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">The Main Tournament Hall</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">6x 9-ft Tournament Slate</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Clearance: 1.55m Cueing Radius</span>
+</div>
+<!-- 6-Table Architectural Matrix (3 cols x 2 rows) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-space-lg">
+<!-- TABLE 01: AVAILABLE -->
+<div class="table-card group relative bg-surface p-space-md rounded cursor-pointer transition-all hover:bg-surface-container-low shadow-sm" data-rate="Rp 50.000" data-status="available" data-table-id="01" data-table-name="Table 01" data-table-type="9ft Brunswick Centurion">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface">TBL-01 [9-FT]</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Available</span>
+</span>
+</div>
+<!-- Bilateral Architectural Vector View -->
+<div class="h-28 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative overflow-hidden group-hover:bg-surface-container transition-colors">
+<!-- Hardwood Cushion Perimeter -->
+<div class="w-full h-full bg-[#1e2a24] rounded flex items-center justify-center p-1.5 relative shadow-inner">
+<!-- Brass Corner Pockets -->
+<div class="absolute top-0.5 left-0.5 w-2 h-2 rounded-full bg-tertiary-fixed-dim/70"></div>
+<div class="absolute top-0.5 right-0.5 w-2 h-2 rounded-full bg-tertiary-fixed-dim/70"></div>
+<div class="absolute bottom-0.5 left-0.5 w-2 h-2 rounded-full bg-tertiary-fixed-dim/70"></div>
+<div class="absolute bottom-0.5 right-0.5 w-2 h-2 rounded-full bg-tertiary-fixed-dim/70"></div>
+<div class="absolute top-0.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-tertiary-fixed-dim/70"></div>
+<div class="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 bg-tertiary-fixed-dim/70"></div>
+<!-- Emerald Cloth Bed -->
+<div class="w-full h-full bg-primary-container rounded flex flex-col items-center justify-center relative">
+<!-- Diamond Sighting Inlays -->
+<div class="absolute top-0 inset-x-4 flex justify-between">
+<span class="w-1 h-1 bg-surface-variant/40 rotate-45 transform"></span>
+<span class="w-1 h-1 bg-surface-variant/40 rotate-45 transform"></span>
+<span class="w-1 h-1 bg-surface-variant/40 rotate-45 transform"></span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-wider">01</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Brunswick Centurion</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>9ft American Slate</span>
+<span class="font-semibold text-on-surface">Rp 50.000 / hr</span>
+</div>
+</div>
+<!-- TABLE 02: OCCUPIED (IN PLAY) -->
+<div class="table-card relative bg-surface-container-low p-space-md rounded opacity-80 cursor-not-allowed" data-status="occupied" data-table-id="02">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface-variant">TBL-02 [9-FT]</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<span>In-Play • ~21:15</span>
+</span>
+</div>
+<div class="h-28 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative">
+<div class="w-full h-full bg-surface-variant rounded flex items-center justify-center p-1.5 relative">
+<div class="w-full h-full bg-surface-dim rounded flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-bold">02</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rasson Ox Match</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Frame 3 • Match in Progress</span>
+<span class="text-tertiary font-medium">Clears in 75m</span>
+</div>
+</div>
+<!-- TABLE 03: RESERVED -->
+<div class="table-card relative bg-surface-container-low p-space-md rounded opacity-80 cursor-not-allowed" data-status="reserved" data-table-id="03">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface-variant">TBL-03 [9-FT]</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded font-medium">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+<span>Reserved 20:00</span>
+</span>
+</div>
+<div class="h-28 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative">
+<div class="w-full h-full bg-[#323d47] rounded flex items-center justify-center p-1.5 relative">
+<div class="w-full h-full bg-[#415160] rounded flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-secondary-fixed-dim font-bold">03</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">Brunswick Gold Crown</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Pre-booked Member Salon</span>
+<span>Till 22:30</span>
+</div>
+</div>
+<!-- TABLE 04: SELECTED FOCUS STATE -->
+<div class="table-card selected-table group relative bg-surface-container-lowest p-space-md rounded cursor-pointer shadow-md" data-rate="Rp 50.000" data-status="selected" data-table-id="04" data-table-name="Table 04" data-table-type="9ft Rasson Magnum Championship">
+<!-- Trajectory Animated Line Top / Left Active Highlight -->
+<div class="absolute top-0 left-0 right-0 h-1 bg-primary rounded-t"></div>
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="font-label-sm text-label-sm font-bold tracking-wider text-primary">TBL-04 [9-FT VIP FOCUS]</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-primary text-on-primary font-label-sm text-label-sm rounded font-semibold">
+<span class="material-symbols-outlined text-[12px]">check</span>
+<span>Selected</span>
+</span>
+</div>
+<!-- Table Vector Graphic with Active Sightline Trajectory Line -->
+<div class="h-28 w-full bg-primary/10 rounded p-2 flex items-center justify-center relative overflow-hidden">
+<div class="w-full h-full bg-[#0a2e23] rounded flex items-center justify-center p-1.5 relative shadow-md">
+<!-- Brass Corner Pockets with Specular Shimmer -->
+<div class="absolute top-0.5 left-0.5 w-2.5 h-2.5 rounded-full bg-tertiary-fixed flex items-center justify-center">
+<span class="w-1 h-1 bg-surface-container-lowest rounded-full"></span>
+</div>
+<div class="absolute top-0.5 right-0.5 w-2.5 h-2.5 rounded-full bg-tertiary-fixed"></div>
+<div class="absolute bottom-0.5 left-0.5 w-2.5 h-2.5 rounded-full bg-tertiary-fixed"></div>
+<div class="absolute bottom-0.5 right-0.5 w-2.5 h-2.5 rounded-full bg-tertiary-fixed"></div>
+<div class="absolute top-0.5 left-1/2 -translate-x-1/2 w-2 h-1.5 bg-tertiary-fixed"></div>
+<div class="absolute bottom-0.5 left-1/2 -translate-x-1/2 w-2 h-1.5 bg-tertiary-fixed"></div>
+<!-- Pristine Felt Bed -->
+<div class="w-full h-full bg-primary rounded flex flex-col items-center justify-center relative">
+<!-- Optical Trajectory Shot Angle Animation Line -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<div class="w-3/4 h-[1.5px] bg-primary-fixed/60 rotate-[-18deg] transform origin-center shadow-[0_0_8px_rgba(172,241,215,0.8)]"></div>
+<div class="w-2 h-2 rounded-full bg-primary-fixed absolute -translate-x-10 -translate-y-3.5 shadow-sm"></div>
+</div>
+<!-- Diamond Inlays along Rails -->
+<div class="absolute top-0.5 inset-x-5 flex justify-between">
+<span class="w-1.5 h-1.5 bg-tertiary-fixed rotate-45 transform"></span>
+<span class="w-1.5 h-1.5 bg-tertiary-fixed rotate-45 transform"></span>
+<span class="w-1.5 h-1.5 bg-tertiary-fixed rotate-45 transform"></span>
+</div>
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold tracking-wider relative z-10">04</span>
+<span class="font-label-sm text-label-sm text-primary-fixed relative z-10 font-semibold">Rasson Magnum</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">straighten</span> Laser-Leveled 0.05mm
+                </span>
+<span class="font-bold text-on-surface">Rp 50.000 / hr</span>
+</div>
+</div>
+<!-- TABLE 05: AVAILABLE -->
+<div class="table-card group relative bg-surface p-space-md rounded cursor-pointer transition-all hover:bg-surface-container-low shadow-sm" data-rate="Rp 50.000" data-status="available" data-table-id="05" data-table-name="Table 05" data-table-type="9ft Diamond Pro-Am">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface">TBL-05 [9-FT]</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Available</span>
+</span>
+</div>
+<div class="h-28 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative overflow-hidden group-hover:bg-surface-container transition-colors">
+<div class="w-full h-full bg-[#1e2a24] rounded flex items-center justify-center p-1.5 relative shadow-inner">
+<div class="absolute top-0.5 left-0.5 w-2 h-2 rounded-full bg-tertiary-fixed-dim/70"></div>
+<div class="absolute top-0.5 right-0.5 w-2 h-2 rounded-full bg-tertiary-fixed-dim/70"></div>
+<div class="absolute bottom-0.5 left-0.5 w-2 h-2 rounded-full bg-tertiary-fixed-dim/70"></div>
+<div class="absolute bottom-0.5 right-0.5 w-2 h-2 rounded-full bg-tertiary-fixed-dim/70"></div>
+<div class="w-full h-full bg-primary-container rounded flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">05</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Diamond Pro-Am</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Integrated Ball Return</span>
+<span class="font-semibold text-on-surface">Rp 50.000 / hr</span>
+</div>
+</div>
+<!-- TABLE 06: RESERVED -->
+<div class="table-card relative bg-surface-container-low p-space-md rounded opacity-80 cursor-not-allowed" data-status="reserved" data-table-id="06">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface-variant">TBL-06 [9-FT]</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded font-medium">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+<span>Reserved</span>
+</span>
+</div>
+<div class="h-28 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative">
+<div class="w-full h-full bg-[#323d47] rounded flex items-center justify-center p-1.5 relative">
+<div class="w-full h-full bg-[#415160] rounded flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-secondary-fixed-dim font-bold">06</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">Brunswick Centurion II</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Private League Booking</span>
+<span>Till 23:00</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- ZONE 02: THE MEZZANINE VIP SALON (Bays 07-10)  -->
+<!-- ============================================== -->
+<section class="space-y-space-md relative z-10" id="zone-mezzanine">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm font-bold tracking-widest text-secondary uppercase">ZONE 02</span>
+<span class="h-3 w-[1px] bg-surface-variant"></span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">The Mezzanine VIP Salon</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">Elevated Tier • Dedicated Sommelier</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Bays 07–10</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- TABLE 07: AVAILABLE -->
+<div class="table-card group relative bg-surface p-space-md rounded cursor-pointer transition-all hover:bg-surface-container-low shadow-sm" data-rate="Rp 60.000" data-status="available" data-table-id="07" data-table-name="Table 07" data-table-type="7ft English 8-Ball">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface">TBL-07 [7-FT]</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Available</span>
+</span>
+</div>
+<div class="h-24 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative overflow-hidden group-hover:bg-surface-container transition-colors">
+<div class="w-full h-full bg-[#1e2a24] rounded flex items-center justify-center p-1 relative">
+<div class="w-full h-full bg-primary-container rounded flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">07</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Supreme Winner</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>English 8-Ball</span>
+<span class="font-semibold text-on-surface">Rp 60.000 / hr</span>
+</div>
+</div>
+<!-- TABLE 08: OCCUPIED (CAROM) -->
+<div class="table-card relative bg-surface-container-low p-space-md rounded opacity-80 cursor-not-allowed" data-status="occupied" data-table-id="08">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface-variant">TBL-08 [10-FT]</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-surface-container-highest text-on-surface-variant font-label-sm text-label-sm rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary animate-pulse"></span>
+<span>Occupied</span>
+</span>
+</div>
+<div class="h-24 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative">
+<div class="w-full h-full bg-surface-variant rounded flex items-center justify-center p-1 relative">
+<div class="w-full h-full bg-surface-dim rounded flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-bold">08</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sorel Heated Carom</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>3-Cushion Billiard</span>
+<span class="text-tertiary">Clears ~21:40</span>
+</div>
+</div>
+<!-- TABLE 09: MAINTENANCE -->
+<div class="table-card relative bg-surface-container-low p-space-md rounded opacity-80 cursor-not-allowed" data-status="maintenance" data-table-id="09">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface-variant">TBL-09 [9-FT]</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-error-container text-on-error-container font-label-sm text-label-sm rounded font-medium">
+<span class="material-symbols-outlined text-[12px]">build</span>
+<span>Re-Stretching</span>
+</span>
+</div>
+<div class="h-24 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative overflow-hidden">
+<div class="w-full h-full bg-[#3d2424] rounded flex items-center justify-center p-1 relative">
+<div class="w-full h-full bg-[#523030] rounded flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-[#ffdad6] font-bold">09</span>
+<span class="font-label-sm text-label-sm text-[#ffdad6]/70">Cloth Re-tension</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Simonis 860 Installation</span>
+<span class="text-error font-medium">Until 23:30</span>
+</div>
+</div>
+<!-- TABLE 10: RESERVED -->
+<div class="table-card relative bg-surface-container-low p-space-md rounded opacity-80 cursor-not-allowed" data-status="reserved" data-table-id="10">
+<div class="flex items-center justify-between mb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface-variant">TBL-10 [9-FT]</span>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded font-medium">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+<span>Member Hold</span>
+</span>
+</div>
+<div class="h-24 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative">
+<div class="w-full h-full bg-[#323d47] rounded flex items-center justify-center p-1 relative">
+<div class="w-full h-full bg-[#415160] rounded flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-secondary-fixed-dim font-bold">10</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">Brunswick Heritage</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Private Member Salon</span>
+<span>Full Evening</span>
+</div>
+</div>
+</div>
+</section>
+<!-- ============================================== -->
+<!-- ZONE 03: THE PRIVATE VAULT & SUITES (Bays 11-12)-->
+<!-- ============================================== -->
+<section class="space-y-space-md relative z-10" id="zone-vault">
+<div class="flex items-center justify-between pb-space-xs">
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm font-bold tracking-widest text-tertiary-container uppercase">ZONE 03</span>
+<span class="h-3 w-[1px] bg-surface-variant"></span>
+<h2 class="font-headline-sm text-headline-sm font-bold text-on-surface">The Private Vault &amp; Founder's Suites</h2>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded">Acoustic Isolation • Private Bar</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-medium">Bays 11 &amp; 12</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<!-- TABLE 11: AVAILABLE (12FT SNOOKER) -->
+<div class="table-card group relative bg-surface p-space-md rounded cursor-pointer transition-all hover:bg-surface-container-low shadow-sm" data-rate="Rp 90.000" data-status="available" data-table-id="11" data-table-name="Suite 11" data-table-type="12ft Riley Aristocrat Snooker">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface">SUITE-11 [12-FT SNOOKER]</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 bg-surface-container text-on-surface-variant rounded">Private Suite</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm rounded font-medium">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span>Available</span>
+</span>
+</div>
+<div class="h-32 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative overflow-hidden group-hover:bg-surface-container transition-colors">
+<div class="w-full h-full bg-[#1b2b22] rounded flex items-center justify-center p-2 relative shadow-inner">
+<!-- Brass pocket mounts -->
+<div class="absolute top-1 left-1 w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></div>
+<div class="absolute top-1 right-1 w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></div>
+<div class="absolute bottom-1 left-1 w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></div>
+<div class="absolute bottom-1 right-1 w-2.5 h-2.5 rounded-full bg-tertiary-fixed-dim"></div>
+<div class="w-full h-full bg-primary-container rounded flex flex-col items-center justify-center relative">
+<!-- Snooker D line representation -->
+<div class="absolute left-6 inset-y-2 w-[1px] bg-primary-fixed/30"></div>
+<span class="font-headline-sm text-headline-sm text-on-primary font-bold">11</span>
+<span class="font-label-sm text-label-sm text-on-primary-container">Riley Aristocrat 12ft Snooker Suite</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Includes Butler Call &amp; Private Bar</span>
+<span class="font-semibold text-on-surface">Rp 90.000 / hr</span>
+</div>
+</div>
+<!-- TABLE 12: RESERVED -->
+<div class="table-card relative bg-surface-container-low p-space-md rounded opacity-80 cursor-not-allowed" data-status="reserved" data-table-id="12">
+<div class="flex items-center justify-between mb-space-sm">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider text-on-surface-variant">SUITE-12 [FOUNDER'S SALON]</span>
+<span class="font-label-sm text-label-sm px-1.5 py-0.5 bg-surface-container text-on-surface-variant rounded">Reserved VIP</span>
+</div>
+<span class="inline-flex items-center gap-1 px-space-xs py-0.5 bg-secondary-container text-on-secondary-container font-label-sm text-label-sm rounded font-medium">
+<span class="material-symbols-outlined text-[12px]">lock</span>
+<span>Private Session</span>
+</span>
+</div>
+<div class="h-32 w-full bg-surface-container-high rounded p-2 flex items-center justify-center relative">
+<div class="w-full h-full bg-[#323d47] rounded flex items-center justify-center p-2 relative">
+<div class="w-full h-full bg-[#415160] rounded flex flex-col items-center justify-center">
+<span class="font-headline-sm text-headline-sm text-secondary-fixed-dim font-bold">12</span>
+<span class="font-label-sm text-label-sm text-secondary-fixed">Founder's Sovereign Table</span>
+</div>
+</div>
+</div>
+<div class="flex items-center justify-between mt-space-sm pt-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span>Executive Host Booked</span>
+<span>Private Dinner Event</span>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- PHOTOGRAPHIC ARCHITECTURAL AMBIENCE CARDS -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-lg">
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex items-center gap-space-md">
+<img class="w-24 h-24 object-cover rounded shrink-0" data-alt="Close up brass corner pocket and rich worsted Simonis green cloth of a championship billiard table, architectural warm lighting, hand carved walnut wood rails." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA51KKSVzwXjgDEHrFujt5poNB1G_6kG1ImzZ40lSHlFW-T8A1pF_CLuA7MrXeud6vkOuG9wg25guyV50UztFosyo1A2EsR3G9YXtyM0bvfB20uD93kixIryAn02ZCQ33CzPlef60agrwqfTf9O16QC3PRzKzqoSv1fVhA2qb7mNS8DpOMyUTths8ncFxji2eS3XWUUctoRjD9MCsdgq60bo9G84oEfcN7hq0VJbeOmjoUnYjTONpId8g"/>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-primary font-semibold tracking-wider uppercase">Craftsmanship Standard</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">Artisan Rails &amp; Slate Beds</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Each table is leveled with digital micrometers before every evening session to ensure flawless trajectory alignment.</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-space-md rounded shadow-sm flex items-center gap-space-md">
+<img class="w-24 h-24 object-cover rounded shrink-0" data-alt="Luxury private billiard lounge salon with dark fluted oak wood acoustic walls, modern linear brass pendant lamp hanging above pristine green table, velvet emerald curved booth." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzosR3-UJ268Wccvxg3_xPa-oZy0goeNU5TSktWY9zJq2CSyf3Ww9iFJypuWp1mKCa1DdvNUFDI7jTDF3GhU9CFKYQLHnSZTIMfvSXxk7i-QX6uioqj40-WhW18B22LePmnJXr-bHtHNp37NHjK5Smk3GvzqZTte9FZUwnHhypb0qDl3Ewr3Z-1QnUmY-KwPxNHB3EcFr_bzgfcTPAR8nIt1tJeXlL0B9Qwmr14Mndc9KwVcAn-rwNOA"/>
+<div class="space-y-1">
+<span class="font-label-sm text-label-sm text-tertiary-container font-semibold tracking-wider uppercase">Atmospheric Acoustic Design</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">The Vault &amp; Founder's Suites</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sound-baffled slatted oak acoustics designed for private focus, tournament play, and discrete bespoke cocktail hospitality.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- RIGHT: PERSISTENT BOOKING SUMMARY DOCK (~380px Desktop) -->
+<aside class="w-full lg:w-[380px] shrink-0 sticky top-[120px] bg-surface-container-lowest rounded shadow-lg p-space-lg space-y-space-md z-20">
+<!-- Top Title & Trajectory Snapping indicator -->
+<div class="relative pb-space-sm">
+<div class="flex items-center justify-between mb-1">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-primary">Active Selection</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container px-space-xs py-0.5 rounded font-medium">Session Hold</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-bold text-on-surface" id="dockTableName">Table 04</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant" id="dockTableType">Rasson Magnum 9ft Championship</p>
+<!-- The Trajectory Line visual accent -->
+<div class="w-full h-[1.5px] bg-surface-variant mt-3 relative overflow-hidden">
+<div class="absolute left-0 top-0 bottom-0 w-1/3 bg-primary animate-[moveX_2s_infinite]"></div>
+</div>
+</div>
+<!-- Table Technical Specifications Matrix -->
+<div class="space-y-2 bg-surface-container-low p-space-md rounded">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider">Specifications &amp; Setup</span>
+<div class="grid grid-cols-2 gap-2 pt-1 font-label-sm text-label-sm">
+<div class="space-y-0.5">
+<span class="text-on-surface-variant block">Discipline</span>
+<span class="font-semibold text-on-surface">9-ft American Slate</span>
+</div>
+<div class="space-y-0.5">
+<span class="text-on-surface-variant block">Cloth Bed</span>
+<span class="font-semibold text-primary">Simonis 860 Green</span>
+</div>
+<div class="space-y-0.5">
+<span class="text-on-surface-variant block">Calibration</span>
+<span class="font-semibold text-on-surface">Laser-leveled 0.05mm</span>
+</div>
+<div class="space-y-0.5">
+<span class="text-on-surface-variant block">Zone / Bay</span>
+<span class="font-semibold text-on-surface">Zone 01 • Bay 04</span>
+</div>
+</div>
+</div>
+<!-- Reservation Slot Details -->
+<div class="space-y-2 bg-surface-container-low p-space-md rounded">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider">Session Schedule</span>
+<button class="text-primary hover:text-primary-container font-label-sm text-label-sm font-semibold" type="button">Change Slot</button>
+</div>
+<div class="space-y-1.5 pt-1">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">event</span> Date
+            </span>
+<span class="font-semibold text-on-surface">Thursday, 24 October</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">schedule</span> Time
+            </span>
+<span class="font-semibold text-on-surface">20:00 – 22:00 (2 Hours)</span>
+</div>
+</div>
+</div>
+<!-- Financial Breakdown (Tabular JetBrains Mono Alignments) -->
+<div class="space-y-2 pt-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase font-semibold text-on-surface-variant tracking-wider">Cost Itemization</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tax Incl.</span>
+</div>
+<div class="space-y-1.5 text-body-sm font-body-sm">
+<div class="flex justify-between items-center">
+<span class="text-on-surface-variant">Table Rental (2 hrs @ Rp 50.000)</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold tabular-nums">Rp 100.000</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>2x Predator 314 Cues &amp; Aramith Balls</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Complimentary</span>
+</div>
+<div class="flex justify-between items-center text-on-surface-variant">
+<span>Precision Master Chalk Block &amp; Bridge</span>
+<span class="font-label-md text-label-md text-primary font-semibold">Complimentary</span>
+</div>
+<div class="flex justify-between items-center pt-2 border-t border-surface-variant">
+<span class="text-on-surface-variant">Booking Hold Deposit (Refundable)</span>
+<span class="font-label-md text-label-md text-on-surface font-semibold tabular-nums">Rp 30.000</span>
+</div>
+<div class="flex justify-between items-baseline pt-2 bg-surface-container p-space-sm rounded">
+<div>
+<span class="font-body-md text-body-md font-bold text-on-surface block">Total Due Upon Arrival</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">At Concierge Counter</span>
+</div>
+<span class="font-headline-sm text-headline-sm font-bold text-primary font-label-md tabular-nums">Rp 70.000</span>
+</div>
+</div>
+</div>
+<!-- Temporary Hold Timer Readout -->
+<div class="bg-surface-container-high px-space-md py-space-xs rounded flex items-center justify-between">
+<div class="flex items-center gap-1.5 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[15px] text-tertiary">timer</span>
+<span>Temporary hold expires in:</span>
+</div>
+<span class="font-label-sm text-label-sm font-bold text-tertiary tabular-nums" id="holdCountdown">14:48</span>
+</div>
+<!-- Primary & Secondary CTA Actions -->
+<div class="space-y-space-xs pt-space-xs">
+<button class="w-full py-space-sm px-space-lg bg-primary hover:bg-primary-container text-on-primary font-body-md text-body-md font-bold rounded shadow-md transition-all flex items-center justify-center gap-2 group" id="confirmTableBtn" type="button">
+<span>Confirm Table 04 Hold</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</button>
+<div class="grid grid-cols-2 gap-space-xs">
+<button class="py-space-xs px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium rounded transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">wine_bar</span>
+<span>Add Sommelier</span>
+</button>
+<button class="py-space-xs px-space-md bg-surface-container hover:bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium rounded transition-colors flex items-center justify-center gap-1" type="button">
+<span class="material-symbols-outlined text-[15px]">lock</span>
+<span>Assign Locker</span>
+</button>
+</div>
+</div>
+<!-- Venue Policy Micro-text -->
+<p class="font-label-sm text-label-sm text-on-surface-variant text-center pt-space-xs leading-normal">
+        Free cancellation up to 60 minutes before 20:00 session. Dress code: Smart casual or club tailoring.
+      </p>
+</aside>
+</div>
+<!-- INTERACTIVE MICRO-SCRIPTS -->
+<script>
+    // 1. Zone filter pill activation and smooth scrolling
+    const pills = document.querySelectorAll('.zone-pill');
+    pills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        pills.forEach(p => {
+          p.classList.remove('bg-primary', 'text-on-primary', 'active-pill');
+          p.classList.add('text-on-surface-variant');
+        });
+        pill.classList.remove('text-on-surface-variant');
+        pill.classList.add('bg-primary', 'text-on-primary', 'active-pill');
+
+        const targetZone = pill.getAttribute('data-zone');
+        if (targetZone === 'all') {
+          window.scrollTo({ top: 120, behavior: 'smooth' });
+        } else {
+          const el = document.getElementById('zone-' + targetZone);
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }
+        }
+      });
+    });
+
+    // 2. Interactive Table Card Selection
+    const tableCards = document.querySelectorAll('.table-card[data-status="available"], .table-card[data-status="selected"]');
+    const dockName = document.getElementById('dockTableName');
+    const dockType = document.getElementById('dockTableType');
+    const confirmBtn = document.getElementById('confirmTableBtn');
+
+    tableCards.forEach(card => {
+      card.addEventListener('click', () => {
+        // Deselect previous
+        tableCards.forEach(c => {
+          c.classList.remove('selected-table', 'shadow-md', 'bg-surface-container-lowest');
+          c.classList.add('bg-surface', 'shadow-sm');
+          const indicator = c.querySelector('.material-symbols-outlined');
+          if (indicator && indicator.innerText === 'check') {
+            indicator.parentElement.innerHTML = '<span class="w-1.5 h-1.5 rounded-full bg-primary"></span><span>Available</span>';
+            indicator.parentElement.className = 'inline-flex items-center gap-1 px-space-xs py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm rounded font-medium';
+          }
+        });
+
+        // Activate clicked card
+        card.classList.add('selected-table', 'shadow-md', 'bg-surface-container-lowest');
+        card.classList.remove('bg-surface');
+
+        const name = card.getAttribute('data-table-name') || 'Table 04';
+        const type = card.getAttribute('data-table-type') || '9ft American Slate';
+
+        dockName.textContent = name;
+        dockType.textContent = type;
+        confirmBtn.querySelector('span:first-child').textContent = `Confirm ${name} Hold`;
+      });
+    });
+
+    // 3. Simple Hold Countdown Timer
+    let secondsLeft = 14 * 60 + 48;
+    const timerElem = document.getElementById('holdCountdown');
+    setInterval(() => {
+      if (secondsLeft > 0) {
+        secondsLeft--;
+        const mins = Math.floor(secondsLeft / 60);
+        const secs = secondsLeft % 60;
+        timerElem.textContent = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
+      }
+    }, 1000);
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-variant mt-auto"><div class="w-full px-margin py-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-space-xs font-label-md text-label-md text-on-surface font-semibold"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span> 9 of 12 Tables in Play</span><span class="h-3 w-[1px] bg-surface-variant hidden sm:block"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Last synchronized 12s ago</span><span class="h-3 w-[1px] bg-surface-variant hidden sm:block"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Next Open Salon at <span class="text-on-surface font-semibold">20:30</span></span></div><div class="flex items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm"><span>Table Humidity: 46% • Cloth: Simonis 860</span><span class="text-on-surface font-medium">© Cue &amp; Rail Club Ltd.</span></div></div></footer></body></html>

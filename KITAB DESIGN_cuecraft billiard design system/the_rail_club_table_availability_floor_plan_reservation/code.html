@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-low": "#f4f4f1",
+          "on-background": "#1a1c1b",
+          "surface-variant": "#e2e3e0",
+          "surface-container": "#eeeeec",
+          "on-primary-fixed-variant": "#00513f",
+          "on-secondary": "#ffffff",
+          "background": "#f9f9f7",
+          "secondary-fixed": "#d2e4ff",
+          "primary": "#004132",
+          "inverse-primary": "#90d4bc",
+          "outline-variant": "#bfc9c3",
+          "on-secondary-container": "#55667c",
+          "on-primary": "#ffffff",
+          "on-error-container": "#93000a",
+          "surface-container-highest": "#e2e3e0",
+          "inverse-on-surface": "#f1f1ef",
+          "on-surface-variant": "#3f4945",
+          "on-tertiary": "#ffffff",
+          "error": "#ba1a1a",
+          "on-secondary-fixed-variant": "#37485e",
+          "on-secondary-fixed": "#0a1c30",
+          "surface-container-lowest": "#ffffff",
+          "on-surface": "#1a1c1b",
+          "surface-container-high": "#e8e8e6",
+          "surface-bright": "#f9f9f7",
+          "secondary-container": "#d2e4ff",
+          "error-container": "#ffdad6",
+          "secondary-fixed-dim": "#b6c8e2",
+          "on-error": "#ffffff",
+          "primary-fixed": "#acf1d7",
+          "tertiary-fixed": "#ffdcc2",
+          "tertiary-container": "#794100",
+          "surface": "#f9f9f7",
+          "primary-container": "#0f5a47",
+          "on-primary-fixed": "#002118",
+          "on-tertiary-fixed": "#2e1500",
+          "surface-tint": "#256956",
+          "tertiary-fixed-dim": "#ffb77a",
+          "on-primary-container": "#8ccfb7",
+          "outline": "#6f7974",
+          "tertiary": "#582e00",
+          "primary-fixed-dim": "#90d4bc",
+          "inverse-surface": "#2f3130",
+          "on-tertiary-container": "#ffb06b",
+          "on-tertiary-fixed-variant": "#6d3a00",
+          "secondary": "#4f6076",
+          "surface-dim": "#dadad8"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem",
+          "margin": "2.5rem",
+          "gutter-mobile": "0.75rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "display": ["Plus Jakarta Sans"],
+          "body-md": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "label-md": ["JetBrains Mono"],
+          "display-mobile": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "label-sm": ["JetBrains Mono"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "label-lg": ["JetBrains Mono"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "display": ["3rem", {"lineHeight": "1.15", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+          "body-md": ["0.875rem", {"lineHeight": "1.55", "letterSpacing": "0", "fontWeight": "400"}],
+          "body-lg": ["1rem", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+          "label-md": ["0.75rem", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
+          "display-mobile": ["2rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-sm": ["0.75rem", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+          "headline-sm": ["1.125rem", {"lineHeight": "1.4", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+          "label-sm": ["0.6875rem", {"lineHeight": "1.3", "letterSpacing": "0.06em", "fontWeight": "600"}],
+          "headline-md": ["1.375rem", {"lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["2rem", {"lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-lg": ["0.875rem", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "headline-lg-mobile": ["1.5rem", {"lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-surface-variant"><div class="h-[72px] w-full px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-sm focus:outline-none" href="#"><img alt="Cue &amp; Rail Monogram &amp; Wordmark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Ue6GmKo_J647MZcNVNC2Jx18K3o8D1rT6oih7uN88GZhqQv5Mv61sGz2SMS0mi0AyV9cVN5Ifc01VyXMzu4zCAJJnQrRPB_p--bSDYZiEyZSM4UmEUV440ZW0uStsz_4NGPo-PHcxdHC0hH3zfiG2KqHUJUeezcCqtx73e1m6gHPDqB91v-DbbWY9mGqNiF2muDR4kLQNpnXmanQzKTOtPIHIlTCN4aC04qqRsW7ne2TIiTbk-0OCLtoL1"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface uppercase">Cue &amp; Rail</span></a><div class="h-6 w-[1px] bg-surface-variant hidden xl:block"></div><button class="hidden xl:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors" type="button"><span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span><span class="font-body-sm text-body-sm font-medium text-on-surface">The Strand Flagship — London, W1</span><span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded">7 Open</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">keyboard_arrow_down</span></button></div><nav class="hidden lg:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-semibold relative after:absolute after:bottom-[-26px] after:left-0 after:right-0 after:h-[2px] after:bg-primary"><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tables-salon" href="#">Tables &amp; Salon</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="live-availability" href="#">Live Availability</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="private-bookings" href="#">Private Bookings</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tournaments" href="#">Tournaments</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="member-concierge" href="#">Member Concierge</a></nav><div class="flex items-center gap-space-md shrink-0"><button class="hidden sm:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm">Search</span><kbd class="font-label-sm text-label-sm bg-surface-container px-space-xs rounded text-on-surface-variant border border-surface-variant">⌘K</kbd></button><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container border border-surface-variant rounded"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span><span class="font-label-sm text-label-sm text-on-surface">Today, Oct 24 • Evening</span></div><a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary rounded font-body-md text-body-md font-semibold hover:bg-primary-container transition-colors" data-path="reserve-table" href="#"><span class="material-symbols-outlined text-[16px]">add</span><span>Reserve a Table</span></a><div class="h-6 w-[1px] bg-surface-variant"></div><button class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors" type="button"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden sm:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-semibold">MR • T4 Admin</span><span class="font-label-sm text-label-sm text-on-surface-variant">Staff Active</span></div></button></div></div><div class="h-8 w-full bg-surface-container-low border-t border-surface-variant px-margin hidden md:flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Venue Sighting</span><span class="text-outline text-[10px]">•</span><span class="font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="text-primary">♦</span> Salon North: Precision Rails 1–6</span><span class="text-outline text-[10px]">•</span><span class="font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="text-tertiary-container">♦</span> Salon South: Championship Arena 7–12</span></div><div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block animate-pulse"></span><span>Optical Table Trackers Operational</span></div></div></header><main class="w-full pt-[104px] bg-background flex-1"><div class="flex flex-col w-full">
+<!-- Horizontal Architectural Date Rail -->
+<section class="w-full bg-surface-container-lowest border-b border-surface-variant sticky top-[72px] z-30 px-margin py-space-sm shadow-sm">
+<div class="max-w-[1720px] mx-auto flex items-center justify-between gap-space-lg overflow-x-auto no-scrollbar">
+<div class="flex items-center gap-space-xs shrink-0">
+<!-- Date 1: Selected (Today) -->
+<button class="relative group flex flex-col items-start px-space-md py-space-xs rounded bg-surface-container-low border border-primary transition-all duration-150" type="button">
+<div class="flex items-center gap-1.5 text-primary">
+<span class="font-label-sm text-label-sm font-semibold tracking-wider uppercase">Today</span>
+<span class="text-[10px] leading-none">✦</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Thu 24 Oct</span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface">24</span>
+<span class="font-label-sm text-label-sm font-semibold text-primary">6 Tables Open</span>
+</div>
+<span class="absolute bottom-0 left-0 right-0 h-[2px] bg-primary"></span>
+</button>
+<!-- Date 2: Tomorrow -->
+<button class="group flex flex-col items-start px-space-md py-space-xs rounded border border-transparent hover:border-surface-variant hover:bg-surface-container-low transition-all duration-150" type="button">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase">Tomorrow</span>
+<span class="text-[10px] text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm">Fri 25 Oct</span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">25</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">4 Open</span>
+</div>
+</button>
+<!-- Date 3: Sat 26 -->
+<button class="group flex flex-col items-start px-space-md py-space-xs rounded border border-transparent hover:border-surface-variant hover:bg-surface-container-low transition-all duration-150" type="button">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase">Weekend</span>
+<span class="text-[10px] text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm">Sat 26 Oct</span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">26</span>
+<span class="font-label-sm text-label-sm text-tertiary-container font-medium">2 Bays Left</span>
+</div>
+</button>
+<!-- Date 4: Sun 27 -->
+<button class="group flex flex-col items-start px-space-md py-space-xs rounded border border-transparent hover:border-surface-variant hover:bg-surface-container-low transition-all duration-150" type="button">
+<div class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="font-label-sm text-label-sm uppercase">Sunday</span>
+<span class="text-[10px] text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm">Sun 27 Oct</span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">27</span>
+<span class="font-label-sm text-label-sm text-primary">8 Open</span>
+</div>
+</button>
+<!-- Date 5: Mon 28 -->
+<button class="group flex flex-col items-start px-space-md py-space-xs rounded border border-transparent hover:border-surface-variant hover:bg-surface-container-low transition-all duration-150 hidden sm:flex" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Mon 28 Oct</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">28</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Full Availability</span>
+</div>
+</button>
+<!-- Date 6: Tue 29 -->
+<button class="group flex flex-col items-start px-space-md py-space-xs rounded border border-transparent hover:border-surface-variant hover:bg-surface-container-low transition-all duration-150 hidden md:flex" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Tue 29 Oct</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">29</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Tournament Prep</span>
+</div>
+</button>
+<!-- Date 7: Wed 30 -->
+<button class="group flex flex-col items-start px-space-md py-space-xs rounded border border-transparent hover:border-surface-variant hover:bg-surface-container-low transition-all duration-150 hidden lg:flex" type="button">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Wed 30 Oct</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">30</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">9 Open</span>
+</div>
+</button>
+</div>
+<!-- Jump to Date Trigger -->
+<div class="flex items-center gap-space-sm pl-space-md border-l border-surface-variant shrink-0">
+<button class="flex items-center gap-space-xs px-space-md py-2 bg-surface-container-lowest border border-outline-variant hover:border-on-surface text-on-surface rounded text-body-sm font-body-sm transition-colors" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary">calendar_month</span>
+<span>Specific Date</span>
+<kbd class="font-label-sm text-label-sm bg-surface-container px-1 rounded text-on-surface-variant">D</kbd>
+</button>
+</div>
+</div>
+</section>
+<!-- Main Exploration & Selection Canvas -->
+<div class="w-full px-margin py-space-xl pb-36">
+<div class="max-w-[1720px] mx-auto flex flex-col lg:flex-row gap-space-xl items-start">
+<!-- LEFT COLUMN: Precision Session Controls (36%) -->
+<aside class="w-full lg:w-[38%] shrink-0 flex flex-col gap-space-lg">
+<!-- Live Salon Status & Summary -->
+<div class="p-space-lg bg-surface-container-lowest border border-surface-variant rounded flex flex-col gap-space-md shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">Immediate Sighting</span>
+<h2 class="font-display text-display text-on-surface leading-tight mt-0.5">6 Tables Available</h2>
+</div>
+<span class="px-space-xs py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold rounded flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+              Live Salon
+            </span>
+</div>
+<!-- Metadata Context Ribbon -->
+<div class="flex flex-wrap items-center gap-y-1 gap-x-space-md font-body-sm text-body-sm text-on-surface-variant py-2 border-y border-surface-variant">
+<span class="text-on-surface font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">schedule</span> 20:00 — 21:30
+            </span>
+<span class="text-outline-variant">•</span>
+<span>90 min Standard Match</span>
+<span class="text-outline-variant">•</span>
+<span>Salon North Arena</span>
+</div>
+<!-- Environmental Telemetry Readout -->
+<div class="p-space-sm bg-surface-container-low rounded border border-surface-variant/70 flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">thermostat</span> 68°F Calibrated
+            </span>
+<span class="text-outline-variant">•</span>
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-secondary">water_drop</span> 46% Humidity
+            </span>
+<span class="text-outline-variant">•</span>
+<span>Simonis 860 Worsted</span>
+</div>
+</div>
+<!-- Time Window Matrix -->
+<div class="p-space-lg bg-surface-container-lowest border border-surface-variant rounded flex flex-col gap-space-md shadow-sm">
+<div class="flex items-center justify-between">
+<label class="font-headline-sm text-headline-sm text-on-surface">Time Window</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Evening Session</span>
+</div>
+<div class="grid grid-cols-3 gap-space-xs">
+<!-- 17:00 (Passed) -->
+<button class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-high/40 text-on-surface-variant/40 cursor-not-allowed border border-transparent" disabled="" type="button">
+<span class="font-label-md text-label-md font-semibold line-through">17:00</span>
+<span class="font-label-sm text-label-sm">Passed</span>
+</button>
+<!-- 18:30 (Full) -->
+<button class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-high/40 text-on-surface-variant/40 cursor-not-allowed border border-transparent" disabled="" type="button">
+<span class="font-label-md text-label-md font-semibold">18:30</span>
+<span class="font-label-sm text-label-sm">Bay Full</span>
+</button>
+<!-- 20:00 (Selected) -->
+<button class="relative flex flex-col items-center justify-center p-2 rounded bg-primary text-on-primary border border-primary shadow-sm" type="button">
+<div class="flex items-center gap-1">
+<span class="font-label-md text-label-md font-semibold">20:00</span>
+<span class="text-[9px]">✦</span>
+</div>
+<span class="font-label-sm text-label-sm text-primary-fixed font-medium">Prime Break</span>
+<span class="absolute -top-1.5 -right-1 px-1 bg-tertiary-container text-on-tertiary font-label-sm text-[9px] rounded uppercase font-bold tracking-tight">Active</span>
+</button>
+<!-- 21:30 (4 Open) -->
+<button class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-lowest hover:bg-surface-container border border-surface-variant text-on-surface transition-colors" type="button">
+<span class="font-label-md text-label-md font-semibold">21:30</span>
+<span class="font-label-sm text-label-sm text-primary">4 Open</span>
+</button>
+<!-- 23:00 (Late Session) -->
+<button class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-lowest hover:bg-surface-container border border-surface-variant text-on-surface transition-colors" type="button">
+<span class="font-label-md text-label-md font-semibold">23:00</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Late • 5 Open</span>
+</button>
+<!-- 00:30 (Night Play) -->
+<button class="flex flex-col items-center justify-center p-2 rounded bg-surface-container-lowest hover:bg-surface-container border border-surface-variant text-on-surface transition-colors" type="button">
+<span class="font-label-md text-label-md font-semibold">00:30</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Night Play</span>
+</button>
+</div>
+</div>
+<!-- Session Duration Segmented -->
+<div class="p-space-lg bg-surface-container-lowest border border-surface-variant rounded flex flex-col gap-space-sm shadow-sm">
+<div class="flex items-center justify-between">
+<span class="font-headline-sm text-headline-sm text-on-surface">Target Duration</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Simulated Rate: £45/hr</span>
+</div>
+<div class="grid grid-cols-2 gap-space-xs mt-1">
+<button class="p-space-sm rounded border border-surface-variant bg-surface-container-lowest hover:bg-surface-container text-left transition-colors" type="button">
+<div class="font-label-md text-label-md font-semibold text-on-surface">60 Minutes</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Solo Practice / Drills</div>
+</button>
+<button class="p-space-sm rounded border-2 border-primary bg-surface-container-low text-left relative" type="button">
+<div class="font-label-md text-label-md font-semibold text-primary flex items-center justify-between">
+<span>90 Minutes</span>
+<span class="w-2 h-2 rounded-full bg-primary inline-block"></span>
+</div>
+<div class="font-label-sm text-label-sm text-on-surface">Standard Match (Best of 5)</div>
+</button>
+<button class="p-space-sm rounded border border-surface-variant bg-surface-container-lowest hover:bg-surface-container text-left transition-colors" type="button">
+<div class="font-label-md text-label-md font-semibold text-on-surface">120 Minutes</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Championship Match</div>
+</button>
+<button class="p-space-sm rounded border border-surface-variant bg-surface-container-lowest hover:bg-surface-container text-left transition-colors" type="button">
+<div class="font-label-md text-label-md font-semibold text-on-surface">180 Minutes</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Extended Private Club Eve</div>
+</button>
+</div>
+</div>
+<!-- Architectural Filters -->
+<div class="p-space-lg bg-surface-container-lowest border border-surface-variant rounded flex flex-col gap-space-md shadow-sm">
+<div class="font-headline-sm text-headline-sm text-on-surface">Discipline &amp; Specification</div>
+<!-- Table Discipline Filter -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Discipline</span>
+<div class="flex flex-wrap gap-1">
+<span class="px-space-sm py-1 bg-primary text-on-primary text-label-sm font-label-sm font-semibold rounded cursor-pointer">All Disciplines</span>
+<span class="px-space-sm py-1 bg-surface-container border border-surface-variant hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm rounded cursor-pointer transition-colors">9ft American Pool</span>
+<span class="px-space-sm py-1 bg-surface-container border border-surface-variant hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm rounded cursor-pointer transition-colors">12ft Snooker</span>
+<span class="px-space-sm py-1 bg-surface-container border border-surface-variant hover:bg-surface-container-high text-on-surface text-label-sm font-label-sm rounded cursor-pointer transition-colors">10ft Carom</span>
+</div>
+</div>
+<!-- Salon Zone Filter -->
+<div class="flex flex-col gap-1.5">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Salon Quarter</span>
+<div class="grid grid-cols-2 gap-1">
+<button class="text-left px-space-sm py-1.5 rounded bg-surface-container-low border border-primary text-label-sm font-label-sm text-primary font-medium" type="button">
+                North Arena (01–06)
+              </button>
+<button class="text-left px-space-sm py-1.5 rounded bg-surface-container border border-surface-variant hover:bg-surface-container-high text-label-sm font-label-sm text-on-surface" type="button">
+                Mezzanine (07–10)
+              </button>
+<button class="text-left px-space-sm py-1.5 rounded bg-surface-container border border-surface-variant hover:bg-surface-container-high text-label-sm font-label-sm text-on-surface col-span-2" type="button">
+                The Vault &amp; Suites (11–12 • Private Bar)
+              </button>
+</div>
+</div>
+<!-- Filter Toggles -->
+<div class="pt-space-sm border-t border-surface-variant flex flex-col gap-space-xs font-body-sm text-body-sm text-on-surface">
+<label class="flex items-center justify-between cursor-pointer py-1">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-primary">blur_on</span>
+<span>Aramith Tournament Balls</span>
+</span>
+<input checked="" class="accent-primary w-4 h-4 rounded" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer py-1">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">filter_center_focus</span>
+<span>Laser Rail Sighting Inlay</span>
+</span>
+<input checked="" class="accent-primary w-4 h-4 rounded" type="checkbox"/>
+</label>
+<label class="flex items-center justify-between cursor-pointer py-1">
+<span class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px] text-tertiary-container">room_service</span>
+<span>Direct Bartender Service Bell</span>
+</span>
+<input class="accent-primary w-4 h-4 rounded" type="checkbox"/>
+</label>
+</div>
+</div>
+</aside>
+<!-- RIGHT COLUMN: Spatial Blueprint & Interactive Bay Exploration (64%) -->
+<section class="w-full lg:w-[62%] flex flex-col gap-space-xl">
+<!-- Blueprint Header & Legend -->
+<div class="flex flex-col sm:flex-row sm:items-center justify-between pb-space-sm border-b border-surface-variant gap-space-sm">
+<div class="flex items-center gap-space-sm">
+<span class="w-2.5 h-2.5 rounded-full bg-primary inline-block"></span>
+<span class="font-headline-sm text-headline-sm uppercase tracking-wider text-on-surface">Floorplan Blueprint</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">[Rev. 4.2 • North-South Sightline]</span>
+</div>
+<!-- Strict Status Indicators Legend -->
+<div class="flex flex-wrap items-center gap-space-md text-label-sm font-label-sm">
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-[#0F5A47]"></span> Available
+            </span>
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="text-tertiary-container text-xs">◆</span> Selected
+            </span>
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2 h-2 rounded-full bg-amber-600 animate-pulse"></span> In-Play
+            </span>
+<span class="flex items-center gap-1.5 text-on-surface">
+<span class="w-2 h-2 bg-secondary rounded-sm"></span> Reserved
+            </span>
+<span class="flex items-center gap-1.5 text-on-surface-variant">
+<span class="material-symbols-outlined text-[13px] text-error">build</span> Service
+            </span>
+</div>
+</div>
+<!-- ZONE 1: THE NORTH ARENA (Bays 01-06) -->
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold tracking-widest text-primary uppercase">Zone 01</span>
+<span class="text-outline-variant">•</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">The North Arena</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">(9ft Championship American Slate)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bays 01 – 06</span>
+</div>
+<!-- Bay Grid Zone 1 -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- BAY 01: Available -->
+<div class="group relative p-space-md bg-surface-container-lowest border border-surface-variant hover:border-primary rounded transition-all duration-150 flex flex-col justify-between shadow-sm cursor-pointer">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant uppercase tracking-wider">BAY 01 • BRUNSWICK 9-FT</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">Brunswick Centurion</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-primary border border-primary/30 font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span>●</span> £40/hr
+                </span>
+</div>
+<!-- Visual Architectural Rail Blueprint SVG -->
+<div class="my-space-md py-2 flex items-center justify-center bg-surface-container-low rounded border border-surface-variant/40">
+<svg class="overflow-visible" height="120" viewbox="0 0 240 120" width="240">
+<!-- Outer Wood Table Rail -->
+<rect fill="#3D291D" height="100" rx="4" stroke="#251710" stroke-width="2" width="220" x="10" y="10"></rect>
+<!-- Simonis Cloth Bed -->
+<rect fill="#0E5E4A" height="76" rx="2" width="196" x="22" y="22"></rect>
+<!-- Sightline Diamond Inlays -->
+<polygon fill="#F1F1EF" points="65,14 67,16 65,18 63,16"></polygon>
+<polygon fill="#F1F1EF" points="120,14 122,16 120,18 118,16"></polygon>
+<polygon fill="#F1F1EF" points="175,14 177,16 175,18 173,16"></polygon>
+<polygon fill="#F1F1EF" points="65,102 67,104 65,106 63,104"></polygon>
+<polygon fill="#F1F1EF" points="120,102 122,104 120,106 118,104"></polygon>
+<polygon fill="#F1F1EF" points="175,102 177,104 175,106 173,104"></polygon>
+<!-- Corner Brass Pocket Castings -->
+<path d="M12,12 Q20,12 20,20 Q12,20 12,12 Z" fill="#C5A059"></path>
+<path d="M228,12 Q220,12 220,20 Q228,20 228,12 Z" fill="#C5A059"></path>
+<path d="M12,108 Q20,108 20,100 Q12,100 12,108 Z" fill="#C5A059"></path>
+<path d="M228,108 Q220,108 220,100 Q228,100 228,108 Z" fill="#C5A059"></path>
+<!-- Center Pockets -->
+<circle cx="120" cy="20" fill="#141615" r="4"></circle>
+<circle cx="120" cy="100" fill="#141615" r="4"></circle>
+<!-- Head string / Kitchen marker line -->
+<line stroke="#ffffff" stroke-dasharray="2,2" stroke-opacity="0.3" x1="70" x2="70" y1="24" y2="96"></line>
+<circle cx="70" cy="60" fill="#ffffff" fill-opacity="0.5" r="2"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2">
+<span>Simonis 860 Tournament Cloth</span>
+<span class="text-primary font-semibold group-hover:underline">Select Bay 01 →</span>
+</div>
+</div>
+<!-- BAY 02: Occupied / In Play -->
+<div class="p-space-md bg-surface-container-lowest border border-surface-variant rounded flex flex-col justify-between shadow-sm opacity-90">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant uppercase tracking-wider">BAY 02 • RASSON OX 9-FT</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">Rasson Ox Match Arena</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600 animate-pulse"></span>
+                  In-Play
+                </span>
+</div>
+<!-- SVG Representation: Ball Layout -->
+<div class="my-space-md py-2 flex items-center justify-center bg-surface-container-low rounded border border-surface-variant/40 relative">
+<svg height="120" viewbox="0 0 240 120" width="240">
+<rect fill="#2E2B2A" height="100" rx="4" stroke="#1A1C1B" stroke-width="2" width="220" x="10" y="10"></rect>
+<rect fill="#1C5344" height="76" rx="2" width="196" x="22" y="22"></rect>
+<!-- In Play Balls Scattered -->
+<circle cx="60" cy="50" fill="#FFFFFF" r="3.5"></circle>
+<circle cx="160" cy="45" fill="#E59A26" r="3.5"></circle>
+<circle cx="170" cy="70" fill="#8B2635" r="3.5"></circle>
+<circle cx="140" cy="62" fill="#141615" r="3.5"></circle>
+<!-- Sighting Sight Marks -->
+<line stroke="#FFFFFF" stroke-dasharray="1,2" stroke-opacity="0.25" x1="60" x2="160" y1="50" y2="45"></line>
+</svg>
+<div class="absolute inset-0 bg-surface-container-highest/20 backdrop-blur-[0.5px] rounded flex items-center justify-center">
+<span class="font-label-sm text-label-sm font-semibold bg-surface-container-lowest/90 px-space-sm py-1 rounded text-on-surface shadow-sm border border-surface-variant">
+                    Frame 2 of 3 • Clears ~21:15
+                  </span>
+</div>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2">
+<span>Match Session in Progress</span>
+<span class="font-mono text-outline">Queue on Deck</span>
+</div>
+</div>
+<!-- BAY 03: Reserved -->
+<div class="p-space-md bg-surface-container-lowest border border-surface-variant rounded flex flex-col justify-between shadow-sm opacity-80">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant uppercase tracking-wider">BAY 03 • GOLD CROWN VI</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">Brunswick Gold Crown</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lock</span> Reserved
+                </span>
+</div>
+<div class="my-space-md py-2 flex items-center justify-center bg-surface-container-low rounded border border-surface-variant/40">
+<svg height="120" viewbox="0 0 240 120" width="240">
+<rect fill="#3A3029" height="100" rx="4" stroke="#251710" stroke-width="2" width="220" x="10" y="10"></rect>
+<rect fill="#1C5344" height="76" rx="2" width="196" x="22" y="22"></rect>
+<!-- Racked Ball Triangle -->
+<polygon fill="#3D291D" opacity="0.6" points="170,60 185,50 185,70"></polygon>
+<circle cx="172" cy="60" fill="#D4AF37" r="3"></circle>
+<circle cx="178" cy="56" fill="#8B2635" r="3"></circle>
+<circle cx="178" cy="64" fill="#1B4965" r="3"></circle>
+<circle cx="184" cy="52" fill="#E59A26" r="3"></circle>
+<circle cx="184" cy="60" fill="#141615" r="3"></circle>
+<circle cx="184" cy="68" fill="#2E7D32" r="3"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2">
+<span>Reserved Member Booking</span>
+<span class="font-mono text-on-surface">Booked from 20:00</span>
+</div>
+</div>
+<!-- BAY 04: [CURRENTLY SELECTED TABLE - Bespoke Trajectory Sightline Design] -->
+<div class="relative p-space-md bg-surface-container-lowest border-2 border-primary rounded flex flex-col justify-between shadow-md">
+<!-- Decorative 45° Diamond Sightline Corner Accent -->
+<div class="absolute -top-2.5 -right-2.5 w-6 h-6 bg-primary text-on-primary flex items-center justify-center rotate-45 rounded-sm shadow-sm">
+<span class="text-[10px] -rotate-45 leading-none font-bold">✦</span>
+</div>
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-label-sm text-label-sm font-mono text-primary font-bold tracking-wider uppercase">BAY 04 • RASSON MAGNUM</span>
+<span class="px-1 bg-primary text-on-primary font-label-sm text-[9px] rounded font-bold uppercase tracking-tight">Active Focus</span>
+</div>
+<div class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">Rasson Magnum 9ft Championship</div>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm font-bold text-primary font-mono">£45/hr</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">SELECTED</span>
+</div>
+</div>
+<!-- High Precision Visual Table Blueprint with Trajectory Laser Sighting -->
+<div class="my-space-md py-2 flex items-center justify-center bg-primary/5 rounded border border-primary/30 relative">
+<svg class="overflow-visible" height="120" viewbox="0 0 240 120" width="240">
+<!-- Outer Precision Solid Oak Frame with Brushed Brass -->
+<rect fill="#241B15" height="100" rx="4" stroke="#0F5A47" stroke-width="2" width="220" x="10" y="10"></rect>
+<!-- Simonis 860 Worsted Green Cloth -->
+<rect fill="#0F5A47" height="76" rx="2" width="196" x="22" y="22"></rect>
+<!-- Diamond Inlay Sightline Accents (Brass Diamonds) -->
+<polygon fill="#F1E4C3" points="65,14 67,16 65,18 63,16"></polygon>
+<polygon fill="#F1E4C3" points="120,14 122,16 120,18 118,16"></polygon>
+<polygon fill="#F1E4C3" points="175,14 177,16 175,18 173,16"></polygon>
+<polygon fill="#F1E4C3" points="65,102 67,104 65,106 63,104"></polygon>
+<polygon fill="#F1E4C3" points="120,102 122,104 120,106 118,104"></polygon>
+<polygon fill="#F1E4C3" points="175,102 177,104 175,106 173,104"></polygon>
+<!-- Gold Pocket Corner Insets -->
+<path d="M12,12 Q20,12 20,20 Q12,20 12,12 Z" fill="#D4AF37"></path>
+<path d="M228,12 Q220,12 220,20 Q228,20 228,12 Z" fill="#D4AF37"></path>
+<path d="M12,108 Q20,108 20,100 Q12,100 12,108 Z" fill="#D4AF37"></path>
+<path d="M228,108 Q220,108 220,100 Q228,100 228,108 Z" fill="#D4AF37"></path>
+<!-- Active Trajectory Sightline / Cue Laser Vector -->
+<line stroke="#ACF1D7" stroke-dasharray="3,3" stroke-width="1.5" x1="50" x2="185" y1="75" y2="40"></line>
+<circle cx="50" cy="75" fill="#FFFFFF" r="4" stroke="#004132" stroke-width="1"></circle>
+<circle cx="185" cy="40" fill="#D4AF37" r="4.5"></circle>
+<!-- Pocket Target Arc -->
+<path d="M224,16 L185,40" stroke="#ACF1D7" stroke-opacity="0.5" stroke-width="1"></path>
+</svg>
+<div class="absolute bottom-2 left-3 flex items-center gap-1 bg-surface-container-lowest/90 px-1.5 py-0.5 rounded text-primary font-label-sm text-[10px] border border-primary/20">
+<span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span>
+                  Laser Sighting Calibrated
+                </div>
+</div>
+<!-- Technical Specifications -->
+<div class="flex flex-col gap-1 text-on-surface-variant font-label-sm text-label-sm pt-1">
+<div class="flex items-center justify-between">
+<span>Slate: 3-piece 30mm Italian Slate (±0.05mm level)</span>
+<span class="text-primary font-bold font-mono">Simonis 860</span>
+</div>
+<div class="flex items-center justify-between text-[11px] text-on-surface">
+<span>Ball Set: Super Aramith Pro-Cup TV Set</span>
+<span class="bg-primary/10 text-primary px-1.5 py-0.5 rounded font-medium">Ready for Hold</span>
+</div>
+</div>
+</div>
+<!-- BAY 05: In-Play (Clearing Soon) -->
+<div class="p-space-md bg-surface-container-lowest border border-surface-variant rounded flex flex-col justify-between shadow-sm">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant uppercase tracking-wider">BAY 05 • DIAMOND PRO-AM</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">Diamond Pro-Am 9ft Blue</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-amber-600"></span> Clearing at 21:00
+                </span>
+</div>
+<div class="my-space-md py-2 flex items-center justify-center bg-surface-container-low rounded border border-surface-variant/40">
+<svg height="120" viewbox="0 0 240 120" width="240">
+<rect fill="#1E232A" height="100" rx="4" stroke="#12161A" stroke-width="2" width="220" x="10" y="10"></rect>
+<rect fill="#1F487E" height="76" rx="2" width="196" x="22" y="22"></rect>
+<circle cx="80" cy="40" fill="#FFFFFF" r="3.5"></circle>
+<circle cx="130" cy="80" fill="#D32F2F" r="3.5"></circle>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2">
+<span>Tournament Blue Cloth</span>
+<span class="font-mono text-on-surface">Next Open: 21:00</span>
+</div>
+</div>
+<!-- BAY 06: Reserved (20:00 Booking) -->
+<div class="p-space-md bg-surface-container-lowest border border-surface-variant rounded flex flex-col justify-between shadow-sm opacity-80">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant uppercase tracking-wider">BAY 06 • BRUNSWICK 9-FT</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">Brunswick Centurion II</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lock</span> Reserved
+                </span>
+</div>
+<div class="my-space-md py-2 flex items-center justify-center bg-surface-container-low rounded border border-surface-variant/40">
+<svg height="120" viewbox="0 0 240 120" width="240">
+<rect fill="#3D291D" height="100" rx="4" stroke="#251710" stroke-width="2" width="220" x="10" y="10"></rect>
+<rect fill="#0E5E4A" height="76" rx="2" width="196" x="22" y="22"></rect>
+</svg>
+</div>
+<div class="flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-2">
+<span>Reserved: League Match</span>
+<span class="font-mono text-outline">Until 22:30</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ZONE 2: THE MEZZANINE PARLOR (Bays 07-10) -->
+<div class="flex flex-col gap-space-md pt-space-md border-t border-surface-variant">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold tracking-widest text-secondary font-mono uppercase">Zone 02</span>
+<span class="text-outline-variant">•</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">The Mezzanine Parlor</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">(English 8-Ball &amp; Heated Carom Slate)</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Bays 07 – 10</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- BAY 07: Available -->
+<div class="group p-space-md bg-surface-container-lowest border border-surface-variant hover:border-primary rounded flex flex-col justify-between shadow-sm cursor-pointer transition-all duration-150">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant uppercase">BAY 07 • SUPREME WINNER 7-FT</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">English 8-Ball Table</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-primary border border-primary/30 font-label-sm text-label-sm font-semibold">
+                  ● £35/hr
+                </span>
+</div>
+<div class="py-space-md flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Strachan 6811 English Cloth • 2" Red &amp; Yellows</span>
+<span class="text-primary font-semibold group-hover:underline">Hold Bay 07 →</span>
+</div>
+</div>
+<!-- BAY 08: Available (Heated Carom) -->
+<div class="group p-space-md bg-surface-container-lowest border border-surface-variant hover:border-primary rounded flex flex-col justify-between shadow-sm cursor-pointer transition-all duration-150">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant uppercase">BAY 08 • SOREL CAROM 10-FT</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">Pocketless Heated Carom</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-surface-container-low text-primary border border-primary/30 font-label-sm text-label-sm font-semibold">
+                  ● £42/hr
+                </span>
+</div>
+<div class="py-space-md flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span class="flex items-center gap-1 text-tertiary font-medium">
+<span class="material-symbols-outlined text-[15px]">mode_heat</span> Thermostatic 37°C Slate
+                </span>
+<span class="text-primary font-semibold group-hover:underline">Hold Bay 08 →</span>
+</div>
+</div>
+<!-- BAY 09: Maintenance -->
+<div class="p-space-md bg-surface-container-low border border-dashed border-outline-variant rounded flex flex-col justify-between shadow-sm">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant uppercase">BAY 09 • SUPREME 7-FT</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">English 8-Ball Parlor</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">build</span> Cloth Re-Stretch
+                </span>
+</div>
+<div class="py-space-md flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Fitter on site • Simonis re-tensioning</span>
+<span class="font-mono text-outline">ETA 22:00</span>
+</div>
+</div>
+<!-- BAY 10: Reserved -->
+<div class="p-space-md bg-surface-container-lowest border border-surface-variant rounded flex flex-col justify-between shadow-sm opacity-80">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant uppercase">BAY 10 • SUPREME 7-FT</span>
+<div class="font-headline-sm text-headline-sm text-on-surface font-semibold mt-0.5">English 8-Ball Parlor</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lock</span> Reserved
+                </span>
+</div>
+<div class="py-space-md flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>Private Member Reservation</span>
+<span class="font-mono text-outline">Until 21:30</span>
+</div>
+</div>
+</div>
+</div>
+<!-- ZONE 3: THE VAULT & VIP SUITES (Bays 11-12) -->
+<div class="flex flex-col gap-space-md pt-space-md border-t border-surface-variant">
+<div class="flex items-center justify-between px-space-xs">
+<div class="flex items-center gap-space-xs">
+<span class="font-label-md text-label-md font-bold tracking-widest text-tertiary font-mono uppercase">Zone 03</span>
+<span class="text-outline-variant">•</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface">The Vault &amp; VIP Suites</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">(Acoustic Snooker &amp; Private Bar)</span>
+</div>
+<span class="font-label-sm text-label-sm text-tertiary font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">local_bar</span> Dedicated Concierge Included
+            </span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- BAY 11: The St. James Snooker Vault (Available) -->
+<div class="group relative p-space-lg bg-surface-container-lowest border-2 border-surface-variant hover:border-tertiary rounded flex flex-col justify-between shadow-sm cursor-pointer transition-all duration-150">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-tertiary font-bold uppercase tracking-wider">BAY 11 • SNOOKER VAULT</span>
+<div class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">The St. James Snooker Suite</div>
+</div>
+<div class="text-right">
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface font-mono">£75/hr</div>
+<span class="font-label-sm text-label-sm text-primary font-semibold">AVAILABLE</span>
+</div>
+</div>
+<!-- Vault Snooker SVG -->
+<div class="my-space-md py-3 flex items-center justify-center bg-[#151D19] rounded border border-tertiary/20">
+<svg height="130" viewbox="0 0 260 130" width="260">
+<!-- Heavy Mahogany Snooker Table Frame -->
+<rect fill="#2E1C12" height="114" rx="4" stroke="#582E00" stroke-width="2" width="244" x="8" y="8"></rect>
+<!-- 12ft Snooker Green Bed -->
+<rect fill="#0C4A3B" height="90" rx="2" width="220" x="20" y="20"></rect>
+<!-- Baulk Line & D -->
+<line stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1" x1="65" x2="65" y1="20" y2="110"></line>
+<path d="M65,45 A20,20 0 0,0 65,85" fill="none" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="1"></path>
+<!-- Snooker Balls (Triangle of 15 reds + Colors) -->
+<circle cx="190" cy="65" fill="#B71C1C" r="2.8"></circle>
+<circle cx="195" cy="62" fill="#B71C1C" r="2.8"></circle>
+<circle cx="195" cy="68" fill="#B71C1C" r="2.8"></circle>
+<!-- Black ball spot -->
+<circle cx="218" cy="65" fill="#141615" r="3"></circle>
+<!-- Brass Pocket Plates -->
+<circle cx="18" cy="18" fill="#D4AF37" r="5"></circle>
+<circle cx="242" cy="18" fill="#D4AF37" r="5"></circle>
+<circle cx="18" cy="112" fill="#D4AF37" r="5"></circle>
+<circle cx="242" cy="112" fill="#D4AF37" r="5"></circle>
+</svg>
+</div>
+<div class="flex flex-col gap-1 text-on-surface-variant font-label-sm text-label-sm">
+<div class="flex items-center justify-between">
+<span>12ft Riley Aristocrat Snooker Table • Up to 8 Guests</span>
+<span class="text-tertiary font-semibold">Private Butler Service</span>
+</div>
+<div class="flex items-center justify-between text-on-surface pt-1 border-t border-surface-variant/40">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px] text-tertiary">lock_clock</span> Acoustic Soundproof Enclosure
+                  </span>
+<span class="text-primary font-bold group-hover:underline">Hold The Snooker Vault →</span>
+</div>
+</div>
+</div>
+<!-- BAY 12: Founder's Salon (Reserved) -->
+<div class="p-space-lg bg-surface-container-lowest border border-surface-variant rounded flex flex-col justify-between shadow-sm opacity-85">
+<div class="flex items-start justify-between pb-space-sm border-b border-surface-variant">
+<div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant uppercase tracking-wider">BAY 12 • PRIVATE SUITE</span>
+<div class="font-headline-md text-headline-md text-on-surface font-bold mt-0.5">The Founder's Salon</div>
+</div>
+<span class="px-space-xs py-0.5 rounded bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold flex items-center gap-1">
+<span class="material-symbols-outlined text-[13px]">lock</span> Private Session
+                </span>
+</div>
+<div class="my-space-md py-3 flex items-center justify-center bg-surface-container-low rounded border border-surface-variant/40">
+<svg height="130" viewbox="0 0 260 130" width="260">
+<rect fill="#1C1815" height="114" rx="4" stroke="#3A3029" stroke-width="2" width="244" x="8" y="8"></rect>
+<rect fill="#193B32" height="90" rx="2" width="220" x="20" y="20"></rect>
+</svg>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm text-on-surface-variant">
+<span>10ft Custom Walnut • Private Tasting Lounge</span>
+<span class="font-mono text-outline">Executive Lockout</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+</div>
+<!-- BOTTOM FLOATING ARCHITECTURAL BOOKING DRAWER (Sticky Dock) -->
+<aside class="fixed bottom-0 left-0 right-0 z-40 bg-surface-container-lowest border-t-2 border-primary shadow-[0_-4px_24px_rgba(0,0,0,0.08)] py-space-sm px-margin">
+<div class="max-w-[1720px] mx-auto flex flex-col md:flex-row items-center justify-between gap-space-md">
+<!-- Selection Metadata & Table Badge -->
+<div class="flex items-center gap-space-md w-full md:w-auto">
+<div class="w-12 h-12 bg-primary/10 border border-primary/30 rounded flex flex-col items-center justify-center shrink-0 text-primary">
+<span class="font-label-sm text-[10px] font-mono leading-none">BAY</span>
+<span class="font-headline-sm text-headline-sm font-bold leading-none mt-0.5">04</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-headline-sm text-headline-sm font-bold text-on-surface truncate">Rasson Magnum 9ft Championship</span>
+<span class="px-1.5 py-0.5 bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold rounded">Main Arena</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant truncate">
+            Today, Thu 24 Oct • 20:00 – 21:30 (90 min) • Incl. Simonis 860 &amp; Predator 314 Cues
+          </p>
+</div>
+</div>
+<!-- Financials & Transparent Inclusions -->
+<div class="flex items-center gap-space-lg w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 border-surface-variant pt-2 md:pt-0">
+<div class="flex flex-col text-right">
+<div class="flex items-baseline gap-1 justify-end">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Session Total:</span>
+<span class="font-display text-[1.75rem] font-bold font-mono text-on-surface tracking-tight">£67.50</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">
+            £20.00 refundable table hold deposit
+          </span>
+</div>
+<!-- Action Matrix -->
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="hidden sm:inline-flex items-center px-space-md py-space-sm bg-surface-container-lowest border border-outline-variant hover:bg-surface-container text-on-surface font-body-sm text-body-sm font-semibold rounded transition-colors" type="button">
+            Customize Match
+          </button>
+<button class="inline-flex items-center gap-space-sm px-space-lg py-space-sm bg-primary text-on-primary hover:bg-primary-container font-body-md text-body-md font-bold rounded shadow-sm transition-all duration-150" type="button">
+<span>Confirm Bay 04 Hold</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+<span class="h-4 w-[1px] bg-primary-fixed/40"></span>
+<span class="font-label-sm text-label-sm text-primary-fixed tracking-wider font-mono">14:59</span>
+</button>
+</div>
+</div>
+</div>
+</aside>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-variant mt-auto"><div class="w-full px-margin py-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-space-xs font-label-md text-label-md text-on-surface font-semibold"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span> 9 of 12 Tables in Play</span><span class="h-3 w-[1px] bg-surface-variant hidden sm:block"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Last synchronized 12s ago</span><span class="h-3 w-[1px] bg-surface-variant hidden sm:block"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Next Open Salon at <span class="text-on-surface font-semibold">20:30</span></span></div><div class="flex items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm"><span>Table Humidity: 46% • Cloth: Simonis 860</span><span class="text-on-surface font-medium">© Cue &amp; Rail Club Ltd.</span></div></div></footer></body></html>

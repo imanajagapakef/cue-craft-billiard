@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-low": "#f4f4f1",
+          "on-background": "#1a1c1b",
+          "surface-variant": "#e2e3e0",
+          "surface-container": "#eeeeec",
+          "on-primary-fixed-variant": "#00513f",
+          "on-secondary": "#ffffff",
+          "background": "#f9f9f7",
+          "secondary-fixed": "#d2e4ff",
+          "primary": "#004132",
+          "inverse-primary": "#90d4bc",
+          "outline-variant": "#bfc9c3",
+          "on-secondary-container": "#55667c",
+          "on-primary": "#ffffff",
+          "on-error-container": "#93000a",
+          "surface-container-highest": "#e2e3e0",
+          "inverse-on-surface": "#f1f1ef",
+          "on-surface-variant": "#3f4945",
+          "on-tertiary": "#ffffff",
+          "error": "#ba1a1a",
+          "on-secondary-fixed-variant": "#37485e",
+          "on-secondary-fixed": "#0a1c30",
+          "surface-container-lowest": "#ffffff",
+          "on-surface": "#1a1c1b",
+          "surface-container-high": "#e8e8e6",
+          "surface-bright": "#f9f9f7",
+          "secondary-container": "#d2e4ff",
+          "error-container": "#ffdad6",
+          "secondary-fixed-dim": "#b6c8e2",
+          "on-error": "#ffffff",
+          "primary-fixed": "#acf1d7",
+          "tertiary-fixed": "#ffdcc2",
+          "tertiary-container": "#794100",
+          "surface": "#f9f9f7",
+          "primary-container": "#0f5a47",
+          "on-primary-fixed": "#002118",
+          "on-tertiary-fixed": "#2e1500",
+          "surface-tint": "#256956",
+          "tertiary-fixed-dim": "#ffb77a",
+          "on-primary-container": "#8ccfb7",
+          "outline": "#6f7974",
+          "tertiary": "#582e00",
+          "primary-fixed-dim": "#90d4bc",
+          "inverse-surface": "#2f3130",
+          "on-tertiary-container": "#ffb06b",
+          "on-tertiary-fixed-variant": "#6d3a00",
+          "secondary": "#4f6076",
+          "surface-dim": "#dadad8"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem",
+          "margin": "2.5rem",
+          "gutter-mobile": "0.75rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "display": ["Plus Jakarta Sans"],
+          "body-md": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "label-md": ["JetBrains Mono"],
+          "display-mobile": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "label-sm": ["JetBrains Mono"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "label-lg": ["JetBrains Mono"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "display": ["3rem", {"lineHeight": "1.15", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+          "body-md": ["0.875rem", {"lineHeight": "1.55", "letterSpacing": "0", "fontWeight": "400"}],
+          "body-lg": ["1rem", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+          "label-md": ["0.75rem", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
+          "display-mobile": ["2rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-sm": ["0.75rem", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+          "headline-sm": ["1.125rem", {"lineHeight": "1.4", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+          "label-sm": ["0.6875rem", {"lineHeight": "1.3", "letterSpacing": "0.06em", "fontWeight": "600"}],
+          "headline-md": ["1.375rem", {"lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["2rem", {"lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-lg": ["0.875rem", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "headline-lg-mobile": ["1.5rem", {"lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-surface-variant"><div class="h-[72px] w-full px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-sm focus:outline-none" href="#"><img alt="Cue &amp; Rail Monogram &amp; Wordmark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Ue6GmKo_J647MZcNVNC2Jx18K3o8D1rT6oih7uN88GZhqQv5Mv61sGz2SMS0mi0AyV9cVN5Ifc01VyXMzu4zCAJJnQrRPB_p--bSDYZiEyZSM4UmEUV440ZW0uStsz_4NGPo-PHcxdHC0hH3zfiG2KqHUJUeezcCqtx73e1m6gHPDqB91v-DbbWY9mGqNiF2muDR4kLQNpnXmanQzKTOtPIHIlTCN4aC04qqRsW7ne2TIiTbk-0OCLtoL1"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface uppercase">Cue &amp; Rail</span></a><div class="h-6 w-[1px] bg-surface-variant hidden xl:block"></div><button class="hidden xl:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors" type="button"><span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span><span class="font-body-sm text-body-sm font-medium text-on-surface">The Strand Flagship — London, W1</span><span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded">7 Open</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">keyboard_arrow_down</span></button></div><nav class="hidden lg:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-semibold relative after:absolute after:bottom-[-26px] after:left-0 after:right-0 after:h-[2px] after:bg-primary"><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tables-salon" href="#">Tables &amp; Salon</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="live-availability" href="#">Live Availability</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="private-bookings" href="#">Private Bookings</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tournaments" href="#">Tournaments</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="member-concierge" href="#">Member Concierge</a></nav><div class="flex items-center gap-space-md shrink-0"><button class="hidden sm:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm">Search</span><kbd class="font-label-sm text-label-sm bg-surface-container px-space-xs rounded text-on-surface-variant border border-surface-variant">⌘K</kbd></button><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container border border-surface-variant rounded"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span><span class="font-label-sm text-label-sm text-on-surface">Today, Oct 24 • Evening</span></div><a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary rounded font-body-md text-body-md font-semibold hover:bg-primary-container transition-colors" data-path="reserve-table" href="#"><span class="material-symbols-outlined text-[16px]">add</span><span>Reserve a Table</span></a><div class="h-6 w-[1px] bg-surface-variant"></div><button class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors" type="button"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden sm:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-semibold">MR • T4 Admin</span><span class="font-label-sm text-label-sm text-on-surface-variant">Staff Active</span></div></button></div></div><div class="h-8 w-full bg-surface-container-low border-t border-surface-variant px-margin hidden md:flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Venue Sighting</span><span class="text-outline text-[10px]">•</span><span class="font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="text-primary">♦</span> Salon North: Precision Rails 1–6</span><span class="text-outline text-[10px]">•</span><span class="font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="text-tertiary-container">♦</span> Salon South: Championship Arena 7–12</span></div><div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block animate-pulse"></span><span>Optical Table Trackers Operational</span></div></div></header><main class="w-full pt-[104px] bg-background flex-1"><div class="flex flex-col w-full">
+<!-- Telemetry Bar & Session Identifier -->
+<div class="w-full bg-surface-container-low border-b border-surface-variant px-margin py-space-sm flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-sm">
+<div class="flex items-center gap-space-sm flex-wrap">
+<div class="flex items-center gap-space-xs">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-pulse"></span>
+<span class="font-label-md text-label-md text-on-surface font-semibold uppercase tracking-wider">Till 01 Active</span>
+</div>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Desk Operator: <span class="font-medium text-on-surface">M. Reynolds (T4 Senior Host)</span></span>
+<span class="text-outline-variant hidden sm:inline">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[14px] text-primary">sync</span>
+        Gateway Gateway Auto-polling: 8s
+      </span>
+<span class="text-outline-variant hidden md:inline">•</span>
+<span class="font-label-sm text-label-sm text-primary font-medium bg-primary-fixed/40 px-2 py-0.5 rounded">Bank Webhook: 200 OK</span>
+</div>
+<div class="flex items-center gap-space-md w-full xl:w-auto justify-between xl:justify-end">
+<div class="flex items-center gap-space-sm">
+<label class="inline-flex items-center gap-1.5 cursor-pointer">
+<input checked="" class="accent-primary rounded w-3.5 h-3.5" id="audioToggle" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Audio Pings</span>
+</label>
+<span class="text-outline-variant">|</span>
+<label class="inline-flex items-center gap-1.5 cursor-pointer">
+<input class="accent-primary rounded w-3.5 h-3.5" id="autoQrisToggle" type="checkbox"/>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-Accept Clean QRIS</span>
+</label>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">point_of_sale</span>
+<span>Open Till Drawer</span>
+</button>
+<button class="px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">print</span>
+<span>Shift Summary</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Operational Metrics Ticker -->
+<div class="w-full bg-surface-container-lowest border-b border-surface-variant px-margin py-space-sm grid grid-cols-2 md:grid-cols-5 gap-space-md">
+<div class="flex flex-col border-r border-surface-variant pr-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Active Dockets</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">14</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">in system</span>
+</div>
+</div>
+<div class="flex flex-col border-r border-surface-variant pr-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Verification Queue</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-primary">3</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">slips (Rp 150.000)</span>
+</div>
+</div>
+<div class="flex flex-col border-r border-surface-variant pr-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Pending Holds</span>
+<span class="font-label-sm text-label-sm text-error font-semibold">2 expiring &lt;5m</span>
+</div>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-tertiary-container">4</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">provisional</span>
+</div>
+</div>
+<div class="flex flex-col border-r border-surface-variant pr-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Counter Till Awaiting</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-headline-md text-headline-md font-bold text-on-surface">1</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">cash guest (Bay 05)</span>
+</div>
+</div>
+<div class="flex flex-col col-span-2 md:col-span-1">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Settled Tonight</span>
+<div class="flex items-baseline gap-space-xs mt-0.5">
+<span class="font-label-lg text-label-lg font-bold text-on-surface font-label-md">Rp 1.450.000</span>
+<span class="font-label-sm text-label-sm text-primary">6 bays</span>
+</div>
+</div>
+</div>
+<!-- Command Filter Strip -->
+<div class="w-full px-margin py-space-sm bg-surface flex flex-col md:flex-row items-stretch md:items-center justify-between gap-space-sm border-b border-surface-variant">
+<div class="flex items-center gap-space-sm flex-1 max-w-2xl">
+<div class="relative w-full">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[18px] text-on-surface-variant">filter_list</span>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded pl-9 pr-24 py-1.5 font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/20 placeholder:text-outline" id="searchFilter" placeholder="Filter docket #CR-..., player name, Bay #, or phone number..." type="text"/>
+<div class="absolute right-2 top-1/2 -translate-y-1/2 flex items-center gap-1">
+<kbd class="font-label-sm text-label-sm bg-surface-container px-1.5 py-0.5 rounded text-on-surface-variant border border-surface-variant">ESC clears</kbd>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs shrink-0 overflow-x-auto pb-1 md:pb-0">
+<button class="px-space-md py-1 rounded bg-primary text-on-primary font-body-sm text-body-sm font-medium shrink-0">
+        All Queues (14)
+      </button>
+<button class="px-space-md py-1 rounded bg-surface-container-lowest border border-outline-variant text-on-surface font-body-sm text-body-sm hover:bg-surface-container shrink-0">
+        Verify Proof (3)
+      </button>
+<button class="px-space-md py-1 rounded bg-surface-container-lowest border border-outline-variant text-on-surface font-body-sm text-body-sm hover:bg-surface-container shrink-0">
+        Expiring Holds (4)
+      </button>
+<button class="px-space-md py-1 rounded bg-surface-container-lowest border border-outline-variant text-on-surface font-body-sm text-body-sm hover:bg-surface-container shrink-0">
+        Expected Door (7)
+      </button>
+</div>
+</div>
+<!-- Operational Workspace: Split Grid (Stream & Inspection Drawer) -->
+<div class="w-full px-margin py-space-md flex-1 grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- LEFT STREAM (Col 1-8 Desktop) -->
+<div class="lg:col-span-8 flex flex-col gap-space-xl">
+<!-- OPERATIONAL GROUP 1: PAYMENT VERIFICATION QUEUE (High Priority) -->
+<section class="flex flex-col bg-surface-container-lowest border border-surface-variant rounded shadow-sm overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container-low border-b border-surface-variant flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-primary text-on-primary font-label-sm text-label-sm font-semibold">1</span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight">Payment Verification Queue</h2>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container px-2 py-0.5 rounded font-semibold uppercase">Action Needed • 3 Proofs</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Verification SLA: &lt; 3 mins</span>
+</div>
+<div class="divide-y divide-surface-variant">
+<!-- ITEM 1 (CURRENTLY ACTIVE / SELECTED FOR DRAWER) -->
+<article class="p-space-md bg-primary-fixed/15 hover:bg-primary-fixed/25 transition-all cursor-pointer relative border-l-4 border-l-primary group" onclick="selectDocket('CR-8821')">
+<div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-14 bg-surface-container border border-outline-variant rounded flex flex-col items-center justify-center shrink-0 relative overflow-hidden group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[20px] text-primary">receipt_long</span>
+<span class="font-label-sm text-[10px] text-primary font-semibold mt-0.5">SLIP #01</span>
+<div class="absolute inset-x-0 bottom-0 bg-primary h-1"></div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-md text-label-md font-semibold text-primary">#CR-8821</span>
+<span class="font-label-sm text-label-sm bg-primary-fixed text-on-primary-fixed px-1.5 py-0.2 rounded font-medium">QRIS Gateway Auto-Match</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-label-md">1m 40s ago (19:46:12 WIB)</span>
+</div>
+<div class="mt-1 flex items-baseline gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Julian Vance</span>
+<span class="font-label-sm text-label-sm bg-secondary-fixed text-on-secondary-fixed px-1.5 rounded font-semibold">Gold #MEM-4491</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+44 20 7946 0912</span>
+</div>
+<div class="mt-1.5 flex items-center gap-space-md text-body-sm text-on-surface-variant flex-wrap">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">sports_bar</span>
+                      Bay 04 (Rasson Magnum 9ft)
+                    </span>
+<span>•</span>
+<span>20:00 – 22:00 Tonight (2 hrs)</span>
+<span>•</span>
+<span class="text-primary font-medium flex items-center gap-0.5">
+<span class="material-symbols-outlined text-[14px]">lock</span>
+                      Light Bay Locked to Ledger
+                    </span>
+</div>
+</div>
+</div>
+<!-- Amount & Rapid Cashier Actions -->
+<div class="flex xl:flex-col items-end justify-between xl:justify-center w-full xl:w-auto shrink-0 gap-space-sm border-t xl:border-t-0 border-surface-variant pt-2 xl:pt-0">
+<div class="text-left xl:text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Deposit Claim</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface font-label-md">Rp 50.000</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">of Rp 200.000 total</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 bg-primary text-on-primary rounded font-body-sm text-body-sm font-medium hover:bg-primary-container transition-colors flex items-center gap-1 shadow-sm" onclick="event.stopPropagation(); confirmBooking('CR-8821');">
+<span class="material-symbols-outlined text-[16px]">check</span>
+<span>Confirm &amp; Lock</span>
+</button>
+<button class="px-space-sm py-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface rounded font-body-sm text-body-sm hover:bg-surface-variant transition-colors" onclick="event.stopPropagation(); openProofModal('CR-8821');" title="View Uploaded Receipt">
+<span class="material-symbols-outlined text-[16px]">image</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Context Callout: OCR Auto Match Success -->
+<div class="mt-space-sm pt-space-xs border-t border-primary/20 flex items-center justify-between text-label-sm font-label-sm text-primary">
+<span class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px]">verified</span>
+                OCR Optical Engine: Exact match on Ref #MDR-992140-QR • Amount verified 100%
+              </span>
+<span class="underline font-medium">Inspecting in right panel →</span>
+</div>
+</article>
+<!-- ITEM 2: BCA Mobile Transfer with Mismatched Name -->
+<article class="p-space-md hover:bg-surface-container-low transition-all cursor-pointer relative group" onclick="selectDocket('CR-8833')">
+<div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-14 bg-surface-container border border-outline-variant rounded flex flex-col items-center justify-center shrink-0 relative overflow-hidden group-hover:border-primary transition-colors">
+<span class="material-symbols-outlined text-[20px] text-tertiary-container">receipt</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant font-semibold mt-0.5">SLIP #02</span>
+<div class="absolute inset-x-0 bottom-0 bg-tertiary-container h-1"></div>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-md text-label-md font-semibold text-on-surface">#CR-8833</span>
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-1.5 py-0.2 rounded font-medium">BCA Direct Transfer</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-label-md">4m 10s ago (19:43:50 WIB)</span>
+</div>
+<div class="mt-1 flex items-baseline gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">Elena Rostova</span>
+<span class="font-label-sm text-label-sm bg-surface-variant text-on-surface-variant px-1.5 rounded">Guest Pass</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">+44 79 1112 4901</span>
+</div>
+<div class="mt-1.5 flex items-center gap-space-md text-body-sm text-on-surface-variant flex-wrap">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-secondary">sports_bar</span>
+                      Bay 08 (9ft Rasson Ox Championship)
+                    </span>
+<span>•</span>
+<span>20:00 – 21:00 Tonight</span>
+<span>•</span>
+<span class="text-error font-medium">Hold expires in 06:12</span>
+</div>
+</div>
+</div>
+<!-- Amount & Actions -->
+<div class="flex xl:flex-col items-end justify-between xl:justify-center w-full xl:w-auto shrink-0 gap-space-sm border-t xl:border-t-0 border-surface-variant pt-2 xl:pt-0">
+<div class="text-left xl:text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Deposit Claim</span>
+<div class="font-headline-sm text-headline-sm font-bold text-on-surface font-label-md">Rp 50.000</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Single Bay Rate</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 bg-surface-container-highest border border-outline-variant text-on-surface rounded font-body-sm text-body-sm font-medium hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1" onclick="event.stopPropagation(); confirmBooking('CR-8833');">
+<span>Accept Slip</span>
+</button>
+<button class="px-space-sm py-1.5 bg-error-container/40 text-on-error-container border border-error-container rounded font-body-sm text-body-sm hover:bg-error-container transition-colors" onclick="event.stopPropagation(); requestResubmit('CR-8833');" title="Flag Discrepancy">
+<span class="material-symbols-outlined text-[16px]">report</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Discrepancy Note -->
+<div class="mt-space-sm pt-space-xs border-t border-surface-variant flex items-center justify-between text-label-sm font-label-sm text-tertiary">
+<span class="flex items-center gap-1 font-medium">
+<span class="material-symbols-outlined text-[15px]">warning</span>
+                OCR Warning: Remitter name on receipt ("Ivan Rostova") does not match Guest profile ("Elena Rostova"). Requires staff inspection.
+              </span>
+<span class="text-on-surface-variant">Click to review</span>
+</div>
+</article>
+<!-- ITEM 3: Walk-in Cash Guest at Till Counter -->
+<article class="p-space-md hover:bg-surface-container-low transition-all cursor-pointer relative group" onclick="selectDocket('CR-8835')">
+<div class="flex flex-col xl:flex-row items-start xl:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-14 bg-tertiary-fixed/30 border border-tertiary-fixed rounded flex flex-col items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-tertiary">payments</span>
+<span class="font-label-sm text-[10px] text-tertiary font-bold mt-0.5">AT TILL</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-md text-label-md font-semibold text-on-surface">#CR-8835</span>
+<span class="font-label-sm text-label-sm bg-tertiary-fixed text-on-tertiary-fixed px-1.5 py-0.2 rounded font-semibold uppercase">Physical Front Desk Till</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-label-md">Reception Bell Rang 2m ago</span>
+</div>
+<div class="mt-1 flex items-baseline gap-space-sm flex-wrap">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">David Chen</span>
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface-variant px-1.5 rounded">Walk-in Member</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Front desk desk queue</span>
+</div>
+<div class="mt-1.5 flex items-center gap-space-md text-body-sm text-on-surface-variant flex-wrap">
+<span class="flex items-center gap-1 font-medium text-on-surface">
+<span class="material-symbols-outlined text-[16px] text-primary">sports_bar</span>
+                      Bay 05 (Gabriels Carom Heated 10ft)
+                    </span>
+<span>•</span>
+<span>Slot Blocked: 20:15 – 22:15</span>
+</div>
+</div>
+</div>
+<!-- Quick Till Tender Box -->
+<div class="flex xl:flex-col items-end justify-between xl:justify-center w-full xl:w-auto shrink-0 gap-space-sm border-t xl:border-t-0 border-surface-variant pt-2 xl:pt-0">
+<div class="text-left xl:text-right">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase">Cash Due at Desk</span>
+<div class="font-headline-sm text-headline-sm font-bold text-tertiary-container font-label-md">Rp 50.000</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Remaining at exit: Rp 150k</span>
+</div>
+<div class="flex items-center gap-space-xs">
+<button class="px-space-md py-1.5 bg-tertiary-container text-on-tertiary rounded font-body-sm text-body-sm font-medium hover:bg-tertiary transition-colors flex items-center gap-1 shadow-sm" onclick="event.stopPropagation(); acceptCashTill('CR-8835');">
+<span class="material-symbols-outlined text-[16px]">local_atm</span>
+<span>Tender Cash &amp; Issue Key</span>
+</button>
+</div>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- OPERATIONAL GROUP 2: PENDING DEPOSIT HOLDS (Clock Running Down) -->
+<section class="flex flex-col bg-surface-container-lowest border border-surface-variant rounded shadow-sm overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container-low border-b border-surface-variant flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-variant text-on-surface font-label-sm text-label-sm font-semibold">2</span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight">Pending Deposit Holds</h2>
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-2 py-0.5 rounded font-medium">4 Provisional Allocations</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Auto-releases immediately upon timer zero</span>
+</div>
+<div class="divide-y divide-surface-variant">
+<!-- Urgent Hold -->
+<article class="p-space-md hover:bg-surface-container-low transition-colors flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded bg-error-container/30 border border-error-container flex flex-col items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-error">hourglass_bottom</span>
+<span class="font-label-sm text-[10px] text-error font-bold">02:15</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-md text-label-md font-semibold text-on-surface">#CR-8831</span>
+<span class="font-label-sm text-label-sm bg-error-container text-on-error-container font-semibold px-1.5 py-0.2 rounded animate-pulse">Critical Expiry &lt;3m</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Arthur Pendelton</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+44 77 0090 0144</span>
+</div>
+<div class="mt-1 text-body-sm text-on-surface-variant flex items-center gap-space-sm flex-wrap">
+<span class="text-on-surface font-medium">Bay 02 (9ft Rasson Ox Match Arena)</span>
+<span>•</span>
+<span>20:00 – 21:30</span>
+<span>•</span>
+<span>Awaiting Rp 50.000 via VA</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs w-full md:w-auto justify-end shrink-0 border-t md:border-t-0 border-surface-variant pt-2 md:pt-0">
+<button class="px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">add_alarm</span>
+<span>+5m Hold</span>
+</button>
+<button class="px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded font-label-sm text-label-sm text-primary hover:bg-primary hover:text-on-primary transition-colors flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">chat</span>
+<span>WhatsApp Ping</span>
+</button>
+<button class="px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded font-label-sm text-label-sm text-error hover:bg-error-container transition-colors">
+                Release Bay
+              </button>
+</div>
+</article>
+<!-- Standard Hold -->
+<article class="p-space-md hover:bg-surface-container-low transition-colors flex flex-col md:flex-row items-start md:items-center justify-between gap-space-md">
+<div class="flex items-start gap-space-md min-w-0">
+<div class="w-12 h-12 rounded bg-surface-container-high border border-outline-variant flex flex-col items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[20px] text-on-surface-variant">timer</span>
+<span class="font-label-sm text-[10px] text-on-surface-variant font-bold">08:42</span>
+</div>
+<div class="min-w-0">
+<div class="flex items-center gap-space-xs flex-wrap">
+<span class="font-label-md text-label-md font-semibold text-on-surface">#CR-8834</span>
+<span class="font-label-sm text-label-sm bg-surface-container-high text-on-surface px-1.5 py-0.2 rounded">Web Soft-Hold</span>
+<span class="text-outline-variant">•</span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Maya Lin</span>
+<span class="text-outline-variant">•</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">+44 77 0090 0812</span>
+</div>
+<div class="mt-1 text-body-sm text-on-surface-variant flex items-center gap-space-sm flex-wrap">
+<span class="text-on-surface font-medium">Bay 01 (Brunswick Gold Crown IV 9ft)</span>
+<span>•</span>
+<span>20:30 – 22:00</span>
+<span>•</span>
+<span>Hold Deposit: Rp 50.000</span>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-space-xs w-full md:w-auto justify-end shrink-0 border-t md:border-t-0 border-surface-variant pt-2 md:pt-0">
+<button class="px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded font-label-sm text-label-sm text-on-surface hover:bg-surface-container transition-colors">
+                Extend +10m
+              </button>
+<button class="px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded font-label-sm text-label-sm text-on-surface-variant hover:text-error transition-colors">
+                Cancel
+              </button>
+</div>
+</article>
+</div>
+</section>
+<!-- OPERATIONAL GROUP 3: CONFIRMED ARRIVALS (Payment Clear, Staged for Check-In) -->
+<section class="flex flex-col bg-surface-container-lowest border border-surface-variant rounded shadow-sm overflow-hidden">
+<div class="px-space-md py-space-sm bg-surface-container-low border-b border-surface-variant flex items-center justify-between">
+<div class="flex items-center gap-space-sm">
+<span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-surface-variant text-on-surface font-label-sm text-label-sm font-semibold">3</span>
+<h2 class="font-headline-sm text-headline-sm font-semibold text-on-surface tracking-tight">Verified Ready For Arrival &amp; Check-In</h2>
+<span class="font-label-sm text-label-sm text-primary font-medium">6 Cleared Bays</span>
+</div>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Turnstiles Armed</span>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="border-b border-surface-variant bg-surface-container-low/50">
+<th class="py-space-xs px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase font-medium">Booking / Guest</th>
+<th class="py-space-xs px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase font-medium">Bay Assigned</th>
+<th class="py-space-xs px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase font-medium">Slot Time</th>
+<th class="py-space-xs px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase font-medium text-right">Settled Amount</th>
+<th class="py-space-xs px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase font-medium text-center">Bay State</th>
+<th class="py-space-xs px-space-md font-label-sm text-label-sm text-on-surface-variant uppercase font-medium text-right">Action</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant font-body-sm text-body-sm">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-2.5 px-space-md">
+<div class="font-label-md text-label-md font-semibold text-on-surface">#CR-8820</div>
+<div class="font-medium text-on-surface">Marcus Sterling</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="font-medium text-on-surface">Bay 07</span>
+<div class="font-label-sm text-label-sm text-on-surface-variant">7ft English 8-Ball</div>
+</td>
+<td class="py-2.5 px-space-md font-label-md text-label-md text-on-surface">
+                  20:00 (In 14m)
+                </td>
+<td class="py-2.5 px-space-md text-right font-label-md text-label-md">
+<span class="text-primary font-semibold">Rp 50.000</span>
+<span class="block font-label-sm text-[10px] text-on-surface-variant">QRIS Verified</span>
+</td>
+<td class="py-2.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-primary font-medium bg-primary-fixed/30 px-2 py-0.5 rounded">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                    Staged &amp; Heated
+                  </span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="px-2.5 py-1 bg-primary text-on-primary rounded font-label-sm text-label-sm font-medium hover:bg-primary-container transition-colors">
+                    Check In Guest
+                  </button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-2.5 px-space-md">
+<div class="font-label-md text-label-md font-semibold text-on-surface">#CR-8818</div>
+<div class="font-medium text-on-surface flex items-center gap-1">
+<span>Sir Reginald Sterling</span>
+<span class="material-symbols-outlined text-[14px] text-tertiary-container" title="VIP Diamond">workspace_premium</span>
+</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="font-medium text-on-surface">Bay 11 (Private Suite)</span>
+<div class="font-label-sm text-label-sm text-on-surface-variant">12ft St. James Snooker</div>
+</td>
+<td class="py-2.5 px-space-md font-label-md text-label-md text-on-surface">
+                  20:30 (In 44m)
+                </td>
+<td class="py-2.5 px-space-md text-right font-label-md text-label-md">
+<span class="text-primary font-semibold">Rp 375.000</span>
+<span class="block font-label-sm text-[10px] text-primary">Pre-paid Full</span>
+</td>
+<td class="py-2.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-secondary font-medium bg-secondary-fixed/40 px-2 py-0.5 rounded">
+                    Butler Armed
+                  </span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="px-2.5 py-1 bg-surface-container-lowest border border-outline-variant text-on-surface rounded font-label-sm text-label-sm font-medium hover:bg-surface-container transition-colors">
+                    Add Beverage Tab
+                  </button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container-low/40 transition-colors">
+<td class="py-2.5 px-space-md">
+<div class="font-label-md text-label-md font-semibold text-on-surface">#CR-8815</div>
+<div class="font-medium text-on-surface">Autumn Invitational Semi-finals</div>
+</td>
+<td class="py-2.5 px-space-md">
+<span class="font-medium text-on-surface">Bays 03 &amp; 04</span>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Dual Championship Rails</div>
+</td>
+<td class="py-2.5 px-space-md font-label-md text-label-md text-on-surface">
+                  21:00
+                </td>
+<td class="py-2.5 px-space-md text-right font-label-md text-label-md">
+<span class="text-on-surface-variant font-semibold">WAIVED</span>
+<span class="block font-label-sm text-[10px] text-on-surface-variant">Tournament Pass</span>
+</td>
+<td class="py-2.5 px-space-md text-center">
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-on-surface-variant bg-surface-variant px-2 py-0.5 rounded">
+                    Referee Standby
+                  </span>
+</td>
+<td class="py-2.5 px-space-md text-right">
+<button class="px-2.5 py-1 bg-surface-container-lowest border border-outline-variant text-on-surface rounded font-label-sm text-label-sm font-medium hover:bg-surface-container transition-colors">
+                    Allot Dual Rails
+                  </button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- RIGHT COLUMN (Col 9-12 Desktop): SLIDE-OUT DETAIL INSPECTION DRAWER -->
+<aside class="lg:col-span-4 sticky top-[120px] flex flex-col bg-surface-container-lowest border border-surface-variant rounded shadow-md overflow-hidden transition-all duration-300" id="inspectionDrawer">
+<!-- Drawer Top Bar -->
+<div class="px-space-md py-space-sm bg-primary text-on-primary flex items-center justify-between">
+<div class="flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-[18px]">verified_user</span>
+<span class="font-label-md text-label-md uppercase tracking-wider font-semibold">Inspection Dossier</span>
+<span class="font-label-sm text-label-sm bg-primary-container px-1.5 py-0.2 rounded text-on-primary-container ml-1 font-label-md">#CR-8821</span>
+</div>
+<div class="flex items-center gap-1">
+<button class="w-6 h-6 rounded flex items-center justify-center text-on-primary/80 hover:text-on-primary hover:bg-primary-container transition-colors" title="Print Docket Slip">
+<span class="material-symbols-outlined text-[16px]">print</span>
+</button>
+<button class="w-6 h-6 rounded flex items-center justify-center text-on-primary/80 hover:text-on-primary hover:bg-primary-container transition-colors" title="Audit Log">
+<span class="material-symbols-outlined text-[16px]">history</span>
+</button>
+</div>
+</div>
+<div class="p-space-md flex flex-col gap-space-md max-h-[calc(100vh-210px)] overflow-y-auto">
+<!-- Customer Entity Card -->
+<div class="bg-surface-container-low p-space-sm rounded border border-surface-variant">
+<div class="flex items-start justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-medium">Guest Profile</span>
+<h3 class="font-headline-sm text-headline-sm font-bold text-on-surface mt-0.5">Julian Vance</h3>
+<p class="font-label-sm text-label-sm text-on-surface-variant font-label-md mt-0.5">+44 20 7946 0912 • j.vance@strand-invest.co.uk</p>
+</div>
+<span class="px-2 py-0.5 rounded font-label-sm text-label-sm font-semibold bg-secondary-fixed text-on-secondary-fixed">
+              Gold Tier #4491
+            </span>
+</div>
+<div class="mt-space-sm pt-space-xs border-t border-surface-variant grid grid-cols-3 gap-1 text-center font-label-sm text-label-sm">
+<div class="bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface-variant block text-[10px]">Sessions</span>
+<span class="font-bold text-on-surface">18 Completed</span>
+</div>
+<div class="bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface-variant block text-[10px]">No-Shows</span>
+<span class="font-bold text-primary">0 (Flawless)</span>
+</div>
+<div class="bg-surface-container-lowest p-1 rounded">
+<span class="text-on-surface-variant block text-[10px]">Rating</span>
+<span class="font-bold text-tertiary-container">4.9 / 5.0</span>
+</div>
+</div>
+<div class="mt-space-xs p-1.5 bg-surface-container-lowest rounded text-body-sm text-on-surface-variant italic flex items-start gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary shrink-0 not-italic">info</span>
+<span>Prefers Predator Revo 12.4mm from Member Locker #B-04. Room temp set at 21.0°C.</span>
+</div>
+</div>
+<!-- Visual Proof Inspection & OCR Card -->
+<div class="border border-surface-variant rounded overflow-hidden">
+<div class="px-space-sm py-1 bg-surface-container border-b border-surface-variant flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">receipt</span>
+              Deposit Receipt Inspection (OCR Parser)
+            </span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">100% Optical Confidence</span>
+</div>
+<!-- Proof Preview Area -->
+<div class="p-space-sm bg-surface flex flex-col gap-space-sm">
+<div class="relative w-full h-44 rounded border border-outline-variant bg-on-background overflow-hidden flex items-center justify-center group">
+<img class="object-cover w-full h-full opacity-85 group-hover:opacity-95 transition-opacity" data-alt="Close up archival inspection view of official electronic bank payment receipt slip from Bank Mandiri QRIS showing Rp 50,000 transaction with reference number MDR-992140-QR with sharp green verification stamp and clean typography" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZFYQubGAewHbibpcI3VbpTSxzDnKwy1cS7fp5U1fo8vRtz_6WBqkg3APGqwXF2OQzN7LqxM7XozvXJWn_RsNHF_07Ymqw36Aw6ltKP4Fp8YY7vjFquSmCaNK0OMGpuBc-nAPTURn5OCqstgUaom-9GSrB47diPc42nAk1TsETAVXLFwfFUtaF_giX8saKp-sp1_KuCjwSgFgoPVaV7KDtGY_Tdg9t-fecDbpBqXm8P-seUd0uSh9clQ"/>
+<!-- OCR Scanner Overlay Wireframe -->
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/90 via-transparent to-transparent flex flex-col justify-end p-2.5 text-inverse-on-surface">
+<div class="flex items-center justify-between text-label-sm font-label-sm">
+<span class="flex items-center gap-1">
+<span class="w-2 h-2 rounded-full bg-primary-fixed animate-ping"></span>
+                    Bank Mandiri QRIS Parser Active
+                  </span>
+<button class="bg-surface-container-lowest/20 hover:bg-surface-container-lowest/40 backdrop-blur-sm px-2 py-0.5 rounded text-white text-[11px] transition-colors">
+                    Inspect Raw Image (1.8MB)
+                  </button>
+</div>
+</div>
+</div>
+<!-- OCR Tabular Comparison Matrix -->
+<div class="bg-surface-container-lowest p-space-sm rounded border border-surface-variant space-y-1 font-label-sm text-label-sm">
+<div class="flex items-center justify-between py-0.5 border-b border-surface-container">
+<span class="text-on-surface-variant">Bank Gateway</span>
+<span class="font-semibold text-on-surface">Bank Mandiri / QRIS Escrow</span>
+</div>
+<div class="flex items-center justify-between py-0.5 border-b border-surface-container">
+<span class="text-on-surface-variant">Gateway Ref (RRN)</span>
+<span class="font-semibold text-on-surface font-label-md text-primary">MDR-992140-QR</span>
+</div>
+<div class="flex items-center justify-between py-0.5 border-b border-surface-container">
+<span class="text-on-surface-variant">Parsed Amount</span>
+<span class="font-bold text-on-surface font-label-md">Rp 50.000 <span class="text-primary font-normal">(Match)</span></span>
+</div>
+<div class="flex items-center justify-between py-0.5 border-b border-surface-container">
+<span class="text-on-surface-variant">Account Remitter</span>
+<span class="font-semibold text-on-surface">Julian Vance</span>
+</div>
+<div class="flex items-center justify-between py-0.5">
+<span class="text-on-surface-variant">Timestamp Captured</span>
+<span class="text-on-surface font-label-md">19:46:12 WIB</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Table Allocation Impact Audit -->
+<div class="border border-surface-variant rounded p-space-sm bg-surface-container-low space-y-space-xs">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-medium">Physical Table Lock State</span>
+<span class="font-label-sm text-label-sm text-primary font-semibold">Simonis 860 Worsted</span>
+</div>
+<div class="flex items-center gap-space-sm mt-1">
+<div class="w-10 h-10 rounded bg-primary text-on-primary flex items-center justify-center font-bold font-headline-sm">
+              04
+            </div>
+<div>
+<div class="font-headline-sm text-headline-sm font-semibold text-on-surface">Bay 04 • Salon North</div>
+<div class="font-label-sm text-label-sm text-on-surface-variant">Rasson Magnum 9ft Championship Slate</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-1 text-label-sm font-label-sm pt-space-xs text-on-surface-variant">
+<div>Heated Slate: <span class="text-primary font-medium">Active (21.5°C)</span></div>
+<div>Lighting Canopy: <span class="text-on-surface font-medium">Arming at 19:55</span></div>
+</div>
+</div>
+<!-- Lifecycle Event Timeline -->
+<div class="space-y-space-xs">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant font-medium block">Docket Audit Trail</span>
+<div class="relative pl-4 space-y-2 border-l border-surface-variant font-label-sm text-label-sm">
+<div class="relative">
+<span class="w-2 h-2 rounded-full bg-primary absolute -left-[21px] top-1"></span>
+<span class="font-label-md text-on-surface-variant font-medium">19:46:14 WIB</span>
+<p class="text-on-surface">OCR Parser confirmed exact reference and sum. Flagged to Cashier Till 01.</p>
+</div>
+<div class="relative">
+<span class="w-2 h-2 rounded-full bg-outline-variant absolute -left-[21px] top-1"></span>
+<span class="font-label-md text-on-surface-variant font-medium">19:46:12 WIB</span>
+<p class="text-on-surface-variant">Deposit proof slip submitted by guest via mobile portal.</p>
+</div>
+<div class="relative">
+<span class="w-2 h-2 rounded-full bg-outline-variant absolute -left-[21px] top-1"></span>
+<span class="font-label-md text-on-surface-variant font-medium">19:42:05 WIB</span>
+<p class="text-on-surface-variant">Table 04 locked on venue floor plan (15m window allocated).</p>
+</div>
+<div class="relative">
+<span class="w-2 h-2 rounded-full bg-outline-variant absolute -left-[21px] top-1"></span>
+<span class="font-label-md text-on-surface-variant font-medium">19:42:04 WIB</span>
+<p class="text-on-surface-variant">Reservation initiated by Julian Vance (Web Direct).</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Cashier Action Bar (Footer of Drawer) -->
+<div class="p-space-md bg-surface-container-low border-t border-surface-variant flex flex-col gap-space-xs">
+<button class="w-full py-2.5 bg-primary text-on-primary rounded font-body-md text-body-md font-semibold hover:bg-primary-container transition-colors flex items-center justify-center gap-space-xs shadow-sm" id="confirmActionBtn" onclick="confirmBooking('CR-8821')">
+<span class="material-symbols-outlined text-[18px]">verified</span>
+<span>Confirm Payment &amp; Issue Bay PIN</span>
+</button>
+<button class="w-full py-1.5 bg-surface-container-lowest border border-outline-variant text-on-surface rounded font-body-sm text-body-sm hover:bg-surface-container transition-colors flex items-center justify-center gap-1" onclick="requestResubmit('CR-8821')">
+<span class="material-symbols-outlined text-[16px] text-tertiary">chat</span>
+<span>Request Re-upload (WhatsApp Direct)</span>
+</button>
+<div class="pt-1 flex items-center justify-between border-t border-surface-variant text-label-sm font-label-sm">
+<span class="text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">warning</span>
+            Dispute or Void?
+          </span>
+<button class="text-error hover:underline font-medium" onclick="rejectSlip('CR-8821')">
+            Reject Proof &amp; Unlock Table 04
+          </button>
+</div>
+</div>
+</aside>
+</div>
+<!-- Micro Notification Toast Container (Vanilla Interactive Feedback) -->
+<div class="fixed bottom-12 right-margin z-50 transform translate-y-24 opacity-0 transition-all duration-300 pointer-events-none bg-inverse-surface text-inverse-on-surface px-space-md py-space-sm rounded shadow-lg border border-outline/30 flex items-center gap-space-sm" id="toastNotification">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed" id="toastIcon">check_circle</span>
+<span class="font-body-sm text-body-sm" id="toastMessage">Payment confirmed successfully.</span>
+</div>
+</div>
+<script>
+  // Inspection Drawer Live State Controller
+  function selectDocket(id) {
+    const drawer = document.getElementById('inspectionDrawer');
+    showToast(`Loaded Docket #${id} into inspection drawer.`, 'receipt');
+  }
+
+  function confirmBooking(id) {
+    showToast(`✓ Payment confirmed for Docket #${id}. Keyless Bay PIN dispatched to player.`, 'verified');
+    const row = event?.currentTarget?.closest('article');
+    if (row) {
+      row.style.opacity = '0.4';
+      row.style.pointerEvents = 'none';
+    }
+  }
+
+  function acceptCashTill(id) {
+    showToast(`Rp 50.000 cash received into Till 01 for #${id}. Receipt printed.`, 'payments');
+  }
+
+  function requestResubmit(id) {
+    showToast(`Discrepancy notice sent via WhatsApp to player on Docket #${id}.`, 'chat');
+  }
+
+  function rejectSlip(id) {
+    if (confirm(`Reject proof for Docket #${id} and release the held billiard table?`)) {
+      showToast(`Docket #${id} cancelled. Table returned to open salon floor.`, 'cancel');
+    }
+  }
+
+  function openProofModal(id) {
+    showToast(`Opening high-resolution voucher scan for #${id}...`, 'image');
+  }
+
+  function showToast(message, icon = 'check_circle') {
+    const toast = document.getElementById('toastNotification');
+    const toastMsg = document.getElementById('toastMessage');
+    const toastIcon = document.getElementById('toastIcon');
+    
+    toastMsg.textContent = message;
+    toastIcon.textContent = icon;
+    
+    toast.classList.remove('translate-y-24', 'opacity-0');
+    toast.classList.add('translate-y-0', 'opacity-100');
+
+    setTimeout(() => {
+      toast.classList.add('translate-y-24', 'opacity-0');
+      toast.classList.remove('translate-y-0', 'opacity-100');
+    }, 3400);
+  }
+
+  // Quick Instant Filter
+  document.getElementById('searchFilter')?.addEventListener('input', function(e) {
+    const val = e.target.value.toLowerCase();
+    const articles = document.querySelectorAll('section article');
+    articles.forEach(art => {
+      const text = art.textContent.toLowerCase();
+      art.style.display = text.includes(val) ? '' : 'none';
+    });
+  });
+
+  // ESC to clear search
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const search = document.getElementById('searchFilter');
+      if (search) {
+        search.value = '';
+        search.dispatchEvent(new Event('input'));
+      }
+    }
+  });
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-surface-variant mt-auto"><div class="w-full px-margin py-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-space-xs font-label-md text-label-md text-on-surface font-semibold"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span> 9 of 12 Tables in Play</span><span class="h-3 w-[1px] bg-surface-variant hidden sm:block"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Last synchronized 12s ago</span><span class="h-3 w-[1px] bg-surface-variant hidden sm:block"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Next Open Salon at <span class="text-on-surface font-semibold">20:30</span></span></div><div class="flex items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm"><span>Table Humidity: 46% • Cloth: Simonis 860</span><span class="text-on-surface font-medium">© Cue &amp; Rail Club Ltd.</span></div></div></footer></body></html>

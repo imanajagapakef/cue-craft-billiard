@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container-low": "#f4f4f1",
+          "on-background": "#1a1c1b",
+          "surface-variant": "#e2e3e0",
+          "surface-container": "#eeeeec",
+          "on-primary-fixed-variant": "#00513f",
+          "on-secondary": "#ffffff",
+          "background": "#f9f9f7",
+          "secondary-fixed": "#d2e4ff",
+          "primary": "#004132",
+          "inverse-primary": "#90d4bc",
+          "outline-variant": "#bfc9c3",
+          "on-secondary-container": "#55667c",
+          "on-primary": "#ffffff",
+          "on-error-container": "#93000a",
+          "surface-container-highest": "#e2e3e0",
+          "inverse-on-surface": "#f1f1ef",
+          "on-surface-variant": "#3f4945",
+          "on-tertiary": "#ffffff",
+          "error": "#ba1a1a",
+          "on-secondary-fixed-variant": "#37485e",
+          "on-secondary-fixed": "#0a1c30",
+          "surface-container-lowest": "#ffffff",
+          "on-surface": "#1a1c1b",
+          "surface-container-high": "#e8e8e6",
+          "surface-bright": "#f9f9f7",
+          "secondary-container": "#d2e4ff",
+          "error-container": "#ffdad6",
+          "secondary-fixed-dim": "#b6c8e2",
+          "on-error": "#ffffff",
+          "primary-fixed": "#acf1d7",
+          "tertiary-fixed": "#ffdcc2",
+          "tertiary-container": "#794100",
+          "surface": "#f9f9f7",
+          "primary-container": "#0f5a47",
+          "on-primary-fixed": "#002118",
+          "on-tertiary-fixed": "#2e1500",
+          "surface-tint": "#256956",
+          "tertiary-fixed-dim": "#ffb77a",
+          "on-primary-container": "#8ccfb7",
+          "outline": "#6f7974",
+          "tertiary": "#582e00",
+          "primary-fixed-dim": "#90d4bc",
+          "inverse-surface": "#2f3130",
+          "on-tertiary-container": "#ffb06b",
+          "on-tertiary-fixed-variant": "#6d3a00",
+          "secondary": "#4f6076",
+          "surface-dim": "#dadad8"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-lg": "1.5rem",
+          "space-sm": "0.5rem",
+          "space-xl": "2.5rem",
+          "space-xs": "0.25rem",
+          "margin": "2.5rem",
+          "gutter-mobile": "0.75rem",
+          "margin-mobile": "1rem",
+          "space-md": "1rem"
+        },
+        "fontFamily": {
+          "display": ["Plus Jakarta Sans"],
+          "body-md": ["Plus Jakarta Sans"],
+          "body-lg": ["Plus Jakarta Sans"],
+          "label-md": ["JetBrains Mono"],
+          "display-mobile": ["Plus Jakarta Sans"],
+          "body-sm": ["Plus Jakarta Sans"],
+          "headline-sm": ["Plus Jakarta Sans"],
+          "label-sm": ["JetBrains Mono"],
+          "headline-md": ["Plus Jakarta Sans"],
+          "headline-lg": ["Plus Jakarta Sans"],
+          "label-lg": ["JetBrains Mono"],
+          "headline-lg-mobile": ["Plus Jakarta Sans"]
+        },
+        "fontSize": {
+          "display": ["3rem", {"lineHeight": "1.15", "letterSpacing": "-0.03em", "fontWeight": "600"}],
+          "body-md": ["0.875rem", {"lineHeight": "1.55", "letterSpacing": "0", "fontWeight": "400"}],
+          "body-lg": ["1rem", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+          "label-md": ["0.75rem", {"lineHeight": "1.4", "letterSpacing": "0.04em", "fontWeight": "500"}],
+          "display-mobile": ["2rem", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "body-sm": ["0.75rem", {"lineHeight": "1.5", "letterSpacing": "0.01em", "fontWeight": "400"}],
+          "headline-sm": ["1.125rem", {"lineHeight": "1.4", "letterSpacing": "-0.005em", "fontWeight": "600"}],
+          "label-sm": ["0.6875rem", {"lineHeight": "1.3", "letterSpacing": "0.06em", "fontWeight": "600"}],
+          "headline-md": ["1.375rem", {"lineHeight": "1.35", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+          "headline-lg": ["2rem", {"lineHeight": "1.25", "letterSpacing": "-0.02em", "fontWeight": "600"}],
+          "label-lg": ["0.875rem", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "500"}],
+          "headline-lg-mobile": ["1.5rem", {"lineHeight": "1.3", "letterSpacing": "-0.015em", "fontWeight": "600"}]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface min-h-screen flex flex-col antialiased selection:bg-primary-fixed selection:text-on-primary-fixed"><header class="fixed top-0 left-0 right-0 z-50 bg-surface border-b border-surface-variant"><div class="h-[72px] w-full px-margin flex items-center justify-between gap-space-lg"><div class="flex items-center gap-space-lg shrink-0"><a class="flex items-center gap-space-sm focus:outline-none" href="#"><img alt="Cue &amp; Rail Monogram &amp; Wordmark" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1Ue6GmKo_J647MZcNVNC2Jx18K3o8D1rT6oih7uN88GZhqQv5Mv61sGz2SMS0mi0AyV9cVN5Ifc01VyXMzu4zCAJJnQrRPB_p--bSDYZiEyZSM4UmEUV440ZW0uStsz_4NGPo-PHcxdHC0hH3zfiG2KqHUJUeezcCqtx73e1m6gHPDqB91v-DbbWY9mGqNiF2muDR4kLQNpnXmanQzKTOtPIHIlTCN4aC04qqRsW7ne2TIiTbk-0OCLtoL1"/><span class="font-headline-sm text-headline-sm font-semibold tracking-tight text-on-surface uppercase">Cue &amp; Rail</span></a><div class="h-6 w-[1px] bg-surface-variant hidden xl:block"></div><button class="hidden xl:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors" type="button"><span class="w-2 h-2 rounded-full bg-primary-container inline-block"></span><span class="font-body-sm text-body-sm font-medium text-on-surface">The Strand Flagship — London, W1</span><span class="font-label-sm text-label-sm text-on-surface-variant bg-surface-container-high px-space-xs py-0.5 rounded">7 Open</span><span class="material-symbols-outlined text-[18px] text-on-surface-variant">keyboard_arrow_down</span></button></div><nav class="hidden lg:flex items-center gap-space-lg h-full" data-active-classes="text-primary font-semibold relative after:absolute after:bottom-[-26px] after:left-0 after:right-0 after:h-[2px] after:bg-primary"><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tables-salon" href="#">Tables &amp; Salon</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="live-availability" href="#">Live Availability</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="private-bookings" href="#">Private Bookings</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="tournaments" href="#">Tournaments</a><a class="h-full flex items-center text-on-surface-variant hover:text-on-surface transition-colors font-body-md text-body-md" data-path="member-concierge" href="#">Member Concierge</a></nav><div class="flex items-center gap-space-md shrink-0"><button class="hidden sm:flex items-center gap-space-sm px-space-md py-space-xs bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors text-on-surface-variant" type="button"><span class="material-symbols-outlined text-[16px]">search</span><span class="font-body-sm text-body-sm">Search</span><kbd class="font-label-sm text-label-sm bg-surface-container px-space-xs rounded text-on-surface-variant border border-surface-variant">⌘K</kbd></button><div class="hidden md:flex items-center gap-space-xs px-space-md py-space-xs bg-surface-container border border-surface-variant rounded"><span class="material-symbols-outlined text-[16px] text-on-surface-variant">calendar_today</span><span class="font-label-sm text-label-sm text-on-surface">Today, Oct 24 • Evening</span></div><a class="inline-flex items-center gap-space-xs px-space-lg py-space-sm bg-primary text-on-primary rounded font-body-md text-body-md font-semibold hover:bg-primary-container transition-colors" data-path="reserve-table" href="#"><span class="material-symbols-outlined text-[16px]">add</span><span>Reserve a Table</span></a><div class="h-6 w-[1px] bg-surface-variant"></div><button class="flex items-center gap-space-xs px-space-sm py-1 bg-surface-container-lowest border border-outline-variant rounded hover:bg-surface-container transition-colors" type="button"><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="hidden sm:flex flex-col text-left"><span class="font-label-sm text-label-sm text-on-surface font-semibold">MR • T4 Admin</span><span class="font-label-sm text-label-sm text-on-surface-variant">Staff Active</span></div></button></div></div><div class="h-8 w-full bg-surface-container-low border-t border-surface-variant px-margin hidden md:flex items-center justify-between"><div class="flex items-center gap-space-md"><span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Venue Sighting</span><span class="text-outline text-[10px]">•</span><span class="font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="text-primary">♦</span> Salon North: Precision Rails 1–6</span><span class="text-outline text-[10px]">•</span><span class="font-label-sm text-label-sm text-on-surface flex items-center gap-space-xs"><span class="text-tertiary-container">♦</span> Salon South: Championship Arena 7–12</span></div><div class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-space-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block animate-pulse"></span><span>Optical Table Trackers Operational</span></div></div></header><main class="w-full pt-[104px] bg-background flex-1"><div class="flex flex-col w-full">
+<!-- SECTION 1: EDITORIAL HEADER & SYSTEM PROVENANCE -->
+<section class="w-full px-margin py-space-xl border-b border-surface-variant bg-surface">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-space-lg">
+<div class="flex flex-wrap items-center justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="inline-block w-2.5 h-2.5 bg-primary rounded-[1px]"></span>
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary font-semibold">
+            System Specification v1.0 • Architectural Billiard Framework
+          </span>
+</div>
+<div class="flex items-center gap-space-md">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="material-symbols-outlined text-[15px] text-primary">verified</span> Verified Production Standard
+          </span>
+<span class="text-surface-variant font-label-sm">|</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">WCAG 2.1 AAA Compliant</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-baseline">
+<div class="lg:col-span-8 flex flex-col gap-space-sm">
+<h1 class="font-headline-lg text-headline-lg lg:font-display lg:text-display text-on-surface tracking-tight font-semibold">
+            Architectural Precision for Modern Billiard Hospitality
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl leading-relaxed">
+            A high-fidelity interface design system derived directly from competition rail geometry, optical trajectory lines, and tactile woolen cloths. Designed for multi-salon floor management, bespoke member reservations, and operational oversight.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-space-xs border-l border-surface-variant pl-space-lg">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant">Core Mechanical Tokens</span>
+<div class="grid grid-cols-2 gap-y-space-sm gap-x-space-md pt-space-xs">
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Ground Canvas</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">#FBF9F5 Warm Ivory</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Master Emerald</span>
+<span class="font-label-md text-label-md font-semibold text-primary">#0F5A47 Sim. 860</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Trajectory Ray</span>
+<span class="font-label-md text-label-md font-semibold text-on-surface">1.5px Hairline</span>
+</div>
+<div>
+<span class="block font-label-sm text-label-sm text-on-surface-variant">Rail Angle Sight</span>
+<span class="font-label-md text-label-md font-semibold text-tertiary-container">45° Inlay Diamond</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Spec Metadata Strip -->
+<div class="w-full grid grid-cols-2 sm:grid-cols-4 border-t border-surface-variant pt-space-md gap-space-md text-on-surface-variant">
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-primary shrink-0"></span>
+<span class="font-label-sm text-label-sm truncate"><strong class="text-on-surface">Simonis 860 Felt:</strong> Zero-Deflection Standard</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-secondary-fixed-variant shrink-0"></span>
+<span class="font-label-sm text-label-sm truncate"><strong class="text-on-surface">Typography:</strong> Plus Jakarta &amp; JetBrains</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-tertiary-container shrink-0"></span>
+<span class="font-label-sm text-label-sm truncate"><strong class="text-on-surface">Tactile Depth:</strong> 1px Structural Rules</span>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="w-2 h-2 rounded-full bg-outline-variant shrink-0"></span>
+<span class="font-label-sm text-label-sm truncate"><strong class="text-on-surface">Acoustic Logic:</strong> Quiet State Transitions</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: THE SIGNATURE TRAJECTORY LINE & INTERACTION MECHANISM -->
+<section class="w-full px-margin py-space-xl border-b border-surface-variant bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">
+<span>01 • Signature Interaction Paradigm</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-semibold text-on-surface tracking-tight mt-1">
+            The Trajectory Ray &amp; Sightline Geometry
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+            In cue sports, the shot path is calculated before motion begins. All state shifts, selector switches, and focal transitions in Cue &amp; Rail deploy a strict 1.5px trajectory rule anchored by sightline diamond markers.
+          </p>
+</div>
+<div class="flex items-center gap-space-sm">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Interactive Target:</span>
+<span class="font-label-sm text-label-sm bg-surface px-space-sm py-1 border border-outline-variant rounded font-mono text-primary">Hover or Select Target Bay</span>
+</div>
+</div>
+<!-- Interactive Trajectory Playground -->
+<div class="bg-surface border border-surface-variant rounded p-space-lg shadow-sm">
+<div class="flex flex-col gap-space-lg">
+<!-- Bay Selector Switcher with Dynamic Line -->
+<div class="flex flex-wrap items-center justify-between border-b border-surface-variant pb-space-md gap-space-md">
+<div class="flex items-center gap-space-sm font-label-md text-label-md font-semibold text-on-surface">
+<span class="material-symbols-outlined text-[18px] text-primary">straighten</span>
+<span>VECTOR SELECTION DEMONSTRATOR</span>
+</div>
+<div class="flex items-center gap-space-xs text-on-surface-variant font-label-sm text-label-sm">
+<span class="inline-block w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+<span>Vector Coordinate: <span class="font-mono text-on-surface font-semibold" id="vector-coords">Bay-01 [X: 184, Y: 42]</span></span>
+</div>
+</div>
+<!-- Interactive Target Nodes -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-space-md relative" id="trajectory-cluster">
+<!-- Node 1 -->
+<button class="group text-left p-space-md bg-surface-container-lowest border border-primary rounded transition-all duration-200 relative overflow-hidden" id="node-1" onclick="setTrajectory(1, 14, 42, 'TBL-01 [9FT MATCH]') font-label-md" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-primary">01 / NORTH BAY</span>
+<span class="text-primary text-[10px]">◆</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface block">Championship Felt</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5 block">Simonis 860 Cloth • 9ft</span>
+</div>
+<div class="mt-space-md flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-space-sm border-t border-surface-variant">
+<span>Rate: <strong class="text-on-surface font-mono">£55/h</strong></span>
+<span class="text-primary font-semibold flex items-center gap-0.5"><span class="w-1.5 h-1.5 rounded-full bg-primary inline-block"></span> Active Ray</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-primary"></div>
+</button>
+<!-- Node 2 -->
+<button class="group text-left p-space-md bg-surface-container-lowest border border-outline-variant hover:border-primary rounded transition-all duration-200 relative overflow-hidden" id="node-2" onclick="setTrajectory(2, 38, 42, 'TBL-02 [10FT CAROM]') font-label-md" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant group-hover:text-primary">02 / CAROM SALON</span>
+<span class="text-outline-variant group-hover:text-primary text-[10px]">◆</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface block">Heated Slate Arena</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5 block">Thermostatic 37°C • 10ft</span>
+</div>
+<div class="mt-space-md flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-space-sm border-t border-surface-variant">
+<span>Rate: <strong class="text-on-surface font-mono">£65/h</strong></span>
+<span class="text-on-surface-variant font-mono">Standby</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+<!-- Node 3 -->
+<button class="group text-left p-space-md bg-surface-container-lowest border border-outline-variant hover:border-primary rounded transition-all duration-200 relative overflow-hidden" id="node-3" onclick="setTrajectory(3, 62, 42, 'TBL-03 [12FT SNOOKER]') font-label-md" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant group-hover:text-primary">03 / SNOOKER VAULT</span>
+<span class="text-outline-variant group-hover:text-primary text-[10px]">◆</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface block">Riley Aristocrat</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5 block">Strachan No. 10 • 12ft</span>
+</div>
+<div class="mt-space-md flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-space-sm border-t border-surface-variant">
+<span>Rate: <strong class="text-on-surface font-mono">£70/h</strong></span>
+<span class="text-on-surface-variant font-mono">Standby</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+<!-- Node 4 -->
+<button class="group text-left p-space-md bg-surface-container-lowest border border-outline-variant hover:border-primary rounded transition-all duration-200 relative overflow-hidden" id="node-4" onclick="setTrajectory(4, 88, 42, 'TBL-04 [CHAMBER VIP]') font-label-md" type="button">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface-variant group-hover:text-primary">04 / THE MEZZANINE</span>
+<span class="text-outline-variant group-hover:text-primary text-[10px]">◆</span>
+</div>
+<div class="mt-space-sm">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface block">The Founder's Bay</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant mt-0.5 block">Private Bar • Acoustic Seal</span>
+</div>
+<div class="mt-space-md flex items-center justify-between text-on-surface-variant font-label-sm text-label-sm pt-space-sm border-t border-surface-variant">
+<span>Rate: <strong class="text-on-surface font-mono">£120/h</strong></span>
+<span class="text-on-surface-variant font-mono">Standby</span>
+</div>
+<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-primary opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</button>
+</div>
+<!-- Dynamic Trajectory Projection Schematic -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-md flex flex-col gap-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider font-semibold">Trajectory Laser &amp; Diamond Inlay Alignment</span>
+<span class="font-label-sm text-label-sm font-mono text-primary font-semibold" id="active-target-id">LOCKED: TBL-01 [9FT MATCH]</span>
+</div>
+<div class="relative h-12 w-full bg-surface-container-low rounded border border-surface-variant flex items-center px-4 overflow-hidden">
+<!-- Left Origin Anchor -->
+<div class="flex items-center gap-1 shrink-0 z-10 bg-surface-container-low pr-2">
+<div class="w-3 h-3 rounded-full border-2 border-primary flex items-center justify-center">
+<div class="w-1 h-1 bg-primary rounded-full"></div>
+</div>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant">ORIGIN 0,0</span>
+</div>
+<!-- Visual Trajectory Ray Canvas Line -->
+<div class="flex-1 relative h-[1.5px] bg-surface-variant mx-2">
+<div class="absolute left-0 top-0 h-full bg-primary transition-all duration-300" id="laser-beam" style="width: 25%;"></div>
+<div class="absolute top-[-5px] transition-all duration-300 transform -translate-x-1/2 w-3 h-3 bg-surface-container-lowest border-2 border-primary rotate-45" id="diamond-cursor" style="left: 25%;"></div>
+</div>
+<!-- Right Terminal Target -->
+<div class="flex items-center gap-1 shrink-0 z-10 bg-surface-container-low pl-2">
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant">SIGHTLINE TERMINUS</span>
+<span class="material-symbols-outlined text-[16px] text-primary">gps_fixed</span>
+</div>
+</div>
+<!-- Motion & Timing Spec Cards -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-md pt-space-xs">
+<div class="p-space-sm bg-surface border border-surface-variant rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-semibold">Linear Translation</span>
+<span class="font-label-md text-label-md text-on-surface font-mono font-semibold">180ms ease-out</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Used for tab markers, drawer rails, and selector pointers.</p>
+</div>
+<div class="p-space-sm bg-surface border border-surface-variant rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-semibold">Table State Morph</span>
+<span class="font-label-md text-label-md text-on-surface font-mono font-semibold">240ms cubic-bezier</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Calculated transition curve for felt color and availability changes.</p>
+</div>
+<div class="p-space-sm bg-surface border border-surface-variant rounded">
+<span class="font-label-sm text-label-sm text-on-surface-variant block uppercase font-semibold">Numeric Tabular Flip</span>
+<span class="font-label-md text-label-md text-on-surface font-mono font-semibold">350ms monospace</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Eliminates horizontal jitter during timer and billing accumulation.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: TABLE AVAILABILITY & STATE MATRIX -->
+<section class="w-full px-margin py-space-xl border-b border-surface-variant bg-surface">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-space-lg">
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">
+<span>02 • Real-Time Telemetry Matrix</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-semibold text-on-surface tracking-tight mt-1">
+          High-Contrast Availability Signals
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+          Billiard operations require instantaneous floor reading. Every table card employs redundant indicators: geometric glyph, semantic color, typography weight, and real-time state telemetry. No indicator relies exclusively on color perception.
+        </p>
+</div>
+<!-- State Cards Grid (4 Canon States) -->
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-space-md">
+<!-- 1. OPEN / AVAILABLE -->
+<div class="bg-surface-container-lowest border border-surface-variant rounded p-space-md flex flex-col justify-between hover:border-primary transition-colors shadow-sm">
+<div>
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-variant">
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant font-semibold">TBL-03 • BRUNSWICK IV</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-[2px] bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm font-semibold">
+<span>●</span>
+<span>OPEN</span>
+</span>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Precision Salon</span>
+<span class="font-headline-sm text-headline-sm font-mono font-bold text-primary">£45<span class="font-label-sm text-label-sm font-normal text-on-surface-variant">/hr</span></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                9ft Tournament Blue cloth, Simonis 860. Super Aramith Pro-Cup TV ball set installed.
+              </p>
+</div>
+<!-- Optical Sensor Metric -->
+<div class="bg-surface-container-low p-space-sm rounded border border-surface-variant flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Ball Rack Status:</span>
+<span class="font-semibold text-on-surface">16 Balls in Tray</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Cloth Condition:</span>
+<span class="text-primary font-semibold">Optimal (34 hrs play)</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-variant flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span> Immediate Play
+            </span>
+<button class="px-space-md py-1 bg-primary text-on-primary rounded font-label-sm text-label-sm font-semibold hover:bg-primary-container transition-colors" type="button">
+              Claim Table
+            </button>
+</div>
+</div>
+<!-- 2. OCCUPIED / IN PLAY -->
+<div class="bg-surface-container-lowest border border-tertiary-container/30 rounded p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-tertiary-container"></div>
+<div>
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-variant">
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant font-semibold">TBL-07 • GABRIELS</span>
+<span class="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-[2px] bg-tertiary-fixed text-on-tertiary-fixed font-label-sm text-label-sm font-semibold">
+<span class="w-2 h-2 rounded-full bg-tertiary-container animate-ping"></span>
+<span>IN PLAY</span>
+</span>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Carom Grand Prix</span>
+<span class="font-headline-sm text-headline-sm font-mono font-bold text-tertiary-container">48m<span class="font-label-sm text-label-sm font-normal text-on-surface-variant"> / frame</span></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                10ft Pocketless heated slate. Match between Master Member K. Vance vs. Guest.
+              </p>
+</div>
+<!-- Optical Sensor Metric -->
+<div class="bg-surface-container-low p-space-sm rounded border border-surface-variant flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Active Frame:</span>
+<span class="font-semibold text-on-surface font-mono">Frame 3 (Tie 1-1)</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Session Tab:</span>
+<span class="font-semibold text-on-surface font-mono">£52.00 acum</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-variant flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Est. Clear: 21:15</span>
+<button class="px-space-md py-1 bg-surface-container border border-outline-variant text-on-surface rounded font-label-sm text-label-sm font-medium hover:bg-surface-variant transition-colors" type="button">
+              Spectate Live
+            </button>
+</div>
+</div>
+<!-- 3. RESERVED / CONFIRMED -->
+<div class="bg-surface-container-lowest border border-secondary/30 rounded p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-secondary"></div>
+<div>
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-variant">
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant font-semibold">TBL-01 • PRIVATE SUITE</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-[2px] bg-secondary-fixed text-on-secondary-fixed font-label-sm text-label-sm font-semibold">
+<span>◆</span>
+<span>RESERVED</span>
+</span>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">The Mayfair Salon</span>
+<span class="font-headline-sm text-headline-sm font-mono font-bold text-secondary">20:30<span class="font-label-sm text-label-sm font-normal text-on-surface-variant"> lock</span></span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                9ft Custom Walnut Table. Reserved for Henderson Syndicate (Party of 6).
+              </p>
+</div>
+<!-- Optical Sensor Metric -->
+<div class="bg-surface-container-low p-space-sm rounded border border-surface-variant flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Lounge Concierge:</span>
+<span class="font-semibold text-on-surface">Highland Park 18y</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Check-in Status:</span>
+<span class="text-secondary font-semibold">Pre-authorized</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-variant flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">In 38 minutes</span>
+<button class="px-space-md py-1 bg-surface-container border border-outline-variant text-on-surface rounded font-label-sm text-label-sm font-medium hover:bg-surface-variant transition-colors" type="button">
+              Manage Lock
+            </button>
+</div>
+</div>
+<!-- 4. MAINTENANCE / RE-FELTING -->
+<div class="bg-surface-container-lowest border border-error/30 rounded p-space-md flex flex-col justify-between shadow-sm relative overflow-hidden">
+<div class="absolute top-0 left-0 right-0 h-1 bg-error"></div>
+<div>
+<div class="flex items-center justify-between pb-space-sm border-b border-surface-variant">
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant font-semibold">TBL-12 • RILEY 12FT</span>
+<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-[2px] bg-error-container text-on-error-container font-label-sm text-label-sm font-semibold">
+<span>—</span>
+<span>MAINTENANCE</span>
+</span>
+</div>
+<div class="my-space-md">
+<div class="flex items-baseline justify-between">
+<span class="font-headline-sm text-headline-sm font-semibold text-on-surface">Championship Snooker</span>
+<span class="font-headline-sm text-headline-sm font-mono font-bold text-error">CLOTH</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">
+                Precision iron re-felting. Cushion rail tension re-torque in progress by master fitter.
+              </p>
+</div>
+<!-- Optical Sensor Metric -->
+<div class="bg-surface-container-low p-space-sm rounded border border-surface-variant flex flex-col gap-1">
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Technician ID:</span>
+<span class="font-semibold text-on-surface font-mono">FITTER #04</span>
+</div>
+<div class="flex items-center justify-between font-label-sm text-label-sm">
+<span class="text-on-surface-variant">Estimated Online:</span>
+<span class="text-error font-semibold font-mono">Tomorrow 10:00</span>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-variant flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-on-surface-variant">Rails Disengaged</span>
+<button class="px-space-md py-1 bg-surface-container border border-outline-variant text-on-surface-variant rounded font-label-sm text-label-sm font-medium hover:bg-surface-variant transition-colors" disabled="" type="button">
+              Service Log
+            </button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: COMPONENT & UI INTERACTION LIBRARY (LIVE SHOWCASE) -->
+<section class="w-full px-margin py-space-xl border-b border-surface-variant bg-surface-container-low">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-space-lg">
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">
+<span>03 • Modular UI Component Architecture</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-semibold text-on-surface tracking-tight mt-1">
+          Precision Control Elements &amp; State Forms
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-3xl">
+          Constructed with strict 1px hairline junctions, calibrated contrast ratios, and tactile state feedback. Engineered to prevent booking overlap errors under low-light club ambient lighting.
+        </p>
+</div>
+<!-- Bento Grid of System Components -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- COLUMN A (8 Cols): Primary Controls & Date/Time Matrix -->
+<div class="lg:col-span-8 flex flex-col gap-space-lg">
+<!-- Segmented Hall Selector & Button Spectrum -->
+<div class="bg-surface border border-surface-variant rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-variant pb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">1. Hall Segments &amp; Button Hierarchy</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Radius: 4px | Flush Align</span>
+</div>
+<!-- Segmented Floor Control -->
+<div class="flex flex-wrap items-center bg-surface-container-low p-1 rounded border border-surface-variant gap-1">
+<button class="px-space-md py-space-xs rounded bg-surface text-primary font-body-sm text-body-sm font-semibold shadow-xs border border-surface-variant flex items-center gap-2" type="button">
+<span>The Strand Floor</span>
+<span class="font-label-sm text-label-sm bg-primary text-on-primary px-1.5 py-0.2 rounded-full">8 Open</span>
+</button>
+<button class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium flex items-center gap-2 transition-colors" type="button">
+<span>The Mezzanine</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-1.5 py-0.2 rounded-full text-on-surface-variant">3 Open</span>
+</button>
+<button class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium flex items-center gap-2 transition-colors" type="button">
+<span>Private Chambers</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-1.5 py-0.2 rounded-full text-on-surface-variant">1 Open</span>
+</button>
+<button class="px-space-md py-space-xs rounded text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium flex items-center gap-2 transition-colors" type="button">
+<span>Championship Arena</span>
+<span class="font-label-sm text-label-sm bg-surface-container px-1.5 py-0.2 rounded-full text-on-surface-variant">Full</span>
+</button>
+</div>
+<!-- Button Token Hierarchy -->
+<div class="grid grid-cols-1 sm:grid-cols-4 gap-space-sm pt-space-xs">
+<button class="w-full px-space-md py-space-sm bg-primary text-on-primary rounded font-body-md text-body-md font-semibold hover:bg-primary-container active:translate-y-0.5 transition-all text-center" type="button">
+                Primary Action
+              </button>
+<button class="w-full px-space-md py-space-sm bg-surface-container-lowest border border-outline-variant text-on-surface rounded font-body-md text-body-md font-medium hover:bg-surface-container active:translate-y-0.5 transition-all text-center" type="button">
+                Secondary Ghost
+              </button>
+<button class="w-full px-space-md py-space-sm bg-surface-container border border-surface-variant text-on-surface-variant rounded font-body-md text-body-md font-medium hover:text-on-surface flex items-center justify-center gap-1 group transition-all" type="button">
+<span>Table Details</span>
+<span class="material-symbols-outlined text-[16px] group-hover:translate-x-0.5 transition-transform text-primary">arrow_forward</span>
+</button>
+<button class="w-full px-space-md py-space-sm bg-error-container text-on-error-container rounded font-body-md text-body-md font-semibold hover:bg-error hover:text-on-error transition-all text-center" type="button">
+                Release Table
+              </button>
+</div>
+</div>
+<!-- Date & Time Slot Matrix (Horizontal Editorial Picker) -->
+<div class="bg-surface border border-surface-variant rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-variant pb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">2. Temporal Slot Grid &amp; Reservation Horizon</span>
+<span class="font-label-sm text-label-sm text-primary font-mono font-medium">Trajectory Selected: Today, 20:00 - 22:00</span>
+</div>
+<!-- Horizontal Day Selector with Trajectory Line -->
+<div class="flex items-center gap-space-md border-b border-surface-variant overflow-x-auto pb-space-xs">
+<button class="flex flex-col pb-2 relative font-body-md text-body-md font-semibold text-primary shrink-0" type="button">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Today</span>
+<span class="font-headline-sm text-headline-sm">Thu 24 Oct</span>
+<div class="absolute bottom-0 left-0 right-0 h-[2px] bg-primary"></div>
+</button>
+<button class="flex flex-col pb-2 relative font-body-md text-body-md text-on-surface-variant hover:text-on-surface shrink-0 transition-colors" type="button">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Fri</span>
+<span class="font-headline-sm text-headline-sm">Fri 25 Oct</span>
+</button>
+<button class="flex flex-col pb-2 relative font-body-md text-body-md text-on-surface-variant hover:text-on-surface shrink-0 transition-colors" type="button">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Sat</span>
+<span class="font-headline-sm text-headline-sm">Sat 26 Oct</span>
+</button>
+<button class="flex flex-col pb-2 relative font-body-md text-body-md text-on-surface-variant hover:text-on-surface shrink-0 transition-colors" type="button">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Sun</span>
+<span class="font-headline-sm text-headline-sm">Sun 27 Oct</span>
+</button>
+<button class="flex flex-col pb-2 relative font-body-md text-body-md text-on-surface-variant hover:text-on-surface shrink-0 transition-colors" type="button">
+<span class="font-label-sm text-label-sm uppercase text-on-surface-variant">Mon</span>
+<span class="font-headline-sm text-headline-sm">Mon 28 Oct</span>
+</button>
+</div>
+<!-- Time Slot Matrix -->
+<div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-6 gap-space-xs pt-space-xs">
+<button class="p-2 border border-surface-variant rounded bg-surface-container-low text-on-surface-variant font-label-md text-label-md opacity-50 cursor-not-allowed flex flex-col items-center" type="button">
+<span>17:00</span>
+<span class="text-[10px] text-error font-sans font-medium">Passed</span>
+</button>
+<button class="p-2 border border-surface-variant rounded bg-surface-container-low text-on-surface-variant font-label-md text-label-md opacity-50 cursor-not-allowed flex flex-col items-center" type="button">
+<span>18:00</span>
+<span class="text-[10px] text-tertiary font-sans font-medium">Full</span>
+</button>
+<button class="p-2 border border-surface-variant rounded bg-surface text-on-surface hover:border-primary font-label-md text-label-md flex flex-col items-center transition-colors" type="button">
+<span class="font-bold">19:00</span>
+<span class="text-[10px] text-primary font-sans font-medium">3 Tables</span>
+</button>
+<button class="p-2 border-2 border-primary rounded bg-surface-container-lowest text-primary font-label-md text-label-md font-bold flex flex-col items-center shadow-xs" type="button">
+<span>20:00</span>
+<span class="text-[10px] text-primary font-sans font-medium">Selected</span>
+</button>
+<button class="p-2 border border-surface-variant rounded bg-surface text-on-surface hover:border-primary font-label-md text-label-md flex flex-col items-center transition-colors" type="button">
+<span class="font-bold">21:00</span>
+<span class="text-[10px] text-primary font-sans font-medium">5 Tables</span>
+</button>
+<button class="p-2 border border-surface-variant rounded bg-surface text-on-surface hover:border-primary font-label-md text-label-md flex flex-col items-center transition-colors" type="button">
+<span class="font-bold">22:00</span>
+<span class="text-[10px] text-primary font-sans font-medium">7 Tables</span>
+</button>
+</div>
+<!-- Toast / Notification Bar Specimen -->
+<div class="mt-space-xs p-space-sm bg-primary text-on-primary rounded flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[20px] text-primary-fixed">check_circle</span>
+<span class="font-body-sm text-body-sm">
+<strong>Reservation Locked:</strong> Table 04 (Brunswick Gold Crown IV) allocated for 20:00 Tonight.
+                </span>
+</div>
+<div class="flex items-center gap-space-sm shrink-0">
+<button class="font-label-sm text-label-sm underline hover:text-primary-fixed uppercase tracking-wider" type="button">Undo (14s)</button>
+<button class="text-on-primary hover:text-primary-fixed" type="button"><span class="material-symbols-outlined text-[16px]">close</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- COLUMN B (4 Cols): Inputs, Forms & Skeleton States -->
+<div class="lg:col-span-4 flex flex-col gap-space-lg">
+<!-- Booking Parameter Matrix -->
+<div class="bg-surface border border-surface-variant rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-variant pb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">3. Input Fields &amp; Counters</span>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant">Spec: 1px Inset</span>
+</div>
+<!-- Select Venue Dropdown -->
+<div class="flex flex-col gap-1">
+<label class="font-label-sm text-label-sm font-medium text-on-surface">Club Location</label>
+<div class="relative">
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded p-space-sm font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary appearance-none pr-8">
+<option>The Strand Flagship — London, W1</option>
+<option>Mayfair Vault &amp; Cigar Lounge — London, W1K</option>
+<option>St. James's Snooker Club — London, SW1A</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-2.5 text-[18px] text-on-surface-variant pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Counter Component -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm font-medium text-on-surface">Player Party Size</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant font-mono">Max 6 per Bay</span>
+</div>
+<div class="flex items-center border border-outline-variant rounded bg-surface-container-lowest overflow-hidden">
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container hover:bg-surface-variant text-on-surface text-lg font-bold border-r border-outline-variant" onclick="adjustParty(-1)" type="button">-</button>
+<div class="flex-1 text-center font-label-md text-label-md font-bold text-on-surface" id="party-count">4 Players</div>
+<button class="w-10 h-10 flex items-center justify-center bg-surface-container hover:bg-surface-variant text-on-surface text-lg font-bold border-l border-outline-variant" onclick="adjustParty(1)" type="button">+</button>
+</div>
+</div>
+<!-- Notes Textarea -->
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<label class="font-label-sm text-label-sm font-medium text-on-surface">Catering &amp; Cue Fitting Notes</label>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Optional</span>
+</div>
+<textarea class="w-full bg-surface-container-lowest border border-outline-variant rounded p-space-sm font-body-sm text-body-sm text-on-surface focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary" placeholder="e.g. Provide 2x 18oz Predator cues, chilled sparkling water..." rows="2"></textarea>
+</div>
+</div>
+<!-- Structural Skeleton & Loading State Representation -->
+<div class="bg-surface border border-surface-variant rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-variant pb-space-sm">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-semibold">4. Precision Rail Skeleton State</span>
+<span class="font-label-sm text-label-sm text-primary font-mono font-medium">Simulated Sync</span>
+</div>
+<div class="flex flex-col gap-space-sm animate-pulse">
+<div class="flex items-center justify-between">
+<div class="h-3 w-28 bg-surface-variant rounded"></div>
+<div class="h-4 w-12 bg-surface-variant rounded"></div>
+</div>
+<div class="h-6 w-3/4 bg-surface-container-high rounded"></div>
+<div class="h-3 w-full bg-surface-variant rounded"></div>
+<!-- Billiard Table Wireframe Placeholder -->
+<div class="h-16 w-full border border-dashed border-outline-variant rounded bg-surface-container-low flex items-center justify-center gap-4">
+<div class="w-2 h-2 bg-outline-variant rotate-45"></div>
+<span class="font-label-sm text-label-sm font-mono text-outline">ACOUSTIC SENSOR CALIBRATING...</span>
+<div class="w-2 h-2 bg-outline-variant rotate-45"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: RESPONSIVE BREAKPOINT & REBRANDING TOKEN ARCHITECTURE -->
+<section class="w-full px-margin py-space-xl border-b border-surface-variant bg-surface">
+<div class="max-w-[1440px] mx-auto flex flex-col gap-space-lg">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+<div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-primary font-semibold uppercase tracking-wider">
+<span>04 • Multi-Tenant Architecture &amp; Fluid Grid</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg font-semibold text-on-surface tracking-tight mt-1">
+            Engineered for Franchise Rebranding &amp; Responsive Scale
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1 max-w-2xl">
+            The Cue &amp; Rail platform shell is built to support white-label luxury clubs, regional snooker leagues, and private venues through strict semantic tokens and responsive spatial mechanics.
+          </p>
+</div>
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-on-surface-variant bg-surface-container-low px-space-md py-space-xs border border-surface-variant rounded">
+<span class="material-symbols-outlined text-[16px] text-primary">devices</span>
+<span>4 Tested Viewport Envelopes</span>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Rebrand Theme Variable Simulator (Left 5 Cols) -->
+<div class="lg:col-span-5 bg-surface-container-lowest border border-surface-variant rounded p-space-lg shadow-sm flex flex-col justify-between">
+<div class="flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-variant pb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Semantic Token Overrides</span>
+<span class="font-label-sm text-label-sm font-mono text-primary">:root CSS Matrix</span>
+</div>
+<!-- Token Simulator Code Block -->
+<pre class="bg-surface-container-low p-space-md rounded font-mono font-label-sm text-label-sm text-on-surface overflow-x-auto border border-surface-variant leading-relaxed"><code>/* Cue &amp; Rail Universal System */
+:root {
+  --brand-primary:   <span class="text-primary font-bold">#004132</span>; /* Deep Felt */
+  --brand-cloth:     <span class="text-primary-container font-bold">#0F5A47</span>; /* Sim. 860 */
+  --brand-canvas:    <span class="text-on-surface-variant font-bold">#FBF9F5</span>; /* Ivory Base */
+  --brand-rule:      <span class="text-outline font-bold">#E5E0D8</span>; /* Hairline */
+  --brand-trajectory:<span class="text-primary font-bold">1.5px</span>;   /* Ray Vector */
+  --brand-diamond:   <span class="text-tertiary-container font-bold">45deg</span>;   /* Sighting */
+}</code></pre>
+<div class="flex flex-col gap-space-xs">
+<span class="font-label-sm text-label-sm font-semibold text-on-surface">Interactive Theme Tone Swatch</span>
+<div class="grid grid-cols-3 gap-space-xs pt-1">
+<button class="p-space-xs border-2 border-primary rounded bg-surface flex flex-col items-center gap-1 text-center" onclick="alert('Strand Flagship standard active.')" type="button">
+<div class="w-6 h-6 rounded-full bg-[#0F5A47]"></div>
+<span class="font-label-sm text-label-sm font-bold text-on-surface">Emerald</span>
+</button>
+<button class="p-space-xs border border-surface-variant rounded bg-surface hover:border-secondary flex flex-col items-center gap-1 text-center" onclick="alert('Mayfair Slate preset demonstrated.')" type="button">
+<div class="w-6 h-6 rounded-full bg-[#1e293b]"></div>
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">Mayfair Navy</span>
+</button>
+<button class="p-space-xs border border-surface-variant rounded bg-surface hover:border-tertiary flex flex-col items-center gap-1 text-center" onclick="alert('Heritage Burgundy preset demonstrated.')" type="button">
+<div class="w-6 h-6 rounded-full bg-[#4a1515]"></div>
+<span class="font-label-sm text-label-sm font-medium text-on-surface-variant">St. James Red</span>
+</button>
+</div>
+</div>
+</div>
+<div class="mt-space-md pt-space-sm border-t border-surface-variant flex items-center justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Zero build-step rebranding</span>
+<span class="text-primary font-semibold">100% Tokenized</span>
+</div>
+</div>
+<!-- Breakpoint Architecture Matrix (Right 7 Cols) -->
+<div class="lg:col-span-7 bg-surface-container-lowest border border-surface-variant rounded p-space-lg shadow-sm flex flex-col gap-space-md">
+<div class="flex items-center justify-between border-b border-surface-variant pb-space-sm">
+<span class="font-label-sm text-label-sm font-semibold uppercase tracking-wider text-on-surface-variant">Fluid Spatial Adaptations</span>
+<span class="font-label-sm text-label-sm font-mono text-on-surface-variant">Desktop • Laptop • Tablet • Mobile</span>
+</div>
+<div class="flex flex-col gap-space-sm">
+<!-- Breakpoint 1 -->
+<div class="p-space-sm bg-surface-container-low rounded border border-surface-variant flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">desktop_windows</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Championship Deck (1440px+)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">12-column Cartesian grid, 40px margins, simultaneous floorplan and booking drawer.</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-mono bg-surface px-space-xs py-0.5 rounded border border-surface-variant shrink-0">12 Col</span>
+</div>
+<!-- Breakpoint 2 -->
+<div class="p-space-sm bg-surface-container-low rounded border border-surface-variant flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">laptop_mac</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Executive Terminal (1280px)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Compressed navigation bar, sticky telemetry footer, dynamic laser trajectory cursor.</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-mono bg-surface px-space-xs py-0.5 rounded border border-surface-variant shrink-0">8-12 Col</span>
+</div>
+<!-- Breakpoint 3 -->
+<div class="p-space-sm bg-surface-container-low rounded border border-surface-variant flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">tablet</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Floor Concierge Tablet (1024px • 768px)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Floor map reflows to vertical inspection deck; touch-optimized 44px hit-targets.</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-mono bg-surface px-space-xs py-0.5 rounded border border-surface-variant shrink-0">8 Col</span>
+</div>
+<!-- Breakpoint 4 -->
+<div class="p-space-sm bg-surface-container-low rounded border border-surface-variant flex items-start justify-between gap-space-md">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">smartphone</span>
+<div>
+<span class="font-label-md text-label-md font-semibold text-on-surface block">Player Mobile Companion (390px)</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tables collapse into rail inspection cards with swipeable time slot selection.</span>
+</div>
+</div>
+<span class="font-label-sm text-label-sm font-mono bg-surface px-space-xs py-0.5 rounded border border-surface-variant shrink-0">4 Col</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: READY-FOR-PRODUCTION IMPLEMENTATION SUMMARY -->
+<section class="w-full px-margin py-space-xl bg-surface">
+<div class="max-w-[1440px] mx-auto bg-primary text-on-primary rounded p-space-lg lg:p-space-xl flex flex-col md:flex-row items-center justify-between gap-space-lg shadow-sm">
+<div class="flex flex-col gap-space-xs max-w-2xl">
+<div class="flex items-center gap-space-xs font-label-sm text-label-sm text-primary-fixed uppercase tracking-wider font-semibold">
+<span class="w-2 h-2 rounded-full bg-primary-fixed"></span>
+<span>Commercial Foundation Ready</span>
+</div>
+<h3 class="font-headline-lg text-headline-lg font-semibold tracking-tight">
+          Inherit This Shell Across All Future Views
+        </h3>
+<p class="font-body-md text-body-md text-on-primary-container leading-relaxed">
+          The global shell, trajectory interaction logic, color contrasts, and table state primitives are fully established. Upcoming views (Live Floor Map, Match Tracker, Member Dossier, and Billing Concierge) will inherit these exact tokens seamlessly.
+        </p>
+</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-sm shrink-0 w-full sm:w-auto">
+<a class="w-full sm:w-auto px-space-lg py-space-sm bg-surface text-primary rounded font-body-md text-body-md font-semibold hover:bg-surface-container transition-colors text-center" data-path="tables-salon" href="#">
+          Open Live Tables View
+        </a>
+<a class="w-full sm:w-auto px-space-lg py-space-sm bg-primary-container text-on-primary rounded font-body-md text-body-md font-semibold hover:bg-primary-fixed hover:text-on-primary-fixed transition-colors border border-on-primary-container/30 text-center" data-path="reserve-table" href="#">
+          Launch Booking Wizard
+        </a>
+</div>
+</div>
+</section>
+</div>
+<!-- Inline JavaScript for Trajectory & UI Showcase Interactions -->
+<script>
+  function setTrajectory(nodeIndex, percent, yVal, label) {
+    // Reset all nodes
+    for (let i = 1; i <= 4; i++) {
+      const node = document.getElementById('node-' + i);
+      if (node) {
+        node.classList.remove('border-primary');
+        node.classList.add('border-outline-variant');
+        const ray = node.querySelector('.absolute.bottom-0');
+        if (ray) ray.classList.add('opacity-0');
+      }
+    }
+
+    // Activate selected node
+    const activeNode = document.getElementById('node-' + nodeIndex);
+    if (activeNode) {
+      activeNode.classList.add('border-primary');
+      activeNode.classList.remove('border-outline-variant');
+      const ray = activeNode.querySelector('.absolute.bottom-0');
+      if (ray) ray.classList.remove('opacity-0');
+    }
+
+    // Move beam and diamond
+    const beam = document.getElementById('laser-beam');
+    const diamond = document.getElementById('diamond-cursor');
+    const coords = document.getElementById('vector-coords');
+    const targetLabel = document.getElementById('active-target-id');
+
+    if (beam && diamond) {
+      beam.style.width = percent + '%';
+      diamond.style.left = percent + '%';
+    }
+
+    if (coords) {
+      coords.innerText = 'Bay-0' + nodeIndex + ' [X: ' + (percent * 7.5).toFixed(0) + ', Y: ' + yVal + ']';
+    }
+
+    if (targetLabel) {
+      targetLabel.innerText = 'LOCKED: ' + label;
+    }
+  }
+
+  let partySize = 4;
+  function adjustParty(delta) {
+    partySize += delta;
+    if (partySize < 1) partySize = 1;
+    if (partySize > 8) partySize = 8;
+    const el = document.getElementById('party-count');
+    if (el) {
+      el.innerText = partySize + (partySize === 1 ? ' Player' : ' Players');
+    }
+  }
+</script></main><footer class="w-full bg-surface-container-lowest border-t border-surface-variant mt-auto"><div class="w-full px-margin py-space-sm flex flex-col sm:flex-row items-center justify-between gap-space-sm"><div class="flex items-center gap-space-md"><span class="inline-flex items-center gap-space-xs font-label-md text-label-md text-on-surface font-semibold"><span class="w-2 h-2 rounded-full bg-primary inline-block"></span> 9 of 12 Tables in Play</span><span class="h-3 w-[1px] bg-surface-variant hidden sm:block"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Last synchronized 12s ago</span><span class="h-3 w-[1px] bg-surface-variant hidden sm:block"></span><span class="font-label-sm text-label-sm text-on-surface-variant">Next Open Salon at <span class="text-on-surface font-semibold">20:30</span></span></div><div class="flex items-center gap-space-lg text-on-surface-variant font-label-sm text-label-sm"><span>Table Humidity: 46% • Cloth: Simonis 860</span><span class="text-on-surface font-medium">© Cue &amp; Rail Club Ltd.</span></div></div></footer></body></html>
