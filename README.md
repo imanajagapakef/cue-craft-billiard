@@ -67,7 +67,7 @@ Menjalankan seluruh suite berurutan. Rinciannya:
 | `npm test` | 25 | Overlap, buffer, jam operasional lintas tengah malam, batas extension, split harga, DP, overage, settlement |
 | `npm run test:constraint` | 11 | Database **menolak** double booking, termasuk dua insert balapan |
 | `npm run test:flow` | 43 | Alur penuh §80 di layer service |
-| `npm run test:routes` | 14 | Halaman render, dan route staff menolak tamu tanpa session |
+| `npm run test:routes` | 19 | Halaman render; route staff menolak tamu tanpa session |
 | `npm run test:counter` | 24 | Walk-in → extension → checkout lewat HTTP dengan session kasir |
 
 Dua suite terakhir butuh `npm run dev` berjalan.
@@ -132,6 +132,35 @@ Semua perhitungan uang lewat `src/lib/pricing.ts`, semua nilai kebijakan lewat t
 
 ---
 
+## Route
+
+Pelanggan:
+
+| Route | Isi |
+| --- | --- |
+| `/` | Venue home, occupancy live, rate card |
+| `/meja` | Cari meja, pilih slot, pesan + DP |
+| `/booking` | Lookup booking (kode + nomor HP) |
+| `/booking/[code]` | Detail, bayar DP, upload bukti, keyless pass, batal |
+| `/m/meja` | Mobile: date strip, meja sebagai rail bar, action bar mengambang |
+| `/m/booking` | Lookup mobile |
+| `/m/booking/[code]` | Keyless pass mobile + bayar DP |
+
+Staff:
+
+| Route | Isi |
+| --- | --- |
+| `/admin/masuk` | Sign-in |
+| `/admin` | Dashboard: pendapatan, okupansi, antrean verifikasi, floor |
+| `/admin/meja` | Operasional meja + toggle maintenance (alasan wajib) |
+| `/admin/kasir` | Check-in by kode, walk-in, sesi aktif |
+| `/admin/pembayaran` | Verifikasi / tolak DP (alasan wajib) |
+| `/admin/sesi/[id]` | Kontrol sesi: extension, checkout, tagihan |
+| `/admin/booking/[code]` | Dossier: timeline audit, outbox WhatsApp, status uang |
+| `/m/admin` | Floor ops mobile: floor bars, antrean bayar, check-in inline |
+
+---
+
 ## Struktur
 
 ```
@@ -140,11 +169,16 @@ src/
     page.tsx                    venue home + occupancy live
     meja/                       cari meja & booking
     booking/                    lookup, detail, checkout DP, keyless pass
+    m/                          5 route mobile
     admin/
       masuk/                    sign-in staff
-                              →  dashboard, meja, kasir, pembayaran, sesi/[id], booking/[code]
+                               →  dashboard, meja, kasir, pembayaran, sesi/[id], booking/[code]
     api/                        13 route handler
-  components/                   design tokens + komponen UI
+  components/
+    ui.tsx                      primitive dari design token
+    mobile.tsx                  shell, chip strip, table bar
+    shell.tsx  live.tsx         header, countdown
+    …                           komponen per layar
   lib/
     availability.ts             overlap, buffer, jam operasional, batas extension
     pricing.ts                  split harga, DP, overage, settlement
@@ -163,6 +197,9 @@ tests/domain.test.ts           unit
 scripts/                        4 skenario integrasi
 docs/                           3 dokumen
 ```
+
+> `/m/admin` **tidak** dicakup middleware `/admin`, jadi ia punya pemeriksaan session
+> sendiri. Jangan dihapus dengan alasan "middleware sudah menagih".
 
 ---
 

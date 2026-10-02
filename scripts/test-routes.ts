@@ -85,18 +85,29 @@ const STAFF_PAGES: Array<[string, string, string]> = [
   ["/admin/pembayaran", "Verifikasi DP", "verification queue"],
 ];
 
-/** Pages that must never render for a signed-out visitor, with what they leak. */
+/**
+ * Pages that must never render for a signed-out visitor.
+ *
+ * The needle must be operational DATA, never a page title. Next.js evaluates a
+ * page's `metadata` export before the component runs, so a redirecting page still
+ * emits its <title> in the 307 body. Asserting on a title would either fail
+ * correctly-working pages or, worse, train someone to ignore a real failure here.
+ */
 const LEAKY_PAGES: Array<[string, string]> = [
   ["/admin", "Pendapatan hari ini"],
   ["/admin/meja", "Operasional meja"],
   ["/admin/kasir", "Customer datang"],
   ["/admin/pembayaran", "Verifikasi DP"],
+  // Outside the /admin matcher, so this path has no middleware behind it.
+  ["/m/admin", "TBL-"],
 ];
 
 const PUBLIC_PAGES: Array<[string, string]> = [
   ["/", "Meja dulu"],
   ["/meja", "Cari meja yang tersedia"],
   ["/booking", "Booking saya"],
+  ["/m/meja", "Cari Meja"],
+  ["/m/booking", "Booking Saya"],
 ];
 
 async function main() {
@@ -153,6 +164,25 @@ async function main() {
       "/admin/masuk bounces a signed-in staff member to the dashboard",
       masuk.status === 307 || masuk.status === 302,
       `status ${masuk.status}`,
+    );
+
+    // The mobile floor view sits outside the /admin matcher, so its own guard is
+    // the only thing protecting it.
+    const mAdminRes = await staff.get("/m/admin");
+    const mAdminHtml = await mAdminRes.text();
+    check(
+      "/m/admin renders for a signed-in staff member",
+      mAdminRes.status === 200 && mAdminHtml.includes("TBL-"),
+      `status ${mAdminRes.status}`,
+    );
+
+    // A booking viewed without a phone number must not render a dossier: the
+    // code alone is not a credential, so it redirects to the lookup form.
+    const noPhone = await staff.get("/m/booking/BK-NOPE");
+    check(
+      "mobile booking without a phone number redirects to lookup",
+      noPhone.status === 307 || noPhone.status === 302,
+      `status ${noPhone.status}`,
     );
 
     // Prove requireStaff is wired into the handler, not only the page.
