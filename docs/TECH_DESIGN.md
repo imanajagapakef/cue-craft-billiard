@@ -399,10 +399,23 @@ Stated rather than hidden.
 | --- | --- | --- |
 | No migration rollback story | A bad migration must be fixed forward | Prisma `migrate resolve`; migrations are additive-only by policy |
 | `Table.status` can drift from bookings | Admin override may desync the display | Admin status change writes an `audit_logs` row; a reconciliation view is not built |
+| `audit_logs.booking_id` has no FK | Rows outlive their booking, by design — see below | Deliberate. Add a retention policy if the table grows past a few million rows |
 | Refund is manual | Venue must remember to refund | Out of scope until a gateway exists (D3) |
 | Expiry is lazy | Stale rows linger if nobody reads | Acceptable; add Vercel Cron on the same sweep function |
 | Single venue | No `venue_id` anywhere | Adding it later touches every table and the exclusion constraint |
 | No holiday calendar | Public holidays price as weekends | `weekendOnly` flag is the seam to extend |
+
+### Why `audit_logs.booking_id` is not a foreign key
+
+Deleting a booking must not erase the record of who created, verified, or cancelled
+it — that is the entire point of an audit trail. A cascade would make the log
+defeatable by deleting the subject, which is exactly the attack an audit log exists
+to prevent.
+
+The cost is orphan rows, and no unbounded growth: `audit_logs` currently holds ~126
+rows after a full test cycle covering 122 assertions, so a single venue produces
+single-digit rows per booking. If it ever becomes a problem, add a retention job —
+not a cascade.
 
 ---
 
